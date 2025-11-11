@@ -1,0 +1,3692 @@
+[
+    {
+        "ID": "1",
+        "Location": "Parking around Plot No. 10, Distt. Centre, Laxmi Nagar.",
+        "Authority": "DDA",
+        "Zone": "ER",
+        "Status": "Recommended",
+        "Latitude": 28.6362736,
+        "Longitude": 77.2733814
+    },
+    {
+        "ID": "2",
+        "Location": "Parking site Plot No. 5 to 9, Distt. Centre, Laxmi Nagar.",
+        "Authority": "DDA",
+        "Zone": "ER",
+        "Status": "Recommended",
+        "Latitude": 28.6331422,
+        "Longitude": 77.28056269999999
+    },
+    {
+        "ID": "3",
+        "Location": "Parking site in front of Plot No. 15 to 19, Distt. Centre, Laxmi Nagar.",
+        "Authority": "DDA",
+        "Zone": "ER",
+        "Status": "Recommended",
+        "Latitude": 28.6331422,
+        "Longitude": 77.28056269999999
+    },
+    {
+        "ID": "4",
+        "Location": "Parking site Coffee Home Plot No. 14, Distt. Centre, Laxmi Nagar.",
+        "Authority": "DDA",
+        "Zone": "ER",
+        "Status": "Recommended",
+        "Latitude": 28.6988401,
+        "Longitude": 77.2659237
+    },
+    {
+        "ID": "5",
+        "Location": "Parking site around Scope Minar plot No. 2, Distt. Centre, Laxmi Nagar.",
+        "Authority": "DDA",
+        "Zone": "ER",
+        "Status": "Recommended",
+        "Latitude": 28.6392305,
+        "Longitude": 77.2858359
+    },
+    {
+        "ID": "6",
+        "Location": "Parking plot No. 4, DDA Bldg. Distt. Centre, Laxmi Nagar.",
+        "Authority": "DDA",
+        "Zone": "ER",
+        "Status": "Recommended",
+        "Latitude": 28.6331422,
+        "Longitude": 77.28056269999999
+    },
+    {
+        "ID": "7",
+        "Location": "Parking site in front of Kiosk No. 5 to 9 Distt. Centre, Laxmi Nagar.",
+        "Authority": "DDA",
+        "Zone": "ER",
+        "Status": "Recommended",
+        "Latitude": 28.6331422,
+        "Longitude": 77.28056269999999
+    },
+    {
+        "ID": "8",
+        "Location": "Parking site in front of Kiosk No. 15 to 19 Distt, Centre, Laxmi Nagar.",
+        "Authority": "DDA",
+        "Zone": "ER",
+        "Status": "Recommended",
+        "Latitude": 28.6331422,
+        "Longitude": 77.28056269999999
+    },
+    {
+        "ID": "9",
+        "Location": "Parking site Group \u00e2\u20ac\u201c V, Lot \u2018A\u2019 near Cinema Building, Rajendra Place.",
+        "Authority": "DDA",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.5795706,
+        "Longitude": 77.25662350000002
+    },
+    {
+        "ID": "10",
+        "Location": "Parking site Group-VII Lot \u2018F\u2019 Rajendra Place.",
+        "Authority": "DDA",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6432533,
+        "Longitude": 77.17799250000002
+    },
+    {
+        "ID": "11",
+        "Location": "Parking site at Lot \u2018B\u2019 at Rajendra Place.",
+        "Authority": "DDA",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6432533,
+        "Longitude": 77.17799250000002
+    },
+    {
+        "ID": "12",
+        "Location": "Parking site Group \u00e2\u20ac\u201c I in front of Plot No. 16, Rajendra Place.",
+        "Authority": "DDA",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.642797,
+        "Longitude": 77.178434
+    },
+    {
+        "ID": "13",
+        "Location": "Parking site Group \u00e2\u20ac\u201cIV \u2018E\u2019 in front of Plot No. 25-26, Rajendra Place.",
+        "Authority": "DDA",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.579862,
+        "Longitude": 77.19410289999999
+    },
+    {
+        "ID": "14",
+        "Location": "Parking site Group \u00e2\u20ac\u201c IV in front of Plot No.17-19, Rajendra Place.",
+        "Authority": "DDA",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6439639,
+        "Longitude": 77.1783969
+    },
+    {
+        "ID": "15",
+        "Location": "Parking site Group \u00e2\u20ac\u201cII in front of Plot No. 11 between Plot No. 7 & 12, Rajendra Place.",
+        "Authority": "DDA",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.644041,
+        "Longitude": 77.17752639999999
+    },
+    {
+        "ID": "16",
+        "Location": "Parking site in basement of Rajendra Place.",
+        "Authority": "DDA",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6432533,
+        "Longitude": 77.17799250000002
+    },
+    {
+        "ID": "17",
+        "Location": "Parking under Plot No. 20 adjacent to Rubi Taxi Stand, near Sant Longowal Tower, Rajinder Place.",
+        "Authority": "DDA",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6432533,
+        "Longitude": 77.17799250000002
+    },
+    {
+        "ID": "18",
+        "Location": "Parking site at HOG Market, Rajendra Place.",
+        "Authority": "DDA",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6446717,
+        "Longitude": 77.1772307
+    },
+    {
+        "ID": "19",
+        "Location": "Parking site at Truck Parking, Timar Pur.",
+        "Authority": "DDA",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.7702086,
+        "Longitude": 77.1267045
+    },
+    {
+        "ID": "20",
+        "Location": "Parking site under at Yamuna Sur Ghat.",
+        "Authority": "DDA",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.710092,
+        "Longitude": 77.2299402
+    },
+    {
+        "ID": "21",
+        "Location": "Parking site near Manglam Place Rohini, Plot No. 16 (M2K), Cinema, Rohini (car parking)",
+        "Authority": "DDA",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.7010788,
+        "Longitude": 77.1169522
+    },
+    {
+        "ID": "22",
+        "Location": "Parking site near Manglam Place Rohini, No, 16 (M2K), Cinema, Rohini (Scooter Parking)",
+        "Authority": "DDA",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.7010788,
+        "Longitude": 77.1169522
+    },
+    {
+        "ID": "23",
+        "Location": "Parking site near Manglam Plaza, Rohini Plot No. 7, (Vardhman Plaza).",
+        "Authority": "DDA",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.7536701,
+        "Longitude": 77.08799429999999
+    },
+    {
+        "ID": "24",
+        "Location": "Additional parking site entrance of formal garden gate No. 3 of Swaran Jayanti Park, Rohini.",
+        "Authority": "DDA",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.7247703,
+        "Longitude": 77.1228654
+    },
+    {
+        "ID": "25",
+        "Location": "Additional parking site Sec-9, Swarnjayanti Park, Rohini Gate No. 1.",
+        "Authority": "DDA",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.723707,
+        "Longitude": 77.113832
+    },
+    {
+        "ID": "26",
+        "Location": "Parking site under ground in front of Plot No. 20, Nehru Place.",
+        "Authority": "DDA",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5478,
+        "Longitude": 77.2509089
+    },
+    {
+        "ID": "27",
+        "Location": "Parking site at Panch Sheel Shopping Centre, NEW DELHI.",
+        "Authority": "DDA",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5775313,
+        "Longitude": 77.1961565
+    },
+    {
+        "ID": "28",
+        "Location": "Parking site under Defence Colony Flyover (SOUTH and NORTH).",
+        "Authority": "DDA",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5791191,
+        "Longitude": 77.2385633
+    },
+    {
+        "ID": "29",
+        "Location": "DDA Car Parking No. 2, in Tughlakakbad Institutional Area.",
+        "Authority": "DDA",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5128466,
+        "Longitude": 77.2449705
+    },
+    {
+        "ID": "30",
+        "Location": "Parking site at Kalkaji Mandir.",
+        "Authority": "DDA",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5498204,
+        "Longitude": 77.2607105
+    },
+    {
+        "ID": "31",
+        "Location": "Parking site at Haus Khas Village.",
+        "Authority": "DDA",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5533997,
+        "Longitude": 77.1941654
+    },
+    {
+        "ID": "32",
+        "Location": "Parking site Millenium Park, Site No. 3",
+        "Authority": "DDA",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5966628,
+        "Longitude": 77.2546715
+    },
+    {
+        "ID": "33",
+        "Location": "Parking site Millenium Park, Site No. 1",
+        "Authority": "DDA",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.6303137,
+        "Longitude": 77.08228059999999
+    },
+    {
+        "ID": "34",
+        "Location": "Parking site Millenium Park, Site No. 2",
+        "Authority": "DDA",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.6139298,
+        "Longitude": 77.2088282
+    },
+    {
+        "ID": "35",
+        "Location": "Parking site Millenium Park, Site No. 4",
+        "Authority": "DDA",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5966628,
+        "Longitude": 77.2546715
+    },
+    {
+        "ID": "36",
+        "Location": "Car Scooter parking Road 1,4,5, Bhikaji Cama Place.",
+        "Authority": "DDA",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5676248,
+        "Longitude": 77.1887297
+    },
+    {
+        "ID": "37",
+        "Location": "Parking site EAST End at Parking Bhikaji Cama Place.",
+        "Authority": "DDA",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.567924,
+        "Longitude": 77.1880786
+    },
+    {
+        "ID": "38",
+        "Location": "Parking site at CENTRAL Shopping Bhikaji Cama Place.",
+        "Authority": "DDA",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.567924,
+        "Longitude": 77.1880786
+    },
+    {
+        "ID": "39",
+        "Location": "Parking site between Plot No. 6,7,8,9, between MTNL Bldg. and Bhikaji Cama Place.",
+        "Authority": "DDA",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.567924,
+        "Longitude": 77.1880786
+    },
+    {
+        "ID": "40",
+        "Location": "Parking site between EIL and PNB Bhikaji Cama Place.",
+        "Authority": "DDA",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5683244,
+        "Longitude": 77.18791569999999
+    },
+    {
+        "ID": "41",
+        "Location": "Parking site in Basement at Bhikaji Cama Place.",
+        "Authority": "DDA",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.567924,
+        "Longitude": 77.1880786
+    },
+    {
+        "ID": "42",
+        "Location": "Parking site at Vikas Sadan, INA.",
+        "Authority": "DDA",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5753884,
+        "Longitude": 77.2136761
+    },
+    {
+        "ID": "43",
+        "Location": "Parking site of METRO Station No. 1 Sector No. 14 Dwarka.",
+        "Authority": "DDA",
+        "Zone": "WR",
+        "Status": "Recommended",
+        "Latitude": 28.5822999,
+        "Longitude": 77.0499762
+    },
+    {
+        "ID": "44",
+        "Location": "Parking site of METRO Station No. 2 Sector No. 13 Dwarka.",
+        "Authority": "DDA",
+        "Zone": "WR",
+        "Status": "Recommended",
+        "Latitude": 28.5822999,
+        "Longitude": 77.0499762
+    },
+    {
+        "ID": "45",
+        "Location": "Parking site of METRO Station No. 3 Sector No. 12 Dwarka.",
+        "Authority": "DDA",
+        "Zone": "WR",
+        "Status": "Recommended",
+        "Latitude": 18.6526974,
+        "Longitude": 73.82867329999999
+    },
+    {
+        "ID": "46",
+        "Location": "Parking site of METRO Station No. 4 Sector No. 11 Dwarka.",
+        "Authority": "DDA",
+        "Zone": "WR",
+        "Status": "Recommended",
+        "Latitude": 28.5822999,
+        "Longitude": 77.0499762
+    },
+    {
+        "ID": "47",
+        "Location": "Parking site of METRO Station No. 5 Sector No. 10 Dwarka.",
+        "Authority": "DDA",
+        "Zone": "WR",
+        "Status": "Recommended",
+        "Latitude": 28.5847464,
+        "Longitude": 77.0315469
+    },
+    {
+        "ID": "48",
+        "Location": "Idle Truck Parking at Rohtak Road, Transport Centre (Punjabi Bagh).",
+        "Authority": "DDA",
+        "Zone": "WR",
+        "Status": "Recommended",
+        "Latitude": 28.6761036,
+        "Longitude": 77.14199719999999
+    },
+    {
+        "ID": "49",
+        "Location": "Basement of Parking of Plot No 1 & 2, Janak Place.",
+        "Authority": "DDA",
+        "Zone": "WR",
+        "Status": "Recommended",
+        "Latitude": 28.5891235,
+        "Longitude": 77.05644819999999
+    },
+    {
+        "ID": "50",
+        "Location": "Parking site in Basement of Plot No. 7-A, Janak Puri.",
+        "Authority": "DDA",
+        "Zone": "WR",
+        "Status": "Recommended",
+        "Latitude": 28.6452642,
+        "Longitude": 77.046541
+    },
+    {
+        "ID": "51",
+        "Location": "Parking site Service Industries Building at Distt. Centre, Janak Puri.",
+        "Authority": "DDA",
+        "Zone": "WR",
+        "Status": "Recommended",
+        "Latitude": 28.6295538,
+        "Longitude": 77.0801899
+    },
+    {
+        "ID": "52",
+        "Location": "Parking site at Block \u2018C\u2019 Community Centre, Janak Puri.",
+        "Authority": "DDA",
+        "Zone": "WR",
+        "Status": "Recommended",
+        "Latitude": 28.6289105,
+        "Longitude": 77.0912012
+    },
+    {
+        "ID": "53",
+        "Location": "Parking site adjoining Suneja Tower Columbus Tower Janak Puri Restaurant parking between LIC Bldg. and Jyoti Shikhar, Janak Puri.",
+        "Authority": "DDA",
+        "Zone": "WR",
+        "Status": "Recommended",
+        "Latitude": 28.6288309,
+        "Longitude": 77.0817861
+    },
+    {
+        "ID": "54",
+        "Location": "Parking site under DECK near Taxi Stand, Janak Puri.",
+        "Authority": "DDA",
+        "Zone": "WR",
+        "Status": "Recommended",
+        "Latitude": 28.624678,
+        "Longitude": 77.101156
+    },
+    {
+        "ID": "55",
+        "Location": "Parking site on Plot No. 1 & 2 Distt. Centre, Janak Puri.",
+        "Authority": "DDA",
+        "Zone": "WR",
+        "Status": "Recommended",
+        "Latitude": 28.6339068,
+        "Longitude": 77.08681969999999
+    },
+    {
+        "ID": "56",
+        "Location": "Parking site basement Car parking under plot No. 5, Janak Place.",
+        "Authority": "DDA",
+        "Zone": "WR",
+        "Status": "Recommended",
+        "Latitude": 28.624781,
+        "Longitude": 77.1063518
+    },
+    {
+        "ID": "57",
+        "Location": "Parking site Intersection Jail road, Lajwanti Garden.",
+        "Authority": "DDA",
+        "Zone": "WR",
+        "Status": "Recommended",
+        "Latitude": 28.6140124,
+        "Longitude": 77.1080712
+    },
+    {
+        "ID": "58",
+        "Location": "DVB, Karkardooma(Single Lane Parking)",
+        "Authority": "MCD",
+        "Zone": "ER",
+        "Status": "Recommended",
+        "Latitude": 28.6529458,
+        "Longitude": 77.30228679999999
+    },
+    {
+        "ID": "59",
+        "Location": "Business Centre Karkardooma Near Malls",
+        "Authority": "MCD",
+        "Zone": "ER",
+        "Status": "Recommended",
+        "Latitude": 28.6529458,
+        "Longitude": 77.30228679999999
+    },
+    {
+        "ID": "60",
+        "Location": "Com. Com. Preet Vihar",
+        "Authority": "MCD",
+        "Zone": "ER",
+        "Status": "Recommended",
+        "Latitude": 28.63642,
+        "Longitude": 77.2927538
+    },
+    {
+        "ID": "61",
+        "Location": "MCD Zonal Office Shahdara SOUTH Zone Karkardooma",
+        "Authority": "MCD",
+        "Zone": "ER",
+        "Status": "Recommended",
+        "Latitude": 28.6969432,
+        "Longitude": 77.1104022
+    },
+    {
+        "ID": "62",
+        "Location": "CENTRAL Mkt. Suraj Mal Vihar",
+        "Authority": "MCD",
+        "Zone": "ER",
+        "Status": "Recommended",
+        "Latitude": 28.6598215,
+        "Longitude": 77.30497
+    },
+    {
+        "ID": "63",
+        "Location": "MTNL Office, Laxmi Nagar, Delhi(Single Lane Parking)",
+        "Authority": "MCD",
+        "Zone": "ER",
+        "Status": "Recommended",
+        "Latitude": 28.6392305,
+        "Longitude": 77.2858359
+    },
+    {
+        "ID": "64",
+        "Location": "Pandav Nagar, Park near Mother Dairy",
+        "Authority": "MCD",
+        "Zone": "ER",
+        "Status": "Recommended",
+        "Latitude": 28.6179357,
+        "Longitude": 77.2846495
+    },
+    {
+        "ID": "65",
+        "Location": "Out side Railway Reservation office Karkardooma",
+        "Authority": "MCD",
+        "Zone": "ER",
+        "Status": "Recommended",
+        "Latitude": 28.6464991,
+        "Longitude": 77.2995579
+    },
+    {
+        "ID": "66",
+        "Location": "MCD Zonal Office, Shahdara SOUTH, Karkardooma",
+        "Authority": "MCD",
+        "Zone": "ER",
+        "Status": "Recommended",
+        "Latitude": 28.6969432,
+        "Longitude": 77.1104022
+    },
+    {
+        "ID": "67",
+        "Location": "Parking Site at Sunder Nagar Mkt.",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.602168,
+        "Longitude": 77.240665
+    },
+    {
+        "ID": "68",
+        "Location": "Under Flyover, Shahdara",
+        "Authority": "MCD",
+        "Zone": "ER",
+        "Status": "Recommended",
+        "Latitude": 28.6893144,
+        "Longitude": 77.2919663
+    },
+    {
+        "ID": "69",
+        "Location": "Telephone Exchange, Dilshad Garden",
+        "Authority": "MCD",
+        "Zone": "ER",
+        "Status": "Recommended",
+        "Latitude": 28.67605499999999,
+        "Longitude": 77.30935099999999
+    },
+    {
+        "ID": "70",
+        "Location": "Outside DC Office NORTH Nand Nagari",
+        "Authority": "MCD",
+        "Zone": "ER",
+        "Status": "Recommended",
+        "Latitude": 28.7484441,
+        "Longitude": 77.14390999999999
+    },
+    {
+        "ID": "71",
+        "Location": "Outside DC Office MCD NORTH EAST",
+        "Authority": "MCD",
+        "Zone": "ER",
+        "Status": "Recommended",
+        "Latitude": 28.7246777,
+        "Longitude": 77.2577571
+    },
+    {
+        "ID": "72",
+        "Location": "Red Cross Hospital, Seema Puri",
+        "Authority": "MCD",
+        "Zone": "ER",
+        "Status": "Recommended",
+        "Latitude": 28.6779179,
+        "Longitude": 77.32261299999999
+    },
+    {
+        "ID": "73",
+        "Location": "Telephone Exchange Dilshad Garden",
+        "Authority": "MCD",
+        "Zone": "ER",
+        "Status": "Recommended",
+        "Latitude": 28.67605499999999,
+        "Longitude": 77.30935099999999
+    },
+    {
+        "ID": "74",
+        "Location": "BSES Yamuna Power Ltd., 66 KV Grid/Sub Station Bhagirath, Yamuna Vihar",
+        "Authority": "MCD",
+        "Zone": "ER",
+        "Status": "Recommended",
+        "Latitude": 28.7006285,
+        "Longitude": 77.2747706
+    },
+    {
+        "ID": "75",
+        "Location": "Outside DC Office, MCD NORTH EAST.",
+        "Authority": "MCD",
+        "Zone": "ER",
+        "Status": "Recommended",
+        "Latitude": 28.6735847,
+        "Longitude": 77.2264
+    },
+    {
+        "ID": "76",
+        "Location": "Saraswati Marg(Single Lane Parking)",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6495024,
+        "Longitude": 77.1898703
+    },
+    {
+        "ID": "77",
+        "Location": "Arya Samaj Road-I(Single Lane Parking)",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6209325,
+        "Longitude": 77.0600891
+    },
+    {
+        "ID": "78",
+        "Location": "Arya Samaj Road-II(Single Lane Parking)",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6209325,
+        "Longitude": 77.0600891
+    },
+    {
+        "ID": "79",
+        "Location": "Tank Road",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.650381,
+        "Longitude": 77.1827107
+    },
+    {
+        "ID": "80",
+        "Location": "Gurudwara Road",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6484627,
+        "Longitude": 77.1930974
+    },
+    {
+        "ID": "81",
+        "Location": "Ajmal Khan Road-I(Single Lane Parking)",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.65031,
+        "Longitude": 77.1923787
+    },
+    {
+        "ID": "82",
+        "Location": "Ajmal Khan-II(Single Lane Parking)",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.505281,
+        "Longitude": 77.17488
+    },
+    {
+        "ID": "83",
+        "Location": "Roads around Ajmal Khan Park",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.653372,
+        "Longitude": 77.1957209
+    },
+    {
+        "ID": "84",
+        "Location": "Sarvan Bhawan",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6323304,
+        "Longitude": 77.2162487
+    },
+    {
+        "ID": "85",
+        "Location": "Old & New Rajinder Nagar Market",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6349338,
+        "Longitude": 77.1792825
+    },
+    {
+        "ID": "86",
+        "Location": "Asaf Ali Rd. M.LO.U.G. Car Parking",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6422923,
+        "Longitude": 77.232199
+    },
+    {
+        "ID": "87",
+        "Location": "Indraprastha Post Office",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6317436,
+        "Longitude": 77.2405259
+    },
+    {
+        "ID": "88",
+        "Location": "Behind Sales Tax Office, ITO",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6280553,
+        "Longitude": 77.2967595
+    },
+    {
+        "ID": "89",
+        "Location": "Asaf Ali Road, Opp. Delite Cinema",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6412339,
+        "Longitude": 77.2358612
+    },
+    {
+        "ID": "90",
+        "Location": "Kotla Road, Outside Bal Bhawan",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6318401,
+        "Longitude": 77.23681
+    },
+    {
+        "ID": "91",
+        "Location": "Lane Outside Indraprastha Post Office facing BSZ Marg",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6317436,
+        "Longitude": 77.2405259
+    },
+    {
+        "ID": "92",
+        "Location": "Outside Shaheed Park,ITO",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6340445,
+        "Longitude": 77.24122280000002
+    },
+    {
+        "ID": "93",
+        "Location": "Manak Bhawan",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6311558,
+        "Longitude": 77.24057549999999
+    },
+    {
+        "ID": "94",
+        "Location": "Jama Masjid, Gate No.3",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6522772,
+        "Longitude": 77.2332936
+    },
+    {
+        "ID": "95",
+        "Location": "Bahadur Shah Zafar Marg, Press Building",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6309308,
+        "Longitude": 77.2441075
+    },
+    {
+        "ID": "96",
+        "Location": "Outside MCD Zonal Office, Karol Bagh",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6969432,
+        "Longitude": 77.1104022
+    },
+    {
+        "ID": "97",
+        "Location": "Service Road Sadhna Channel Office to Gol Chakkar, Rani Jhansi Road",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6598671,
+        "Longitude": 77.21223599999999
+    },
+    {
+        "ID": "98",
+        "Location": "Tank Road, Prasad Nagar",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.650381,
+        "Longitude": 77.1827107
+    },
+    {
+        "ID": "99",
+        "Location": "Tibetan Market, Monastery Near I.S.B.T.",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.6665575,
+        "Longitude": 77.22686370000001
+    },
+    {
+        "ID": "100",
+        "Location": "Nani Wala Bagh Commercial Complex",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.7084763,
+        "Longitude": 77.18194609999999
+    },
+    {
+        "ID": "101",
+        "Location": "Kirpa Narayan Marg",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.6738568,
+        "Longitude": 77.2270232
+    },
+    {
+        "ID": "102",
+        "Location": "8, Under Hill Road Tpt Authority",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.6791613,
+        "Longitude": 77.2183944
+    },
+    {
+        "ID": "103",
+        "Location": "Civil Line Zone",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.6814284,
+        "Longitude": 77.2226866
+    },
+    {
+        "ID": "104",
+        "Location": "Around Nagia Park",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.6793384,
+        "Longitude": 77.19470369999999
+    },
+    {
+        "ID": "105",
+        "Location": "Gandhi Maidan",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.6586243,
+        "Longitude": 77.2300971
+    },
+    {
+        "ID": "106",
+        "Location": "Mahavir Vatika",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.648504,
+        "Longitude": 77.241118
+    },
+    {
+        "ID": "107",
+        "Location": "Lajpat Rai Market",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.6577391,
+        "Longitude": 77.2358452
+    },
+    {
+        "ID": "108",
+        "Location": "Bagh Deewar Scooter Parking",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.6588612,
+        "Longitude": 77.22506729999999
+    },
+    {
+        "ID": "109",
+        "Location": "Parade Ground",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.5791458,
+        "Longitude": 77.1298204
+    },
+    {
+        "ID": "110",
+        "Location": "Opp. Jagat Cinema",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.6497796,
+        "Longitude": 77.2362269
+    },
+    {
+        "ID": "111",
+        "Location": "Bhagirath Place(Only for Two Wheeler Parking )",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.6572676,
+        "Longitude": 77.2341464
+    },
+    {
+        "ID": "112",
+        "Location": "Qutab Road, Near Lahori Gate",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.6545421,
+        "Longitude": 77.2162965
+    },
+    {
+        "ID": "113",
+        "Location": "Qutab Road Sadar Bazar",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.6581101,
+        "Longitude": 77.2158736
+    },
+    {
+        "ID": "114",
+        "Location": "Sadar Bazar Bara Tooti",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.6578834,
+        "Longitude": 77.2122449
+    },
+    {
+        "ID": "115",
+        "Location": "Parade Ground",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.5791458,
+        "Longitude": 77.1298204
+    },
+    {
+        "ID": "116",
+        "Location": "Around Nangia Park",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.680384,
+        "Longitude": 77.196248
+    },
+    {
+        "ID": "117",
+        "Location": "Car/Scooter parking M.C.D. Zonal Office Civil Lines Zone",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.6583735,
+        "Longitude": 77.17522939999999
+    },
+    {
+        "ID": "118",
+        "Location": "Car/Scooter parking Hindu Rao Hospital",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.6759918,
+        "Longitude": 77.21220269999999
+    },
+    {
+        "ID": "119",
+        "Location": "Car/Scooter parking (excluding Bara Gol Chakkar) Kamla Nagar.",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.6865144,
+        "Longitude": 77.1900313
+    },
+    {
+        "ID": "120",
+        "Location": "8, Under Hill Road, Transport Authority(One Side Only)",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.6791613,
+        "Longitude": 77.2183944
+    },
+    {
+        "ID": "121",
+        "Location": "Batra Cinema Complex, Dr. Mukherjee Nagar",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.7117733,
+        "Longitude": 77.2150482
+    },
+    {
+        "ID": "122",
+        "Location": "Wazirpur Industrial area commercial complex",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.6999815,
+        "Longitude": 77.1643337
+    },
+    {
+        "ID": "123",
+        "Location": "Samrat Cinema, Shakurpur",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.6873588,
+        "Longitude": 77.148895
+    },
+    {
+        "ID": "124",
+        "Location": "Near MCD Primary School, Rani Bagh, Sant Nagar",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.5538709,
+        "Longitude": 77.24886699999999
+    },
+    {
+        "ID": "125",
+        "Location": "Shiva Market, Pitampura",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.701055,
+        "Longitude": 77.1289214
+    },
+    {
+        "ID": "126",
+        "Location": "JD Block Market, Pitampura",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.7012616,
+        "Longitude": 77.13665189999999
+    },
+    {
+        "ID": "127",
+        "Location": "Surrounding Jagan Nath Institute Sector-5 Rohini",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.7162571,
+        "Longitude": 77.1032336
+    },
+    {
+        "ID": "128",
+        "Location": "Telephone Exchange Near Jaipur Golden Hospital",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.697806,
+        "Longitude": 77.10963269999999
+    },
+    {
+        "ID": "129",
+        "Location": "Nimiri Colony Comm. Complex",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.6829674,
+        "Longitude": 77.1736794
+    },
+    {
+        "ID": "130",
+        "Location": "Sub Register Office RU Block Pitampura",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.7109299,
+        "Longitude": 77.1374264
+    },
+    {
+        "ID": "131",
+        "Location": "Sanjay Gandhi Transport Nagar, Truck Parking",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.7387115,
+        "Longitude": 77.1499544
+    },
+    {
+        "ID": "132",
+        "Location": "C SC-III, Ashok Vihar",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.6807769,
+        "Longitude": 77.1625868
+    },
+    {
+        "ID": "133",
+        "Location": "Behind DTC Depot Wazirpur, near Netaji Subhash Palace",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended(Subsequently not recommended vide letter No. 4713/TE(D-II) dated 26.5.08)",
+        "Latitude": 28.6922224,
+        "Longitude": 77.1506734
+    },
+    {
+        "ID": "134",
+        "Location": "Outside MCD Zonal Office, Rohini",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.6969432,
+        "Longitude": 77.1104022
+    },
+    {
+        "ID": "135",
+        "Location": "In front of UTI Bank, C-Block, Ashok Vihar Ph-I",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.6918508,
+        "Longitude": 77.1677852
+    },
+    {
+        "ID": "136",
+        "Location": "Near Kala Mandir, Mangolpuri, Rohtak Road",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.6947465,
+        "Longitude": 77.0913406
+    },
+    {
+        "ID": "137",
+        "Location": "AL Market, Shalimar Bagh",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.703436,
+        "Longitude": 77.1618372
+    },
+    {
+        "ID": "138",
+        "Location": "Roadside, outside Railway Reservation Office Azad Pur,",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.7146959,
+        "Longitude": 77.1770461
+    },
+    {
+        "ID": "139",
+        "Location": "Railway Reservation office, Rohini Zonal",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.73826769999999,
+        "Longitude": 77.0822151
+    },
+    {
+        "ID": "140",
+        "Location": "AD block Shalimar Bagh Commercial Complex and MTNL Office.",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.7048552,
+        "Longitude": 77.1674669
+    },
+    {
+        "ID": "141",
+        "Location": "Parking between Ever Bake and Prabhu Dayal School, Shalimar Bagh",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.7066596,
+        "Longitude": 77.16487289999999
+    },
+    {
+        "ID": "142",
+        "Location": "Near N.D.P.L.Office, Keshav Puram, Lawrence Road",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.6860262,
+        "Longitude": 77.1533718
+    },
+    {
+        "ID": "143",
+        "Location": "Near Rohini (WEST)Metro Station",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.714869,
+        "Longitude": 77.115484
+    },
+    {
+        "ID": "144",
+        "Location": "Near Sunder Lal Jain Hospital",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.6494696,
+        "Longitude": 77.2099704
+    },
+    {
+        "ID": "145",
+        "Location": "Parking site around Saroj Hospital and Rukmini Devi Institute of Advanced Studies",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.70523559999999,
+        "Longitude": 77.12996749999999
+    },
+    {
+        "ID": "146",
+        "Location": "Parking Site Around Shalimar Bagh Club",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.7162534,
+        "Longitude": 77.1562594
+    },
+    {
+        "ID": "147",
+        "Location": "Office of the Deputy Commissioner, Distt. WEST, Old Middle School Bldg. Rampura",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.6440226,
+        "Longitude": 77.1771389
+    },
+    {
+        "ID": "148",
+        "Location": "Surrounding Jagan Nath Institute, Sector-5, Rohini",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.7162571,
+        "Longitude": 77.1032336
+    },
+    {
+        "ID": "149",
+        "Location": "PVR, Anupam, Saket",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5237554,
+        "Longitude": 77.20714699999999
+    },
+    {
+        "ID": "150",
+        "Location": "CC, Gulmohar Enclave, Yusuf Sarai(One Side Only)",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5583923,
+        "Longitude": 77.2106773
+    },
+    {
+        "ID": "151",
+        "Location": "Pushpa Bhawan, LSC, Madangir",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5271939,
+        "Longitude": 77.23172389999999
+    },
+    {
+        "ID": "152",
+        "Location": "Around Tpt. Authority Sheikh Sarai-II",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.558549,
+        "Longitude": 77.1695419
+    },
+    {
+        "ID": "153",
+        "Location": "Yusuf Sarai including Indian oil building(One Side Only)",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5586804,
+        "Longitude": 77.20818009999999
+    },
+    {
+        "ID": "154",
+        "Location": "Max Medicare Punchsheel Park",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5415056,
+        "Longitude": 77.21608499999999
+    },
+    {
+        "ID": "155",
+        "Location": "Qutub Institution Area(Left Side of the Road )",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5384505,
+        "Longitude": 77.1846218
+    },
+    {
+        "ID": "156",
+        "Location": "Green Park Market(One Side Parking facing the Main Market)",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5571077,
+        "Longitude": 77.2025834
+    },
+    {
+        "ID": "157",
+        "Location": "Uphar Cinema Complex(Left Side of the Road Only)",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5573701,
+        "Longitude": 77.2050134
+    },
+    {
+        "ID": "158",
+        "Location": "Max Hospital Institute Khirki Extn.",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.530234,
+        "Longitude": 77.2165725
+    },
+    {
+        "ID": "159",
+        "Location": "Com. Complex Panchsheel Park",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5415056,
+        "Longitude": 77.21608499999999
+    },
+    {
+        "ID": "160",
+        "Location": "Opp. P.Stn. Near Alankar (3 CS), Lajpat Nagar",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.583052,
+        "Longitude": 77.2451895
+    },
+    {
+        "ID": "161",
+        "Location": "Balaji Estate, Kalkaji",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5434006,
+        "Longitude": 77.2624263
+    },
+    {
+        "ID": "162",
+        "Location": "New Friends Colony, Community Center(Only inside Parking)",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5674621,
+        "Longitude": 77.26913259999999
+    },
+    {
+        "ID": "163",
+        "Location": "M-Block, GK-II",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5348475,
+        "Longitude": 77.2441075
+    },
+    {
+        "ID": "164",
+        "Location": "Outside Lotus Temple(Only beyond the main road)",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.553492,
+        "Longitude": 77.25882639999999
+    },
+    {
+        "ID": "165",
+        "Location": "CENTRAL Market, Lajpat Nagar",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.569229,
+        "Longitude": 77.24177259999999
+    },
+    {
+        "ID": "166",
+        "Location": "Outside Max House, Near Okhla Station(Only inside parking)",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.556816,
+        "Longitude": 77.2668366
+    },
+    {
+        "ID": "167",
+        "Location": "Defence Colony Mkt.",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5842049,
+        "Longitude": 77.1907172
+    },
+    {
+        "ID": "168",
+        "Location": "M Block GK I",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5509325,
+        "Longitude": 77.235832
+    },
+    {
+        "ID": "169",
+        "Location": "N Block GK I",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5568413,
+        "Longitude": 77.23404889999999
+    },
+    {
+        "ID": "170",
+        "Location": "Around Mpl. Park Kailash Colony Mkt.",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5534309,
+        "Longitude": 77.2406051
+    },
+    {
+        "ID": "171",
+        "Location": "Commercial Complex Sapna Cinema",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5678316,
+        "Longitude": 77.158908
+    },
+    {
+        "ID": "172",
+        "Location": "LSC M Block GK I",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5509325,
+        "Longitude": 77.235832
+    },
+    {
+        "ID": "173",
+        "Location": "Outside Govt. Girls Sr. Sec. School E.O.K.(Inside the Premises Only)",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.7040592,
+        "Longitude": 77.10249019999999
+    },
+    {
+        "ID": "174",
+        "Location": "C.C. Zamrudpur",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5571147,
+        "Longitude": 77.2369229
+    },
+    {
+        "ID": "175",
+        "Location": "Nizamuddin Railway Station",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5888951,
+        "Longitude": 77.2534096
+    },
+    {
+        "ID": "176",
+        "Location": "Eros Cinema, Jungpura",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5813159,
+        "Longitude": 77.2422666
+    },
+    {
+        "ID": "177",
+        "Location": "Rose Garden, including SDA Commercial Complex, Hauz Khas",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5459628,
+        "Longitude": 77.1997026
+    },
+    {
+        "ID": "178",
+        "Location": "Sub Registrar Office, Mehrauli, Delhi",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.524102,
+        "Longitude": 77.18271299999999
+    },
+    {
+        "ID": "179",
+        "Location": "Qutub Institutional Area(Left Side of the Road )",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5384505,
+        "Longitude": 77.1846218
+    },
+    {
+        "ID": "180",
+        "Location": "Aurbindo Place Commercial Complex",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5563118,
+        "Longitude": 77.2063312
+    },
+    {
+        "ID": "181",
+        "Location": "Qutub Minar Tourist Parking",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5244754,
+        "Longitude": 77.18552059999999
+    },
+    {
+        "ID": "182",
+        "Location": "Saket Palace District Centre Saket",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended(Subsequently not recommended vide letter No. 5462/TE(D-II) dated 25.6.2008)",
+        "Latitude": 28.5280842,
+        "Longitude": 77.2182409
+    },
+    {
+        "ID": "183",
+        "Location": "Car/Scooter parking Near reservation Office Lajpat Nagar(Only inside Parking)",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5670588,
+        "Longitude": 77.21348619999999
+    },
+    {
+        "ID": "184",
+        "Location": "Local Shopping Center, Sheikh Sarai",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5341868,
+        "Longitude": 77.2315328
+    },
+    {
+        "ID": "185",
+        "Location": "Hauz Khas Village to Nilanchal Sewa Sansthan Mandir",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.7062724,
+        "Longitude": 77.0809237
+    },
+    {
+        "ID": "186",
+        "Location": "Near Banaras House, Kalkaji/Govind puri",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5397308,
+        "Longitude": 77.26182310000002
+    },
+    {
+        "ID": "187",
+        "Location": "Surrounding Basant Lok CC, PVR, Priya Cinema",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5573804,
+        "Longitude": 77.1645077
+    },
+    {
+        "ID": "188",
+        "Location": "Community Centre, B-7 Vasant Kunj",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5263842,
+        "Longitude": 77.1573931
+    },
+    {
+        "ID": "189",
+        "Location": "Around Fortis Hospital",
+        "Authority": "MCD",
+        "Zone": "WR",
+        "Status": "Recommended",
+        "Latitude": 28.7040592,
+        "Longitude": 77.10249019999999
+    },
+    {
+        "ID": "190",
+        "Location": "Z Block, Loha Mandi",
+        "Authority": "MCD",
+        "Zone": "WR",
+        "Status": "Recommended",
+        "Latitude": 28.6368691,
+        "Longitude": 77.1399195
+    },
+    {
+        "ID": "191",
+        "Location": "Near Dear Park Service Road Stadium R.K.Puram",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5549523,
+        "Longitude": 77.1916497
+    },
+    {
+        "ID": "192",
+        "Location": "MCD A&C Office, R.K.Puram",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5660075,
+        "Longitude": 77.1767435
+    },
+    {
+        "ID": "193",
+        "Location": "August Kranti Building, Mohammed Pur, Bhikaji Cama Place",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5609775,
+        "Longitude": 77.1878646
+    },
+    {
+        "ID": "194",
+        "Location": "Parking site at C-6, C-7, LSC Mkt Vasant Kunj",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.737078,
+        "Longitude": 77.2680171
+    },
+    {
+        "ID": "195",
+        "Location": "Opp. B-10, Vasant Kunj Market",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5314211,
+        "Longitude": 77.15197880000001
+    },
+    {
+        "ID": "196",
+        "Location": "Parking site at C-8, C-9, Vasant Kunj, NEW DELHI",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5361479,
+        "Longitude": 77.1422195
+    },
+    {
+        "ID": "197",
+        "Location": "Z-Block, Loha Mandi Truck Parking, Naraina",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.6368691,
+        "Longitude": 77.1399195
+    },
+    {
+        "ID": "198",
+        "Location": "Parking site at D-1 Market, Vasant Kunj, Near Taxi stand.",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5293121,
+        "Longitude": 77.1484442
+    },
+    {
+        "ID": "199",
+        "Location": "Car/Scooter parking service Road Safdarjung Enclave Kamal Cinema to Post Office",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5670588,
+        "Longitude": 77.21348619999999
+    },
+    {
+        "ID": "200",
+        "Location": "Parking site at Bhagwan Mahavir Marg, Aruna Asaf Ali Road.",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5229443,
+        "Longitude": 77.168409
+    },
+    {
+        "ID": "201",
+        "Location": "Under Flyover, Tilak Nagar",
+        "Authority": "MCD",
+        "Zone": "WR",
+        "Status": "Recommended",
+        "Latitude": 28.6313862,
+        "Longitude": 77.0820492
+    },
+    {
+        "ID": "202",
+        "Location": "CENTRAL Market, Near Road No.43, Punjabi Bagh(Except onMain Road)",
+        "Authority": "MCD",
+        "Zone": "WR",
+        "Status": "Recommended",
+        "Latitude": 28.6717509,
+        "Longitude": 77.1355739
+    },
+    {
+        "ID": "203",
+        "Location": "Karampura Commercial Complex(Only Single Line Parking inside Complex)",
+        "Authority": "MCD",
+        "Zone": "WR",
+        "Status": "Recommended",
+        "Latitude": 28.6626911,
+        "Longitude": 77.1469192
+    },
+    {
+        "ID": "204",
+        "Location": "PVR, Commercial Complex, G-Block, Vikaspuri",
+        "Authority": "MCD",
+        "Zone": "WR",
+        "Status": "Recommended",
+        "Latitude": 28.6408551,
+        "Longitude": 77.07479409999999
+    },
+    {
+        "ID": "205",
+        "Location": "Khajan Basti, Nangal Raya",
+        "Authority": "MCD",
+        "Zone": "WR",
+        "Status": "Recommended",
+        "Latitude": 28.612284,
+        "Longitude": 77.11291949999999
+    },
+    {
+        "ID": "206",
+        "Location": "Sonia Outside PVR other then three sites Vikas Puri Comm. Complex.",
+        "Authority": "MCD",
+        "Zone": "WR",
+        "Status": "Recommended",
+        "Latitude": 28.6503574,
+        "Longitude": 77.27677779999999
+    },
+    {
+        "ID": "207",
+        "Location": "Distt. Center Janakpuri",
+        "Authority": "MCD",
+        "Zone": "WR",
+        "Status": "Recommended",
+        "Latitude": 28.6295538,
+        "Longitude": 77.0801899
+    },
+    {
+        "ID": "208",
+        "Location": "Ghas Mandi Zakhira(Only inside Ghas Mandi Parking)",
+        "Authority": "MCD",
+        "Zone": "WR",
+        "Status": "Recommended",
+        "Latitude": 28.6871912,
+        "Longitude": 77.146151
+    },
+    {
+        "ID": "209",
+        "Location": "Tilak Nagar Market",
+        "Authority": "MCD",
+        "Zone": "WR",
+        "Status": "Recommended",
+        "Latitude": 28.6375543,
+        "Longitude": 77.0958441
+    },
+    {
+        "ID": "210",
+        "Location": "Parking site near Indian Oil Building, Punjabi Bagh, Truck Parking",
+        "Authority": "MCD",
+        "Zone": "WR",
+        "Status": "Recommended",
+        "Latitude": 28.67360589999999,
+        "Longitude": 77.1429897
+    },
+    {
+        "ID": "211",
+        "Location": "MCD Parking, B-1 Commercial Complex, Janak Puri",
+        "Authority": "MCD",
+        "Zone": "WR",
+        "Status": "Recommended",
+        "Latitude": 28.6176977,
+        "Longitude": 77.1053848
+    },
+    {
+        "ID": "212",
+        "Location": "A- Block Inner CircleB- Block Inner CircleC- Block Inner CircleD- Block Inner CircleE- Block Inner CircleF- Block Inner Circle",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6324561,
+        "Longitude": 77.2184946
+    },
+    {
+        "ID": "213",
+        "Location": "1) B-Block Middle Circle(Recommended One Line Diagonal Parking along with Footpath)2) B-Block RR No. 43) B-Block RR PK Road",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.617528,
+        "Longitude": 77.0646261
+    },
+    {
+        "ID": "214",
+        "Location": "1) C-Block Middle Circle(Recommended One Line Diagonal Parking along with Footpath)2) C-Block RR No. 43) C-Block RR No. 5",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6150239,
+        "Longitude": 77.0620567
+    },
+    {
+        "ID": "215",
+        "Location": "1) D-Block Middle Circle(Recommended One Line Diagonal Parking along with Footpath)2) D-Block RR No. 63) D-Block RR No. 5",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6150239,
+        "Longitude": 77.0620567
+    },
+    {
+        "ID": "216",
+        "Location": "1) E-Block Middle Circle(Recommended One Line Diagonal Parking along with Footpath)2) E-Block RR No. 63) E-Block RR No. 7",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6151373,
+        "Longitude": 77.06187059999999
+    },
+    {
+        "ID": "217",
+        "Location": "1) F-Block RR No. 7 (BK Road)",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6275249,
+        "Longitude": 77.2278109
+    },
+    {
+        "ID": "218",
+        "Location": "1) G-Block Opp. Madras Hotel2) G-Block in front Marina Hotel3) G-Block RR BKS Marg4) G-Block RR PK Road",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6355461,
+        "Longitude": 77.2165006
+    },
+    {
+        "ID": "219",
+        "Location": "1) H-Block Outer Circle2) H-Block Cheimsford Road3) H-Block RR PK Road",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.4714995,
+        "Longitude": 77.1400621
+    },
+    {
+        "ID": "220",
+        "Location": "1) K-Block Outer Circle.2) K-Block RR No. 4.3) K-RR Maszid Wali Parking4) K-RR No. 5",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.4551253,
+        "Longitude": 77.1439355
+    },
+    {
+        "ID": "221",
+        "Location": "1) L-Block Outer Circle2) L-Block RR No. 6 Nirula Hotel3) L-Block RR No. 5",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6151116,
+        "Longitude": 77.0620053
+    },
+    {
+        "ID": "222",
+        "Location": "1) M-Block Outer Circle2) M-Block RR No. 6.3) Between M & N Block",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.5514689,
+        "Longitude": 77.2954509
+    },
+    {
+        "ID": "223",
+        "Location": "1) N-Block Opp. Statesman",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.556939,
+        "Longitude": 77.2328469
+    },
+    {
+        "ID": "224",
+        "Location": "1) P-Block Opp. Madras Hotel",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6275759,
+        "Longitude": 77.0526967
+    },
+    {
+        "ID": "225",
+        "Location": "1) Between PK Road and Chelmsford Road.2) H-Block Entry ARCH3) M-Block Entry ARCH4) N-Block Entry ARCH",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.635129,
+        "Longitude": 77.2195
+    },
+    {
+        "ID": "226",
+        "Location": "Mayur Bhawan specified parking",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6332677,
+        "Longitude": 77.2244386
+    },
+    {
+        "ID": "227",
+        "Location": "1) Super Bazar2) Shankar Market",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6335701,
+        "Longitude": 77.2229116
+    },
+    {
+        "ID": "228",
+        "Location": "Two tier parking at BKS Marg",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6278364,
+        "Longitude": 77.2086919
+    },
+    {
+        "ID": "229",
+        "Location": "BKS Marg opp. Shiv Mandir",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.4576337,
+        "Longitude": 77.1843939
+    },
+    {
+        "ID": "230",
+        "Location": "1) Scindia House in front of Federal Motors.2) Scindia House in front of TBD Jewelers.Hhhhh",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.7040592,
+        "Longitude": 77.10249019999999
+    },
+    {
+        "ID": "231",
+        "Location": "1) Hans Plaza2) Statesman House",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.5444852,
+        "Longitude": 77.25083149999999
+    },
+    {
+        "ID": "232",
+        "Location": "1) In front of Sona Rupa2) Janpath Guest House3) Indian Coffee House",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6308088,
+        "Longitude": 77.2160809
+    },
+    {
+        "ID": "233",
+        "Location": "1) Keeping Lane2) Behind Mohan Dev Building",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6268249,
+        "Longitude": 77.2207628
+    },
+    {
+        "ID": "234",
+        "Location": "1) IOB, Janpath2) Jeewan Bharti Bldg.3) Narender Dev in front of DLF Building",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6284608,
+        "Longitude": 77.2172528
+    },
+    {
+        "ID": "235",
+        "Location": "1) In front of Mercantile Building",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.7040592,
+        "Longitude": 77.10249019999999
+    },
+    {
+        "ID": "236",
+        "Location": "1) Yashwant Place Shopping Complex.2) Between Garage of park office complex Yashwant Place & Satya Marg.",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.5840144,
+        "Longitude": 77.1919903
+    },
+    {
+        "ID": "237",
+        "Location": "1) In front of Gopal Dass Building2) Akash Deep Building3) Akash Deep Building to WTT.4) In front of Kanchanjunga Building.",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6301044,
+        "Longitude": 77.2255613
+    },
+    {
+        "ID": "238",
+        "Location": "1) Behind Rivoli Cinema",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6310718,
+        "Longitude": 77.21646210000002
+    },
+    {
+        "ID": "239",
+        "Location": "1) Pandara Road Market(Parking on the Foot Path onPandara Road(BikanerHouse Side)",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.607889,
+        "Longitude": 77.2298876
+    },
+    {
+        "ID": "240",
+        "Location": "1) Claridge Hotel(On Foot Path)",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.5315299,
+        "Longitude": 77.2118468
+    },
+    {
+        "ID": "241",
+        "Location": "1) Out side Connaught Hotel.",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6304203,
+        "Longitude": 77.21772159999999
+    },
+    {
+        "ID": "242",
+        "Location": "1) Behind Hotel Janpath2) Thaper House",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6245915,
+        "Longitude": 77.2180992
+    },
+    {
+        "ID": "243",
+        "Location": "1) Ashoka Hotel",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.5970601,
+        "Longitude": 77.1958281
+    },
+    {
+        "ID": "244",
+        "Location": "1) In front of Eastern Court",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6227437,
+        "Longitude": 77.2196777
+    },
+    {
+        "ID": "245",
+        "Location": "1) RR KG Marg2) RR Zakir Hussain Marg3) RR Tilak Marg4) RR Children Park",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.7040592,
+        "Longitude": 77.10249019999999
+    },
+    {
+        "ID": "246",
+        "Location": "1) Doordarshan & UCO Bank upto gate No. 6 of Akashavani Bhawan.",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6315901,
+        "Longitude": 77.21933539999999
+    },
+    {
+        "ID": "247",
+        "Location": "1) Jeevan Vihar to Jeewan Tara Bldg.",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6235654,
+        "Longitude": 77.2139351
+    },
+    {
+        "ID": "248",
+        "Location": "1) Around Delhi High Court2) Boundary wall of Patiala House.3) Purana Qila Road near NSCI Club.",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6160699,
+        "Longitude": 77.23824069999999
+    },
+    {
+        "ID": "249",
+        "Location": "1) Rail Museum",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.5872,
+        "Longitude": 77.18560000000001
+    },
+    {
+        "ID": "250",
+        "Location": "1) Sangeet Bharti & FICCI Auditorium at Tan Sen Marg.",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.626598,
+        "Longitude": 77.2324768
+    },
+    {
+        "ID": "251",
+        "Location": "1) Kamani Auditorium & Prasar Bharti",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.62323,
+        "Longitude": 77.23129899999999
+    },
+    {
+        "ID": "252",
+        "Location": "1) Behind Gaylord Restt.",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6306726,
+        "Longitude": 77.21648929999999
+    },
+    {
+        "ID": "253",
+        "Location": "1) In front of St. Columbus School(On Foot Path Only)",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.5315299,
+        "Longitude": 77.2118468
+    },
+    {
+        "ID": "254",
+        "Location": "1) Kali Mandir Lane",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6289328,
+        "Longitude": 77.1967367
+    },
+    {
+        "ID": "255",
+        "Location": "1) Hally Lane",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended(Subsequently not recommended vide letter No. 1445-47/SO/DCP/T-NDR dated 17.9.2009)",
+        "Latitude": 28.54102,
+        "Longitude": 77.3104441
+    },
+    {
+        "ID": "256",
+        "Location": "1) Between 21-A, Janpath & Boundary wall of Hotel Le Meridian",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.627863,
+        "Longitude": 77.2189604
+    },
+    {
+        "ID": "257",
+        "Location": "1) A- Block Middle Circle(Recommended One Line Diagonal Parking along with Footpath)2) A-Block RR PK Road",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.7040592,
+        "Longitude": 77.10249019999999
+    },
+    {
+        "ID": "258",
+        "Location": "1) Niti Marg",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.5860029,
+        "Longitude": 77.18955319999999
+    },
+    {
+        "ID": "259",
+        "Location": "1) Malcha Marg Market",
+        "Authority": "NDMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6030891,
+        "Longitude": 77.1847214
+    },
+    {
+        "ID": "260",
+        "Location": "1) Dilli Hatt.2) Addl. Dilli Hatt.",
+        "Authority": "NDMC",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5733233,
+        "Longitude": 77.2075473
+    },
+    {
+        "ID": "261",
+        "Location": "1) Newly Developed area S. Nagar2) In front of Babu Market(Parking for Two Wheelers Only)3) G-Avenue Boundary Wall(Angular Parking Only)",
+        "Authority": "NDMC",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5772672,
+        "Longitude": 77.19632159999999
+    },
+    {
+        "ID": "262",
+        "Location": "1) D-Avenue, S. Nagar(Parking for Two Wheelers Only)2) D-Avenue, Shop No. 96 to 196.3) Behind Veg. Market(Angular on One Side of Road)",
+        "Authority": "NDMC",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.7040592,
+        "Longitude": 77.10249019999999
+    },
+    {
+        "ID": "263",
+        "Location": "1) Palika Bhawan(On Opp. Side of Coffee House and not on both side of Road at Palika Bhawan)",
+        "Authority": "NDMC",
+        "Zone": "SR",
+        "Status": "Recommended(Subsequently not recommended vide letter No. 8555/TE(D-II) dated 17.10.2008",
+        "Latitude": 28.5712928,
+        "Longitude": 77.1841959
+    },
+    {
+        "ID": "264",
+        "Location": "1) Palika Place, RK Puram",
+        "Authority": "NDMC",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.6385644,
+        "Longitude": 77.2086861
+    },
+    {
+        "ID": "265",
+        "Location": "1stCrossing Road, Sarojini Nagar",
+        "Authority": "NDMC",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5740324,
+        "Longitude": 77.19906689999999
+    },
+    {
+        "ID": "266",
+        "Location": "BSES Yamuna Power Ltd., 66 KV Grid/Sub Station Bhagirath, Yamuna Vihar.",
+        "Authority": "PWD",
+        "Zone": "ER",
+        "Status": "Recommended",
+        "Latitude": 28.7006285,
+        "Longitude": 77.2747706
+    },
+    {
+        "ID": "267",
+        "Location": "BSES, Yamuna Vihar.",
+        "Authority": "PWD",
+        "Zone": "ER",
+        "Status": "Recommended",
+        "Latitude": 28.7003187,
+        "Longitude": 77.278432
+    },
+    {
+        "ID": "268",
+        "Location": "Surrounding Jagan Nath Institute Sector 5 Rohini.",
+        "Authority": "PWD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.7162571,
+        "Longitude": 77.1032336
+    },
+    {
+        "ID": "269",
+        "Location": "Surrounding Jagan Nath Institute, Sector -5, Rohini.",
+        "Authority": "PWD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.7162571,
+        "Longitude": 77.1032336
+    },
+    {
+        "ID": "270",
+        "Location": "CAMPA COLA FACTORY OLD NAJAFGARH ROAD EX- SERVICEMEN",
+        "Authority": "MCD",
+        "Zone": "WR",
+        "Status": "Recommended as single line",
+        "Latitude": 28.661927,
+        "Longitude": 77.15199
+    },
+    {
+        "ID": "271",
+        "Location": "CHOTI SUBZI MANDI JANAK PURI",
+        "Authority": "MCD",
+        "Zone": "WR",
+        "Status": "Not Recommended on main approach road of the market however recommended inside the market in open spaces",
+        "Latitude": 28.6338651,
+        "Longitude": 77.09331879999999
+    },
+    {
+        "ID": "272",
+        "Location": "J-BLOCK COMMUNITY CENTRE RAJOURI GARDEN , NEW DELHI",
+        "Authority": "MCD",
+        "Zone": "WR",
+        "Status": "Recommended only inside the complexes and not on road",
+        "Latitude": 28.6419796,
+        "Longitude": 77.1147661
+    },
+    {
+        "ID": "273",
+        "Location": "OUTSIDE GATES TIHAR JAIL",
+        "Authority": "MCD",
+        "Zone": "WR",
+        "Status": "Recommended as new parking space developed in open area besides the road opposite to the jail complex.",
+        "Latitude": 28.6165166,
+        "Longitude": 77.10105159999999
+    },
+    {
+        "ID": "274",
+        "Location": "UNDER FLY OVER, KIRTI NAGAR METRO STATION FOR EX-ERVICEMEN",
+        "Authority": "MCD",
+        "Zone": "WR",
+        "Status": "Recommended",
+        "Latitude": 28.6556764,
+        "Longitude": 77.1508142
+    },
+    {
+        "ID": "275",
+        "Location": "JANAK PURI EAST METRO STATION TO SHIVA MARKET SERVICE ROAD",
+        "Authority": "MCD",
+        "Zone": "WR",
+        "Status": "Not Recommended on main carriageway. Recommended in service road only",
+        "Latitude": 28.701055,
+        "Longitude": 77.1289214
+    },
+    {
+        "ID": "276",
+        "Location": "AROUND NANGAL RAI COMMERCIAL COMPLEX",
+        "Authority": "MCD",
+        "Zone": "WR",
+        "Status": "Recommended inside the complex in open space",
+        "Latitude": 28.6070819,
+        "Longitude": 77.11471759999999
+    },
+    {
+        "ID": "277",
+        "Location": "VISHAL CINEMA PALACE TO TDI MALL RAJOURI GARDEN",
+        "Authority": "MCD",
+        "Zone": "WR",
+        "Status": "Recommended, however not on Vishal Cinema Road meeting the Najafgarh Road",
+        "Latitude": 28.65218699999999,
+        "Longitude": 77.1227584
+    },
+    {
+        "ID": "278",
+        "Location": "NEAR BSES HARI NAGAR(Near BSES Office Hari Nagar on Road to Mayapuri Junk Market from Clock Tower)",
+        "Authority": "MCD",
+        "Zone": "WR",
+        "Status": "Recommended because there is space for parking besides the road \u00e2\u20ac\u201c 50-60 vehicles",
+        "Latitude": 28.6178207,
+        "Longitude": 77.11273969999999
+    },
+    {
+        "ID": "279",
+        "Location": "FROM KUKREJA HOSPITAL (NAJAFGARH ROAD)TO SONY WORLD",
+        "Authority": "MCD",
+        "Zone": "WR",
+        "Status": "Recommended single-line parking on service road only and not on main carriageway",
+        "Latitude": 28.6470271,
+        "Longitude": 77.1174812
+    },
+    {
+        "ID": "280",
+        "Location": "J & H BLOCK RAJOURI GARDEN",
+        "Authority": "MCD",
+        "Zone": "WR",
+        "Status": "It is not a new site the parking is already allotted by MCD till 10.9.2011 as B.K. Dutt Market parking site and the same is recommended again as it is not affecting traffic movement",
+        "Latitude": 28.6427602,
+        "Longitude": 77.122449
+    },
+    {
+        "ID": "281",
+        "Location": "PUNJABI BAGH TRUCK PARKING",
+        "Authority": "MCD",
+        "Zone": "WR",
+        "Status": "Recommended but not on road",
+        "Latitude": 28.6756397,
+        "Longitude": 77.023043
+    },
+    {
+        "ID": "282",
+        "Location": "PARKING SITE NEAR INDIAN OIL BUILDING, PUNJABI BAGH-TRUCK PARKING",
+        "Authority": "MCD",
+        "Zone": "WR",
+        "Status": "Parking site may be recommended on the service road New Rohtak Road in front of Indian Oil building",
+        "Latitude": 28.67360589999999,
+        "Longitude": 77.1429897
+    },
+    {
+        "ID": "283",
+        "Location": "UDHYOG NAGAR INDUSTRIAL AREA, PIRAGARHI",
+        "Authority": "MCD",
+        "Zone": "WR",
+        "Status": "Not Recommended on main road but Recommended on service road",
+        "Latitude": 28.6765157,
+        "Longitude": 77.0917003
+    },
+    {
+        "ID": "284",
+        "Location": "BHAIRO ENCLAVE GARG PLAZA PASCHIM VIHAR",
+        "Authority": "MCD",
+        "Zone": "WR",
+        "Status": "Recommended single line",
+        "Latitude": 28.6737284,
+        "Longitude": 77.088512
+    },
+    {
+        "ID": "285",
+        "Location": "COMMUNITY CENTRE MAYAPURI PH-I",
+        "Authority": "MCD",
+        "Zone": "WR",
+        "Status": "Three parking place are available and are recommended for being converted in paid parking.",
+        "Latitude": 28.5233016,
+        "Longitude": 77.2077374
+    },
+    {
+        "ID": "286",
+        "Location": "IN FRONT OF MILAN CINEMA & MCD SHOPS",
+        "Authority": "MCD",
+        "Zone": "WR",
+        "Status": "Recommended as single line",
+        "Latitude": 28.662462,
+        "Longitude": 77.1462928
+    },
+    {
+        "ID": "287",
+        "Location": "AROUND DISTRICT CENTER JANAK PURI",
+        "Authority": "MCD",
+        "Zone": "WR",
+        "Status": "Site is not new. Already operational around the District Center on service roads, apart from inside the complex including underground parking of DDA",
+        "Latitude": 28.6295538,
+        "Longitude": 77.0801899
+    },
+    {
+        "ID": "288",
+        "Location": "MAIN MARKET, RAJOURI GARDEN ONE SIDE",
+        "Authority": "MCD",
+        "Zone": "WR",
+        "Status": "Recommended single line parking and the site is already allotted for parking till 21.09.2012",
+        "Latitude": 28.6468173,
+        "Longitude": 77.1199319
+    },
+    {
+        "ID": "289",
+        "Location": "IN FRONT OF BIKANER WALA NARAINA",
+        "Authority": "MCD",
+        "Zone": "WR",
+        "Status": "Recommended",
+        "Latitude": 28.6308027,
+        "Longitude": 77.13788389999999
+    },
+    {
+        "ID": "290",
+        "Location": "Z-BLOCK LOHA MANDI NARAINA",
+        "Authority": "MCD",
+        "Zone": "WR",
+        "Status": "Recommended",
+        "Latitude": 28.6368691,
+        "Longitude": 77.1399195
+    },
+    {
+        "ID": "291",
+        "Location": "EAST & WEST, PATEL NAGAR, MARKET",
+        "Authority": "MCD",
+        "Zone": "WR",
+        "Status": "Recommended as single line",
+        "Latitude": 28.64841389999999,
+        "Longitude": 77.1676695
+    },
+    {
+        "ID": "292",
+        "Location": "Y-BLOCK, LOHA MANDI",
+        "Authority": "MCD",
+        "Zone": "WR",
+        "Status": "Recommended",
+        "Latitude": 28.639365,
+        "Longitude": 77.141215
+    },
+    {
+        "ID": "293",
+        "Location": "SHIVA MARKET PITAM PURA",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.701055,
+        "Longitude": 77.1289214
+    },
+    {
+        "ID": "294",
+        "Location": "JAGANATH INSTITUTE ROHINI",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.7190103,
+        "Longitude": 77.1087901
+    },
+    {
+        "ID": "295",
+        "Location": "DISTT.PASSPORT OFFICE PITAM PURA",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.6989703,
+        "Longitude": 77.1387225
+    },
+    {
+        "ID": "296",
+        "Location": "AD-BLOCK LSC, SHALIMAR BAGH",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.705341,
+        "Longitude": 77.1679283
+    },
+    {
+        "ID": "297",
+        "Location": "LOCAL SHOPPING CENTRE, PHASE-III, ASHOK VIHAR",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.6944491,
+        "Longitude": 77.1781451
+    },
+    {
+        "ID": "298",
+        "Location": "PRASHANT VIHAR COMMUNITY CENTRE",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.7157406,
+        "Longitude": 77.1351454
+    },
+    {
+        "ID": "299",
+        "Location": "NEAR SHALIMAR BAGH CLUB",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.7162534,
+        "Longitude": 77.1562594
+    },
+    {
+        "ID": "300",
+        "Location": "EVERBAKE RESTUARAT TO PRABHU DAYAL SCHOOL SHALIMAR BAGH",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.7066596,
+        "Longitude": 77.16487289999999
+    },
+    {
+        "ID": "301",
+        "Location": "BHAGWAN MAHAVIR HOSPITAL, ROHINI",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.7054797,
+        "Longitude": 77.129526
+    },
+    {
+        "ID": "302",
+        "Location": "PITAMPURA RU BLOCK REGISTRAR OFFICE",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.70792299999999,
+        "Longitude": 77.136331
+    },
+    {
+        "ID": "303",
+        "Location": "D.P BLOCK, PITAM PURA",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.7005895,
+        "Longitude": 77.1445617
+    },
+    {
+        "ID": "304",
+        "Location": "RAMESHWAR RESTAURANT TO JAIPUR GOLDEN TRANSPORT (RICHIRICH)",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.5224073,
+        "Longitude": 77.19559439999999
+    },
+    {
+        "ID": "305",
+        "Location": "DEEP HYUNDAI TO STEEL MARKET ASHOK VIHAR SERVICE LANE",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.6508215,
+        "Longitude": 77.1587066
+    },
+    {
+        "ID": "306",
+        "Location": "LSC D-BLOCK PRASHANT VIHAR",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.7157406,
+        "Longitude": 77.1351454
+    },
+    {
+        "ID": "307",
+        "Location": "AROUND ROHINI M-2K COMMERCIAL COMPLEX",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.7010788,
+        "Longitude": 77.1169522
+    },
+    {
+        "ID": "308",
+        "Location": "MCD ZONAL OFFICE, ROHINI",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.6969432,
+        "Longitude": 77.1104022
+    },
+    {
+        "ID": "309",
+        "Location": "ASHOK VIHAR B-3, PHASE-II MARKET ,",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.6937455,
+        "Longitude": 77.1748396
+    },
+    {
+        "ID": "310",
+        "Location": "PARKING OUTSITE AROUND SAROJ HOSPITAL AND RUKMINI DEVI INSTITUTE OF ADVANCE STUDIES",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.70523559999999,
+        "Longitude": 77.12996749999999
+    },
+    {
+        "ID": "311",
+        "Location": "OUTSITE TRANSPORT AUTHORITY ROHINI ZONE, SECTOR-16",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.7419484,
+        "Longitude": 77.1240672
+    },
+    {
+        "ID": "312",
+        "Location": "NEAR ROHINI WEST METRO STATION",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.714869,
+        "Longitude": 77.115484
+    },
+    {
+        "ID": "313",
+        "Location": "KOHAT ENCLAVE MAIN SERVICE ROAD",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.6964931,
+        "Longitude": 77.1386014
+    },
+    {
+        "ID": "314",
+        "Location": "BQ MARKET SHALIMAR BAGH",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.7074375,
+        "Longitude": 77.15525699999999
+    },
+    {
+        "ID": "315",
+        "Location": "CENTRAL MARKET, ASHOK VIHAR, PHASE-I",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.6909791,
+        "Longitude": 77.17652389999999
+    },
+    {
+        "ID": "316",
+        "Location": "DDA SHOPPING COMPLEX, BHARAT NAGAR",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.5663836,
+        "Longitude": 77.2703277
+    },
+    {
+        "ID": "317",
+        "Location": "GOKHLE MARKET TRUCK PARKING TIS HAZARI",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.6653925,
+        "Longitude": 77.2195265
+    },
+    {
+        "ID": "318",
+        "Location": "MAJNU KA TILLA TRUCK PARKING",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.7003049,
+        "Longitude": 77.2275823
+    },
+    {
+        "ID": "319",
+        "Location": "COMMERCIAL COMPLEX PENTAMIDE HOSPITAL GUJRAWALAN TOWN DELHI",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Single Lane Parking on one side only Recommended",
+        "Latitude": 28.6993289,
+        "Longitude": 77.1919413
+    },
+    {
+        "ID": "320",
+        "Location": "HAMILTON ROAD",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Single lane one side parking for cars/two wheelers is Recommended",
+        "Latitude": 28.6626939,
+        "Longitude": 77.2280997
+    },
+    {
+        "ID": "321",
+        "Location": "POLICE STATION TO GPO FRONT, KASHMERE GATE",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Single lane one side parking for cars/two wheelers is recommended",
+        "Latitude": 28.661951,
+        "Longitude": 77.235064
+    },
+    {
+        "ID": "322",
+        "Location": "BEHIND RITZ CINEMA, CHURCH ROAD",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Single lane one side parking for cars/two wheelers is recommended",
+        "Latitude": 28.5149111,
+        "Longitude": 77.1462601
+    },
+    {
+        "ID": "323",
+        "Location": "ARUNA ASAF ALI HOSPITAL",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.6697756,
+        "Longitude": 77.2178505
+    },
+    {
+        "ID": "324",
+        "Location": "MCD OLD HINDU COLLEGE BUILDING TO WINE SHOP, KASHMERE GATE",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "If the site is authorized for parking more vehicles will be parked. At present shopkeepers used to park vehicles in haphazard manner. The free parking space may be allotted upto Bata shop",
+        "Latitude": 28.6536153,
+        "Longitude": 77.1824881
+    },
+    {
+        "ID": "325",
+        "Location": "VINAYAK HOSPITAL DERAWAL NAGAR-II",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Single Lane Parking on one side only Recommended",
+        "Latitude": 28.6986231,
+        "Longitude": 77.1870393
+    },
+    {
+        "ID": "326",
+        "Location": "EROS CINEMA, JANGPURA",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5813159,
+        "Longitude": 77.2422666
+    },
+    {
+        "ID": "327",
+        "Location": "OPPOSITE SITE K-BLOCK AXIS BANK, GREEN PARK MARKET, NEW DELHI",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended one lane",
+        "Latitude": 28.5547994,
+        "Longitude": 77.2017826
+    },
+    {
+        "ID": "328",
+        "Location": "OUTSIDE D.D.A. PARKING, HAUZ KHAS VILLAGE (EX-SERVICEMAN)",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5533997,
+        "Longitude": 77.1941654
+    },
+    {
+        "ID": "329",
+        "Location": "LOCAL SHOPPING CENTRE, SHEIKH SARAI",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.532006,
+        "Longitude": 77.29762699999999
+    },
+    {
+        "ID": "330",
+        "Location": "MUNIRKA FLYOVER",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5597938,
+        "Longitude": 77.170834
+    },
+    {
+        "ID": "331",
+        "Location": "KATWARIA SARAI",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended one side one row pendicular only.",
+        "Latitude": 28.5411219,
+        "Longitude": 77.1894934
+    },
+    {
+        "ID": "332",
+        "Location": "HAUZ KHAS MARKET",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended one side one row pendicular only.",
+        "Latitude": 28.5513725,
+        "Longitude": 77.20674269999999
+    },
+    {
+        "ID": "333",
+        "Location": "AROUND DEER PARK HAUZ KHAS",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended one side, one row parallel only.",
+        "Latitude": 28.5549523,
+        "Longitude": 77.1916497
+    },
+    {
+        "ID": "334",
+        "Location": "J BLOCK MARKET, SAKET",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Only one side, market side, only one line, perpendicular is Recommended",
+        "Latitude": 28.5226568,
+        "Longitude": 77.2148618
+    },
+    {
+        "ID": "335",
+        "Location": "B-1, COMMUNITY CENTER, VASANT KUNJ",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended one side",
+        "Latitude": 28.5673932,
+        "Longitude": 77.1640038
+    },
+    {
+        "ID": "336",
+        "Location": "MOHAMMAD PUR VILLAGE",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "May be Recommended",
+        "Latitude": 28.5650067,
+        "Longitude": 77.1874066
+    },
+    {
+        "ID": "337",
+        "Location": "AUGUST KRANTI BUILDING, MOHAMMCD PUR BHIKAJI CAMA PALACE, NEW DELHI",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Required",
+        "Latitude": 28.5649718,
+        "Longitude": 77.18769650000002
+    },
+    {
+        "ID": "338",
+        "Location": "ONE SIDE AT GREEN PARK MAIN MARKET",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended, one row one side only.",
+        "Latitude": 28.5584489,
+        "Longitude": 77.2029376
+    },
+    {
+        "ID": "339",
+        "Location": "C.C., SAVITRI CINEMA",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5415141,
+        "Longitude": 77.240201
+    },
+    {
+        "ID": "",
+        "Location": "BANARAS HOUSE KALKAJI, NEW DELHI",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended one lane",
+        "Latitude": 28.5397308,
+        "Longitude": 77.26182310000002
+    },
+    {
+        "ID": "340",
+        "Location": "ASHRAM CHOWK, AROUND NAFED BUILDING",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended (already MCD authorized)",
+        "Latitude": 28.570493,
+        "Longitude": 77.26000499999999
+    },
+    {
+        "ID": "341",
+        "Location": "ALAKNANDA MARKET",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "One side single line recommended",
+        "Latitude": 28.5261535,
+        "Longitude": 77.2545245
+    },
+    {
+        "ID": "342",
+        "Location": "BISHAM PITAH MA MARG",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.7022739,
+        "Longitude": 77.0744488
+    },
+    {
+        "ID": "343",
+        "Location": "NBCC PALACE LODHI ROAD",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5918663,
+        "Longitude": 77.23666999999999
+    },
+    {
+        "ID": "344",
+        "Location": "LODHI ROAD INTITUTIONAL AREA I&II",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5907866,
+        "Longitude": 77.2263917
+    },
+    {
+        "ID": "345",
+        "Location": "SCOPE COMPLEX LODHI ROAD, NEW DELHI",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5859813,
+        "Longitude": 77.2379108
+    },
+    {
+        "ID": "346",
+        "Location": "ARCHANA COMPLEX, G.K.",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5538295,
+        "Longitude": 77.23113
+    },
+    {
+        "ID": "347",
+        "Location": "UNDER FLYOVER, NARULAS, DEFENCE COLONY.",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended opposite Narulas Shop.",
+        "Latitude": 28.5726334,
+        "Longitude": 77.2325101
+    },
+    {
+        "ID": "348",
+        "Location": "LIVING STYLE MALL, JASOLA",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Single lane parking space is available on both sides of the road. Recommended.",
+        "Latitude": 28.5412772,
+        "Longitude": 77.2970811
+    },
+    {
+        "ID": "349",
+        "Location": "PACKET H-MARKET, SARITA VIHAR",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Single lane parking space is available on both sides of the road. Recommended.",
+        "Latitude": 28.5307812,
+        "Longitude": 77.2939981
+    },
+    {
+        "ID": "350",
+        "Location": "SERVICE ROAD, SOUTH EX. PART-I",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.5687238,
+        "Longitude": 77.2209661
+    },
+    {
+        "ID": "351",
+        "Location": "SERVICE ROAD, SOUTH EX. PART-II",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Recommended, as it is required by public.",
+        "Latitude": 28.5816283,
+        "Longitude": 77.177015
+    },
+    {
+        "ID": "352",
+        "Location": "OUTSITE MCD ZONAL OFFICE, KAROL BAGH",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6969432,
+        "Longitude": 77.1104022
+    },
+    {
+        "ID": "353",
+        "Location": "SASHTRI PARK, KAROL BAGH",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6463146,
+        "Longitude": 77.191479
+    },
+    {
+        "ID": "354",
+        "Location": "INSIDE MCD SCHOOL, BANK STREET, KAROL BAGH",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "No problem in traffic flow hence, Recommended",
+        "Latitude": 28.6482104,
+        "Longitude": 77.1871838
+    },
+    {
+        "ID": "355",
+        "Location": "MEENA BAZAR",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6516128,
+        "Longitude": 77.23548590000001
+    },
+    {
+        "ID": "356",
+        "Location": "MAHAVIR VATIKA",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.648504,
+        "Longitude": 77.241118
+    },
+    {
+        "ID": "357",
+        "Location": "B-7, DARYA GANJ, NEW DELHI",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.5598812,
+        "Longitude": 77.2000949
+    },
+    {
+        "ID": "358",
+        "Location": "GHATA MASJID, DARYA GANJ",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6464447,
+        "Longitude": 77.2449347
+    },
+    {
+        "ID": "359",
+        "Location": "MATA SUNDARI ROAD",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "Recommended One Lane parking",
+        "Latitude": 28.6351845,
+        "Longitude": 77.233356
+    },
+    {
+        "ID": "360",
+        "Location": "OPP. SANJEEVAN HOSPITAL, DARYA GANJ, NEW DELHI",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6411631,
+        "Longitude": 77.2429845
+    },
+    {
+        "ID": "361",
+        "Location": "OPP. CITY ZONE OFFICE, J.L.N. MARG",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "Recommended One Lane Parking away side wall of LNJP & GB Pant Hospital",
+        "Latitude": 28.7040592,
+        "Longitude": 77.10249019999999
+    },
+    {
+        "ID": "362",
+        "Location": "TEMPO PARKING, OPPOSITE DELHI STOCK ENCHANGE, ASAF ALI ROAD, NEAR HAZ MANJIL",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "Recommended One Lane parking",
+        "Latitude": 28.6424925,
+        "Longitude": 77.2323874
+    },
+    {
+        "ID": "363",
+        "Location": "VYAPAR BHAWAN ITO",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6487493,
+        "Longitude": 77.1988034
+    },
+    {
+        "ID": "364",
+        "Location": "ONE SIDE PARKING AT ASAF ALI ROAD LIC BUILDING TO DELHI STOCK EXCHANGE",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "Recommended one lane parking",
+        "Latitude": 28.6418814,
+        "Longitude": 77.2333823
+    },
+    {
+        "ID": "365",
+        "Location": "R.G. COMPLEX, VARDHMAN DIAMOND PLAZA (EX-SERVICEMAN)",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.64568,
+        "Longitude": 77.2097043
+    },
+    {
+        "ID": "366",
+        "Location": "MCD ZONAL OFFICE, PAHAR GANJ, NEW DELHI",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6969432,
+        "Longitude": 77.1104022
+    },
+    {
+        "ID": "367",
+        "Location": "FALTED FACTORY AREA, JHANDEWALAN",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6472827,
+        "Longitude": 77.2028368
+    },
+    {
+        "ID": "368",
+        "Location": "JAMA MASJID, GATE NO. 3",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6522772,
+        "Longitude": 77.2332936
+    },
+    {
+        "ID": "369",
+        "Location": "JAMA MASJID, GATE NO. 1",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6494879,
+        "Longitude": 77.23745439999999
+    },
+    {
+        "ID": "370",
+        "Location": "DC OFFICE NAND NAGARI",
+        "Authority": "MCD",
+        "Zone": "ER",
+        "Status": "Recommended",
+        "Latitude": 28.6945767,
+        "Longitude": 77.3158523
+    },
+    {
+        "ID": "371",
+        "Location": "AROUND RAJIV GANDHI HOSPITAL TAHIRPUR",
+        "Authority": "MCD",
+        "Zone": "ER",
+        "Status": "Recommended",
+        "Latitude": 28.6892332,
+        "Longitude": 77.3164681
+    },
+    {
+        "ID": "372",
+        "Location": "LSC B-BLOCK DILSHAD GARDEN",
+        "Authority": "MCD",
+        "Zone": "ER",
+        "Status": "Recommended",
+        "Latitude": 28.6784583,
+        "Longitude": 77.31054449999999
+    },
+    {
+        "ID": "373",
+        "Location": "ABD BLOCK (PARK ) DILSHAD COLONY",
+        "Authority": "MCD",
+        "Zone": "ER",
+        "Status": "Recommended",
+        "Latitude": 28.6828687,
+        "Longitude": 77.3266221
+    },
+    {
+        "ID": "374",
+        "Location": "AROUND LSC MAYUR VIHAR PHASE -2, VIRMANI HOSPITAL",
+        "Authority": "MCD",
+        "Zone": "ER",
+        "Status": "Recommended within available space not on main road.",
+        "Latitude": 28.6198259,
+        "Longitude": 77.3013462
+    },
+    {
+        "ID": "375",
+        "Location": "MCD ZONAL OFFICE SHAHDARA SOUTH",
+        "Authority": "MCD",
+        "Zone": "ER",
+        "Status": "Recommended as per terms and conditions within the premises of MCD office",
+        "Latitude": 28.6969432,
+        "Longitude": 77.1104022
+    },
+    {
+        "ID": "376",
+        "Location": "LALITA PARK, VIKAS MARG, LAXMI NAGAR",
+        "Authority": "MCD",
+        "Zone": "ER",
+        "Status": "Recommended",
+        "Latitude": 28.6307088,
+        "Longitude": 77.2775876
+    },
+    {
+        "ID": "377",
+        "Location": "MAX BALAJI HOSPITAL I.P. EXTENSION",
+        "Authority": "MCD",
+        "Zone": "ER",
+        "Status": "Recommended, space is available on service road adjacent to power house wall and hospital\u2019s wall in single lane",
+        "Latitude": 28.6295233,
+        "Longitude": 77.3123396
+    },
+    {
+        "ID": "378",
+        "Location": "GHAZI PUR SUBZI MANDI",
+        "Authority": "MCD",
+        "Zone": "ER",
+        "Status": "Recommended , only in Single Lane",
+        "Latitude": 28.6328357,
+        "Longitude": 77.3227672
+    },
+    {
+        "ID": "379",
+        "Location": "JHILMIL INDUSTRIAL AREA",
+        "Authority": "MCD",
+        "Zone": "ER",
+        "Status": "Recommended",
+        "Latitude": 28.6746182,
+        "Longitude": 77.3116215
+    },
+    {
+        "ID": "380",
+        "Location": "DDA MAIN MARKET, MAYUR VIHAR-II",
+        "Authority": "MCD",
+        "Zone": "ER",
+        "Status": "Recommended for DDA Pocket C Market only",
+        "Latitude": 28.6087483,
+        "Longitude": 77.3055518
+    },
+    {
+        "ID": "381",
+        "Location": "AACHARYA NIKETAN MARKET",
+        "Authority": "MCD",
+        "Zone": "ER",
+        "Status": "Recommended only in single lane",
+        "Latitude": 28.6075138,
+        "Longitude": 77.2952188
+    },
+    {
+        "ID": "382",
+        "Location": "REVITAL GYM TO KHANNA JEWELLERS",
+        "Authority": "MCD",
+        "Zone": "WR",
+        "Status": "Recommended one line only",
+        "Latitude": 28.651194,
+        "Longitude": 77.19343549999999
+    },
+    {
+        "ID": "383",
+        "Location": "MTNL TELEPHONE EXCHANGE, HARI NAGAR",
+        "Authority": "MCD",
+        "Zone": "WR",
+        "Status": "Recommended",
+        "Latitude": 28.5048684,
+        "Longitude": 77.3210004
+    },
+    {
+        "ID": "384",
+        "Location": "T-POINT NARAINA, INDERPURI",
+        "Authority": "MCD",
+        "Zone": "WR",
+        "Status": "Recommended",
+        "Latitude": 28.6319998,
+        "Longitude": 77.14509939999999
+    },
+    {
+        "ID": "385",
+        "Location": "UNDER NARAINA FLYOVER",
+        "Authority": "MCD",
+        "Zone": "WR",
+        "Status": "Recommended",
+        "Latitude": 28.6234798,
+        "Longitude": 77.1353411
+    },
+    {
+        "ID": "386",
+        "Location": "KESHAV PURAM NDPL",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.6172972,
+        "Longitude": 77.3131993
+    },
+    {
+        "ID": "387",
+        "Location": "OUT SITE SUNDER LAL JAIN HOSPITAL",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.6494696,
+        "Longitude": 77.2099704
+    },
+    {
+        "ID": "388",
+        "Location": "IN FRONT OF TIRATH RAM SHAH HOSPITAL",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Parking strictly for cars/two-wheelers is recommended in single lane one side",
+        "Latitude": 28.6705753,
+        "Longitude": 77.216236
+    },
+    {
+        "ID": "389",
+        "Location": "MALVIYA NAGAR MARKET",
+        "Authority": "MCD",
+        "Zone": "SR",
+        "Status": "Volunteers of the Market Association are running it smoothly",
+        "Latitude": 28.5367408,
+        "Longitude": 77.212019
+    },
+    {
+        "ID": "390",
+        "Location": "BAHADUR SHAH ZAFAR MARG PRESS BUILDING AREA ITO, NEW DELHI",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6309308,
+        "Longitude": 77.2441075
+    },
+    {
+        "ID": "400",
+        "Location": "CHITRA GUPTA ROAD",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6426469,
+        "Longitude": 77.2088473
+    },
+    {
+        "ID": "401",
+        "Location": "ARAM BAGH (PAHAR GANJ)",
+        "Authority": "MCD",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6413293,
+        "Longitude": 77.210336
+    },
+    {
+        "ID": "402",
+        "Location": "NEAR GHANTA GHAR, OLD SUBZI MANDI1) BACKSIDE OF MCD MARKET2) IN FRONT OF KEDAR BLDG. FROM FAMILY WELFARE CENTRE TO KEDAR BUILDING SCHOOL GATE",
+        "Authority": "MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.6756878,
+        "Longitude": 77.2034924
+    },
+    {
+        "ID": "403",
+        "Location": "UNDER RAJA GARDEN FLYOVER FOR NEIGHBOURHOOD CULTURAL CENTRE",
+        "Authority": "DTTDC",
+        "Zone": "WR",
+        "Status": "Recommended",
+        "Latitude": 28.6519754,
+        "Longitude": 77.124342
+    },
+    {
+        "ID": "404",
+        "Location": "Basant Road, Pahar Ganj",
+        "Authority": "North DMC",
+        "Zone": "CR",
+        "Status": "Recommended",
+        "Latitude": 28.6389429,
+        "Longitude": 77.2158266
+    },
+    {
+        "ID": "405",
+        "Location": "EDMC (HQ) outside area",
+        "Authority": "EDMC",
+        "Zone": "ER",
+        "Status": "Recommended",
+        "Latitude": 28.6386768,
+        "Longitude": 77.3081961
+    },
+    {
+        "ID": "406",
+        "Location": "Vikas Marg near BSES office",
+        "Authority": "EDMC",
+        "Zone": "ER",
+        "Status": "Recommended",
+        "Latitude": 28.6307088,
+        "Longitude": 77.2775876
+    },
+    {
+        "ID": "407",
+        "Location": "Shakar Pur Thana",
+        "Authority": "EDMC",
+        "Zone": "ER",
+        "Status": "Partially Recommended",
+        "Latitude": 28.6374948,
+        "Longitude": 77.2707281
+    },
+    {
+        "ID": "408",
+        "Location": "Under Flyover Mansarover Park Metro Station",
+        "Authority": "EDMC",
+        "Zone": "ER",
+        "Status": "Recommended",
+        "Latitude": 28.6754517,
+        "Longitude": 77.3012
+    },
+    {
+        "ID": "409",
+        "Location": "Near Akshardham Metro Station Service Lane, Shahdara South Zone",
+        "Authority": "EDMC",
+        "Zone": "ER",
+        "Status": "Recommended",
+        "Latitude": 28.6179626,
+        "Longitude": 77.2793762
+    },
+    {
+        "ID": "410",
+        "Location": "Northern India Engineer College Shastri Park, Shahdara North Zone",
+        "Authority": "EDMC",
+        "Zone": "ER",
+        "Status": "Recommended",
+        "Latitude": 28.67729199999999,
+        "Longitude": 77.261303
+    },
+    {
+        "ID": "411",
+        "Location": "Jagpravesh Chandra Hospital, Shastri Park, Shahdara North Zone",
+        "Authority": "EDMC",
+        "Zone": "ER",
+        "Status": "Recommended",
+        "Latitude": 28.6766267,
+        "Longitude": 77.2629651
+    },
+    {
+        "ID": "412",
+        "Location": "DDA Shopping Centre, Rajdhani Enclave",
+        "Authority": "EDMC",
+        "Zone": "ER",
+        "Status": "Recommended",
+        "Latitude": 28.6862183,
+        "Longitude": 77.13665189999999
+    },
+    {
+        "ID": "413",
+        "Location": "Apsara Border near Dilshad Garden",
+        "Authority": "EDMC",
+        "Zone": "ER",
+        "Status": "Recommended",
+        "Latitude": 28.6766115,
+        "Longitude": 77.3229166
+    },
+    {
+        "ID": "414",
+        "Location": "DC Office Nand Nagri",
+        "Authority": "EDMC",
+        "Zone": "ER",
+        "Status": "Partially Recommended",
+        "Latitude": 28.6945767,
+        "Longitude": 77.3158523
+    },
+    {
+        "ID": "415",
+        "Location": "HIM Tata Motors Patparganj Ind. Area",
+        "Authority": "EDMC",
+        "Zone": "ER",
+        "Status": "Recommended",
+        "Latitude": 28.6376094,
+        "Longitude": 77.31284629999999
+    },
+    {
+        "ID": "416",
+        "Location": "PWD Nursery patparganj Ind. Area",
+        "Authority": "EDMC",
+        "Zone": "ER",
+        "Status": "Recommended",
+        "Latitude": 28.6394246,
+        "Longitude": 77.3109035
+    },
+    {
+        "ID": "417",
+        "Location": "Outside District Court Rohini premises",
+        "Authority": "North MCD",
+        "Zone": "NR",
+        "Status": "Recommended",
+        "Latitude": 28.7066579,
+        "Longitude": 77.13206869999999
+    },
+    {
+        "ID": "418",
+        "Location": "Mehar Chand Market, Lodhi Road on the stretches starts after Lodhi Road Police Station Building to MCD flats",
+        "Authority": "SDMC",
+        "Zone": "SR",
+        "Status": "Recommended",
+        "Latitude": 28.591085,
+        "Longitude": 77.2279773
+    }
+]

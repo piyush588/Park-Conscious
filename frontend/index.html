@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Find Nearby Parking — MVP</title>
+  <link rel="stylesheet" href="./styles/style.css" />
+</head>
+<body>
+  <header>
+    <div class="brand"><img src="./assets/logo.jpg" alt="Park Conscious Logo" style="height: 24px; vertical-align: middle; margin-right: 8px;">Park Conscious</div>
+    <div class="controls">
+      <div class="search">
+        <input id="autocomplete-input" class="search-input" placeholder="Find Parking Near Me type an address or place" />
+      </div>
+      <button id="locate-btn" class="btn" title="Use my location">Use my location</button>
+    </div>
+  </header>
+
+  <main>
+    <div id="map"></div>
+
+    <aside class="sidebar">
+      <div class="top-results">
+        <div class="tab-container">
+          <button class="tab-button active" data-tab="parking">Parking</button>
+          <button class="tab-button" data-tab="bookings">Bookings</button>
+        </div>
+        <div class="center-actions">
+          <label style="font-size:13px;color:var(--muted)">Radius</label>
+          <select id="radius-select" title="Search radius (km)">
+            <option value="1">1 km</option>
+            <option value="3" selected>3 km</option>
+            <option value="5">5 km</option>
+            <option value="10">10 km</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="parking-tab" class="tab-content active">
+        <div><strong id="results-count">0</strong> Results</div>
+        <div id="results-list"></div>
+        <div style="margin-top:10px;color:var(--muted);font-size:13px">Click a card or marker to focus on the parking spot. "Book Now" opens a simple booking modal (no payments).</div>
+      </div>
+
+      <div id="bookings-tab" class="tab-content">
+        <div style="margin-top:10px;color:var(--muted);font-size:13px">Your bookings will appear here.</div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Modal placeholder -->
+  <div id="modal-root" aria-hidden="true"></div>
+
+<!-- replace <script> tag at bottom -->
+<script src="./scripts/main.js"></script>
+
+  <!-- Google Maps JS: Replace `YOUR_GOOGLE_MAPS_API_KEY_HERE` with your key -->
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbGNHEFN2Ta57Gz_5YB4w8ZDbuw6OVgRk&libraries=places&callback=initMap">
+  </script>
+</body>
+</html>

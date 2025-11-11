@@ -1,0 +1,63 @@
+/* Simple clean styles - minimal & responsive */
+:root{
+  --bg:#f7f8fb; --card:#fff; --muted:#6b7280; --accent:#1f6feb;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;background:var(--bg);color:#111}
+header{display:flex;gap:12px;align-items:center;padding:12px 16px;background:var(--card);box-shadow:0 2px 6px rgba(16,24,40,.06);position:sticky;top:0;z-index:10}
+.brand{font-weight:700;font-size:18px;color:var(--accent)}
+.controls{display:flex;gap:8px;flex:1;align-items:center}
+.search{flex:1;display:flex}
+input.search-input{width:100%;padding:10px 12px;border:1px solid #e6e9ef;border-radius:8px;font-size:14px}
+button.btn{padding:10px 12px;border-radius:8px;border:none;background:var(--accent);color:#fff;font-weight:600;cursor:pointer}
+main{display:grid;grid-template-columns:1fr 420px;gap:12px;padding:12px;height:calc(100vh - 68px)}
+#map{width:100%;height:100%;border-radius:10px;overflow:hidden}
+.sidebar{background:var(--card);border-radius:10px;padding:12px;overflow:auto}
+.card{display:flex;flex-direction:column;border-radius:8px;padding:10px;margin-bottom:10px;border:1px solid #eef1f8;background:white}
+.card h4{margin:0 0 6px 0;font-size:15px}
+.muted{color:var(--muted);font-size:13px}
+.meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.meta span{font-size:13px;background:#f3f6fb;padding:6px;border-radius:6px}
+.distance{margin-left:auto;font-weight:700}
+.book-btn{margin-top:8px;align-self:flex-start}
+.top-results{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.center-actions{display:flex;gap:8px}
+/* modal */
+.modal-backdrop{position:fixed;inset:0;background:rgba(2,6,23,.45);display:flex;align-items:center;justify-content:center;z-index:50}
+.modal{background:#fff;padding:16px;border-radius:12px;width:420px;max-width:92%}
+label{font-size:13px;color:var(--muted);display:block;margin-top:8px}
+select,input[type="time"],input[type="number"]{width:100%;padding:8px;border-radius:8px;border:1px solid #e6e9ef;margin-top:6px}
+.row{display:flex;gap:8px}
+@media(max-width:920px){
+  main{grid-template-columns:1fr;grid-auto-rows:1fr}
+  .sidebar{height:320px}
+}
+
+.tab-container {
+  display: flex;
+  border-bottom: 1px solid #e6e9ef;
+  margin-bottom: 12px;
+}
+
+.tab-button {
+  padding: 10px 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--muted);
+  transition: color 0.2s ease;
+}
+
+.tab-button.active {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
