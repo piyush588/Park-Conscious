@@ -1,0 +1,10 @@
+{
+  "name": "park-conscious",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Park Conscious - Smart Parking Solution",
+  "engines": {
+    "node": ">=18.x"
+  }
+}
+

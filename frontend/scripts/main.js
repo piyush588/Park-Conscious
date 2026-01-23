@@ -1,5 +1,6 @@
 // ---- CONFIG ----
-const PARKING_JSON = 'http://localhost:5050/api/parking';
+// Use relative URL so this works both locally and on Vercel (/api is served by Vercel Functions)
+const PARKING_JSON = '/api/parking';
 // file with your 400+ parking entries
 const DEFAULT_LOCATION = {lat:28.644800, lng:77.216721}; // Delhi center fallback
 // -----------------
