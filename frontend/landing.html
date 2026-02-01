@@ -1,510 +1,631 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmartPark: The Future of Parking in Smart Cities</title>
-    <meta name="description" content="SmartPark is an AI-powered smart parking solution designed to eliminate the chaos of urban parking. We upgrade existing parking spaces with IoT technology and build new automated multilevel parking hubs helping drivers find, reserve, and pay for parking in seconds while reducing congestion and pollution.">
+    <title>Park Conscious | The Future of Urban Parking</title>
+    <meta name="description"
+        content="AI-powered smart parking solution for modern cities. Find, reserve, and pay for parking instantly.">
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <style>
         body {
-            box-sizing: border-box;
             font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
         }
-        .gradient-bg {
-            background: linear-gradient(135deg, #1e3a8a 0%, #0f766e 50%, #1e40af 100%);
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Outfit', sans-serif;
         }
-        .card-hover {
-            transition: all 0.3s ease;
+
+        /* Modern Gradient Background */
+        .main-gradient {
+            background: radial-gradient(circle at top right, #1e40af 0%, transparent 40%),
+                radial-gradient(circle at bottom left, #0f766e 0%, transparent 40%),
+                radial-gradient(circle at center, #111827 0%, #000000 100%);
+            background-attachment: fixed;
         }
-        .card-hover:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+
+        /* Glassmorphism Utilities */
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         }
-        .float-animation {
-            animation: float 4s ease-in-out infinite;
+
+        .glass-hover:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
         }
+
+        .glass-nav {
+            background: rgba(17, 24, 39, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Text Gradients */
+        .text-gradient {
+            background: linear-gradient(135deg, #60a5fa 0%, #2dd4bf 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .text-gradient-alt {
+            background: linear-gradient(135deg, #2dd4bf 0%, #34d399 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Animations */
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
         }
-        .hero-pattern {
-            background-image: 
-                radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 0%, transparent 50%),
-                radial-gradient(circle at 75% 75%, rgba(255,255,255,0.05) 0%, transparent 50%);
+
+        .pulse-glow {
+            animation: pulse-glow 3s infinite;
+        }
+
+        @keyframes pulse-glow {
+            0% {
+                box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(45, 212, 191, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(45, 212, 191, 0);
+            }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #111827;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #374151;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4b5563;
         }
     </style>
 </head>
-<body class="bg-gray-900">
+
+<body class="bg-gray-950 text-gray-200 main-gradient min-h-screen selection:bg-teal-500/30 selection:text-teal-200">
+
     <!-- Navigation -->
-    <nav class="bg-gray-900/95 backdrop-blur-sm shadow-sm fixed w-full top-0 z-50">
+    <nav class="fixed w-full top-0 z-50 glass-nav transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <div class="flex-shrink-0 flex items-center">
-                        <img src="./assets/logo.jpg" alt="Park Conscious Logo" class="h-8 w-auto mr-3"/>
-                        <span class="text-xl font-bold text-white">Park Conscious</span>
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <div
+                        class="relative w-10 h-10 mr-3 flex items-center justify-center bg-gradient-to-br from-blue-600 to-teal-600 rounded-lg shadow-lg overflow-hidden">
+                        <img src="./assets/logo.jpg" alt="Logo"
+                            class="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity">
                     </div>
+                    <span class="text-xl font-bold text-white tracking-tight">Park <span
+                            class="text-teal-400">Conscious</span></span>
                 </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="#solution" class="text-gray-300 hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors">Solution</a>
-                        <a href="#features" class="text-gray-300 hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors">Features</a>
-                        <a href="#impact" class="text-gray-300 hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors">Impact</a>
-                        <button onclick="window.location.href='index.html'" class="bg-gradient-to-r from-blue-600 to-teal-600 text-white px-6 py-2 rounded-full text-sm font-medium hover:shadow-lg transition-all">Find Nearest Parking</button>
-                    </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#solution"
+                        class="text-gray-300 hover:text-white text-sm font-medium transition-colors relative group">
+                        Solution
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-400 transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="#features"
+                        class="text-gray-300 hover:text-white text-sm font-medium transition-colors relative group">
+                        Features
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-400 transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="#impact"
+                        class="text-gray-300 hover:text-white text-sm font-medium transition-colors relative group">
+                        Impact
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-400 transition-all group-hover:w-full"></span>
+                    </a>
+                    <button onclick="window.location.href='index.html'"
+                        class="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-6 py-2.5 rounded-full text-sm font-medium transition-all hover:scale-105 active:scale-95 backdrop-blur-sm">
+                        Find Parking
+                    </button>
+                    <button onclick="joinWaitlist()"
+                        class="bg-gradient-to-r from-blue-600 to-teal-500 text-white px-6 py-2.5 rounded-full text-sm font-semibold shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transition-all hover:-translate-y-0.5 active:translate-y-0">
+                        Join Waitlist
+                    </button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button class="text-gray-300 hover:text-white p-2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="gradient-bg hero-pattern pt-20 pb-20 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="text-center lg:text-left">
-                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-                        Smart, stress-free parking for modern cities
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-blue-600/20 rounded-full blur-[100px]"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-teal-600/10 rounded-full blur-[100px]"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div data-aos="fade-right" data-aos-duration="1000">
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-300 text-xs font-semibold uppercase tracking-wider mb-6">
+                        <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+                        Live in Beta
+                    </div>
+                    <h1 class="text-5xl lg:text-7xl font-bold text-white mb-6 leading-[1.1] tracking-tight">
+                        Parking made <br>
+                        <span class="text-gradient">Intelligent.</span>
                     </h1>
-                    <p class="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
-                        Find nearby parking instantly, reserve your spot, and pay digitally all in one app.
+                    <p class="text-lg text-gray-400 mb-10 leading-relaxed max-w-xl">
+                        Stop circling. Start parking. Park Conscious uses AI and IoT to help you find, reserve, and pay
+                        for parking spots instantly in smart cities.
                     </p>
-                    
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
-                        <button onclick="openSurvey()" class="bg-white text-blue-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-50 transition-all shadow-xl hover:shadow-2xl">
-                            Take the 2-Minute Survey
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button onclick="window.location.href='index.html'"
+                            class="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-teal-500 rounded-full text-white font-semibold text-lg shadow-xl shadow-blue-500/25 overflow-hidden transition-all hover:shadow-blue-500/40 hover:-translate-y-1">
+                            <span class="relative z-10 flex items-center gap-2">
+                                Find Spot Now
+                                <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </span>
+                            <div
+                                class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                            </div>
                         </button>
-                        <button onclick="window.location.href='index.html'" class="bg-teal-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-teal-700 transition-all shadow-xl">
-                            Find Nearest Parking
+                        <button onclick="openSurvey()"
+                            class="px-8 py-4 bg-white/5 border border-white/10 rounded-full text-white font-semibold text-lg hover:bg-white/10 transition-all backdrop-blur-sm flex items-center justify-center gap-2">
+                            Take Survey
                         </button>
                     </div>
-                    
-                    <div class="flex flex-wrap justify-center lg:justify-start gap-6 text-blue-100 text-sm">
-                        <span class="flex items-center"><span class="w-2 h-2 bg-green-400 rounded-full mr-2"></span>Real-time slots</span>
-                        <span class="flex items-center"><span class="w-2 h-2 bg-green-400 rounded-full mr-2"></span>EV-ready</span>
-                        <span class="flex items-center"><span class="w-2 h-2 bg-green-400 rounded-full mr-2"></span>AI-powered</span>
-                        <span class="flex items-center"><span class="w-2 h-2 bg-green-400 rounded-full mr-2"></span>Easy payments</span>
+
+                    <div class="mt-12 flex items-center gap-8 text-sm text-gray-400 font-medium">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Real-time Data
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Contactless
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Eco-friendly
+                        </div>
                     </div>
                 </div>
-                
-                <!-- Hero Visual -->
-                <div class="relative">
-                    <div class="float-animation">
-                        <svg class="w-full h-96" viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Abstract Cityscape -->
-                            <rect x="80" y="180" width="340" height="120" fill="#1e3a8a" opacity="0.2" rx="8"/>
-                            <rect x="100" y="150" width="50" height="100" fill="#1e3a8a" opacity="0.4" rx="4"/>
-                            <rect x="170" y="120" width="60" height="130" fill="#0f766e" opacity="0.4" rx="4"/>
-                            <rect x="250" y="140" width="70" height="110" fill="#1e40af" opacity="0.4" rx="4"/>
-                            <rect x="340" y="130" width="55" height="120" fill="#0f766e" opacity="0.4" rx="4"/>
-                            
-                            <!-- Simplified Parking lot -->
-                            <rect x="120" y="310" width="260" height="60" fill="white" rx="8" stroke="#e5e7eb" stroke-width="1"/>
-                            <rect x="140" y="325" width="30" height="20" fill="#10b981" rx="2"/>
-                            <rect x="180" y="325" width="30" height="20" fill="#ef4444" rx="2"/>
-                            <rect x="220" y="325" width="30" height="20" fill="#10b981" rx="2"/>
-                            <rect x="260" y="325" width="30" height="20" fill="#f59e0b" rx="2"/>
-                            <rect x="300" y="325" width="30" height="20" fill="#10b981" rx="2"/>
-                            
-                            <!-- Simplified Mobile phone -->
-                            <rect x="200" y="60" width="100" height="160" fill="#1f2937" rx="16"/>
-                            <rect x="210" y="75" width="80" height="130" fill="#3b82f6" rx="6"/>
-                            
-                            <!-- App interface - cleaner -->
-                            <text x="250" y="98" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Park Conscious</text>
-                            <rect x="220" y="115" width="60" height="25" fill="white" rx="4" opacity="0.9"/>
-                            <text x="250" y="130" text-anchor="middle" fill="#1f2937" font-size="9">Map View</text>
-                            <text x="250" y="145" text-anchor="middle" fill="#10b981" font-size="9" font-weight="bold">5 spots free</text>
-                            
-                            <!-- Abstract Marker -->
-                            <circle cx="250" cy="170" r="8" fill="#fff" stroke="#3b82f6" stroke-width="2"/>
-                            <circle cx="250" cy="170" r="4" fill="#3b82f6"/>
 
-                            <!-- Connection lines -->
-                            <path d="M250 210 L220 310" stroke="#10b981" stroke-width="1" stroke-dasharray="4,4" opacity="0.6"/>
-                            <path d="M250 210 L260 310" stroke="#10b981" stroke-width="1" stroke-dasharray="4,4" opacity="0.6"/>
-                        </svg>
+                <!-- Hero Visual -->
+                <div class="relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="relative w-full aspect-square max-w-lg mx-auto">
+                        <!-- Background Glow -->
+                        <div
+                            class="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-teal-500/20 rounded-full blur-3xl float">
+                        </div>
+
+                        <!-- Main Abstract Element -->
+                        <div
+                            class="relative z-10 w-full h-full glass rounded-3xl p-6 border border-white/10 float animation-delay-200">
+                            <!-- Simulated Map UI -->
+                            <div
+                                class="w-full h-full bg-gray-900/50 rounded-2xl overflow-hidden relative border border-white/5">
+                                <!-- Map Grid -->
+                                <div class="absolute inset-0"
+                                    style="background-image: radial-gradient(rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 20px 20px; opacity: 0.3;">
+                                </div>
+
+                                <!-- Parking Route Path -->
+                                <svg class="absolute inset-0 w-full h-full pointer-events-none">
+                                    <path d="M100 350 Q 150 200 250 180 T 400 100" stroke="url(#paint0_linear)"
+                                        stroke-width="4" fill="none"
+                                        class="drop-shadow-[0_0_10px_rgba(45,212,191,0.5)]" />
+                                    <defs>
+                                        <linearGradient id="paint0_linear" x1="100" y1="350" x2="400" y2="100"
+                                            gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#3B82F6" stop-opacity="0" />
+                                            <stop offset="0.5" stop-color="#2DD4BF" />
+                                            <stop offset="1" stop-color="#3B82F6" />
+                                        </linearGradient>
+                                    </defs>
+                                    <!-- Moving dot -->
+                                    <circle r="6" fill="#fff">
+                                        <animateMotion dur="4s" repeatCount="indefinite"
+                                            path="M100 350 Q 150 200 250 180 T 400 100" />
+                                    </circle>
+                                </svg>
+
+                                <!-- Floating Markers -->
+                                <div class="absolute top-[20%] right-[20%]">
+                                    <div class="relative group cursor-pointer">
+                                        <div
+                                            class="w-12 h-12 bg-teal-500 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(20,184,166,0.5)] pulse-glow">
+                                            <span class="text-white font-bold text-lg">P</span>
+                                        </div>
+                                        <div
+                                            class="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 bg-white text-gray-900 text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
+                                            5 spots left
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="absolute bottom-[30%] left-[25%]">
+                                    <div class="relative group cursor-pointer hover:scale-110 transition-transform">
+                                        <div
+                                            class="w-10 h-10 bg-gray-700 border-2 border-red-500/50 rounded-full flex items-center justify-center">
+                                            <span class="text-white text-sm font-bold">P</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="absolute top-[50%] right-[40%]">
+                                    <div class="relative group cursor-pointer hover:scale-110 transition-transform">
+                                        <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
+                                            <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24"
+                                                stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- UI Overlay -->
+                                <div
+                                    class="absolute bottom-4 left-4 right-4 bg-gray-900/90 backdrop-blur-md rounded-xl p-4 border border-white/10 flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-10 h-10 rounded-full bg-teal-500/20 flex items-center justify-center text-teal-400">
+                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 7m0 13V7">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <div class="text-xs text-gray-400">Nearest Spot</div>
+                                            <div class="text-sm font-bold text-white">Phoenix Mall, L2</div>
+                                        </div>
+                                    </div>
+                                    <button
+                                        class="bg-teal-500 text-white text-xs font-bold px-4 py-2 rounded-lg">Navigate</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Problem Section -->
-    <section class="py-20 bg-gray-800">
+    <!-- Stats Section -->
+    <section class="py-10 border-y border-white/5 bg-white/5 backdrop-blur-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">The Urban Parking Challenge</h2>
-                <div class="max-w-4xl mx-auto">
-                    <p class="text-xl text-gray-300 leading-relaxed mb-6">
-                        Drivers in urban areas spend significant time daily searching for parking, leading to congestion, wasted fuel, and frustration.
-                    </p>
-                    <p class="text-xl text-gray-300 leading-relaxed">
-                        Existing systems often lack real-time data, dynamic pricing, and efficient space utilization, resulting in underutilized lots and chaotic public parking.
-                    </p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="0">
+                    <div class="text-4xl font-bold text-white mb-1">70%</div>
+                    <div class="text-sm text-gray-400 uppercase tracking-wide">Time Saved</div>
                 </div>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="text-center p-8 bg-gray-700 rounded-2xl">
-                    <div class="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">Time Consumption</h3>
-                    <p class="text-gray-300 text-lg">Minutes wasted daily searching for spots</p>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-4xl font-bold text-white mb-1">50%</div>
+                    <div class="text-sm text-gray-400 uppercase tracking-wide">Less Traffic</div>
                 </div>
-                
-                <div class="text-center p-8 bg-gray-700 rounded-2xl">
-                    <div class="w-20 h-20 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l-2 2H5m0 0l-2-2m2 2l2-2m7 16V6l2 2h2m0 0l2-2m-2 2l2-2M9 6h6a2 2 0 012 2v10a2 2 0 01-2 2H9a2 2 0 01-2-2V8a2 2 0 012-2z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">Increased Congestion</h3>
-                    <p class="text-gray-300 text-lg">More traffic and pollution in city centers</p>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-4xl font-bold text-white mb-1">40%</div>
+                    <div class="text-sm text-gray-400 uppercase tracking-wide">Revenue Boost</div>
                 </div>
-                
-                <div class="text-center p-8 bg-gray-700 rounded-2xl">
-                    <div class="w-20 h-20 bg-yellow-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 8h6m-5 0v4m0-4h.01M9 12h6m-5 0v4m0-4h.01M9 16h6m-5 0v4m0-4h.01M4 20h16a2 2 0 002-2V6a2 2 0 00-2-2H4a2 2 0 00-2 2v12a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">Revenue Inefficiency</h3>
-                    <p class="text-gray-300 text-lg">Underutilized spaces and suboptimal pricing</p>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-4xl font-bold text-white mb-1">100+</div>
+                    <div class="text-sm text-gray-400 uppercase tracking-wide">Smart Cities</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Solution Section -->
-    <section id="solution" class="py-20 bg-gray-900">
+    <section id="solution" class="py-24 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Park Conscious: A Modern Solution</h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">Addressing urban parking challenges through innovative approaches.</p>
+            <div class="text-center max-w-3xl mx-auto mb-20" data-aos="fade-up">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Redefining Urban Parking</h2>
+                <p class="text-xl text-gray-400">Combining existing infrastructure with futuristic technology to solve
+                    the parking crisis.</p>
             </div>
-            
-            <div class="grid lg:grid-cols-2 gap-12">
-                <!-- Upgrade Existing -->
-                <div class="bg-gray-800 rounded-3xl p-10 shadow-xl card-hover">
-                    <div class="flex items-center mb-8">
-                        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mr-6">
-                            <span class="text-2xl font-bold text-white">1.</span>
-                        </div>
-                        <h3 class="text-3xl font-bold text-white">Upgrade Existing Parking Spaces</h3>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Card 1 -->
+                <div class="glass glass-hover p-10 rounded-3xl transition-all duration-300 group" data-aos="fade-up">
+                    <div
+                        class="w-16 h-16 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-blue-500/20 transition-colors">
+                        <span class="text-3xl font-bold text-blue-400">01</span>
                     </div>
-                    
-                    <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mr-4 mt-1">
-                                <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.552-4.552A1.25 1.25 0 0122 6.5v11.5a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2h11.552L15 10z"></path></svg>
-                            </div>
-                            <div>
-                                <h4 class="text-lg font-semibold text-white mb-2">IoT sensors & smart cameras for real-time occupancy</h4>
-                                <p class="text-gray-300">Advanced sensors detect vehicle presence and update availability instantly</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mr-4 mt-1">
-                                <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21H5a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v14a2 2 0 01-2 2h-3M19 10H5"></path></svg>
-                            </div>
-                            <div>
-                                <h4 class="text-lg font-semibold text-white mb-2">Mobile app integration for booking and payments</h4>
-                                <p class="text-gray-300">Seamless reservation system with digital payment processing</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mr-4 mt-1">
-                                <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 10l-6 4-6-4m6 4v-11m0 0H9m-6 0h12v9a2 2 0 01-2 2h-8a2 2 0 01-2-2v-9z"></path></svg>
-                            </div>
-                            <div>
-                                <h4 class="text-lg font-semibold text-white mb-2">QR/RFID entry & exit for fast access</h4>
-                                <p class="text-gray-300">Contactless entry system for quick and secure access</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mr-4 mt-1">
-                                <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10v11h18V10M3 10h18M3 10l-1-6h20l-1 6m-9 0v4m0-4h.01M9 12h6"></path></svg>
-                            </div>
-                            <div>
-                                <h4 class="text-lg font-semibold text-white mb-2">AI analytics dashboard for parking owners</h4>
-                                <p class="text-gray-300">Data-driven insights for optimization and revenue management</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mr-4 mt-1">
-                                <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                            </div>
-                            <div>
-                                <h4 class="text-lg font-semibold text-white mb-2">EV charging support for sustainable mobility</h4>
-                                <p class="text-gray-300">Integrated electric vehicle charging infrastructure</p>
-                            </div>
-                        </div>
-                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Upgrading Existing Spaces</h3>
+                    <p class="text-gray-400 mb-8 leading-relaxed">We retrofit existing lots with IoT sensors and smart
+                        cameras to digitize occupancy in real-time.</p>
+
+                    <ul class="space-y-4">
+                        <li class="flex items-center text-gray-300">
+                            <svg class="w-5 h-5 text-blue-400 mr-3" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            IoT sensors & smart cameras
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <svg class="w-5 h-5 text-blue-400 mr-3" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Seamless mobile app booking
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <svg class="w-5 h-5 text-blue-400 mr-3" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Automated QR/RFID entry
+                        </li>
+                    </ul>
                 </div>
-                
-                <!-- Smart Multilevel Hubs -->
-                <div class="bg-gray-800 rounded-3xl p-10 shadow-xl card-hover">
-                    <div class="flex items-center mb-8">
-                        <div class="w-16 h-16 bg-gradient-to-br from-teal-500 to-teal-600 rounded-2xl flex items-center justify-center mr-6">
-                            <span class="text-2xl font-bold text-white">2.</span>
-                        </div>
-                        <h3 class="text-3xl font-bold text-white">Build Smart Multilevel Parking Hubs</h3>
+
+                <!-- Card 2 -->
+                <div class="glass glass-hover p-10 rounded-3xl transition-all duration-300 group" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <div
+                        class="w-16 h-16 bg-teal-500/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-teal-500/20 transition-colors">
+                        <span class="text-3xl font-bold text-teal-400">02</span>
                     </div>
-                    
-                    <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div class="w-8 h-8 bg-teal-100 rounded-lg flex items-center justify-center mr-4 mt-1">
-                                <svg class="w-5 h-5 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10a2 2 0 002 2h8m4-4H8a2 2 0 01-2-2V7m4 0h12a2 2 0 012 2v8a2 2 0 01-2 2h-4m-4 4v-4m0 0h-4"></path></svg>
-                            </div>
-                            <div>
-                                <h4 class="text-lg font-semibold text-white mb-2">Vertical stacking for space optimization</h4>
-                                <p class="text-gray-300">Maximize parking capacity in minimal footprint</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="w-8 h-8 bg-teal-100 rounded-lg flex items-center justify-center mr-4 mt-1">
-                                <svg class="w-5 h-5 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4m0-4h.01"></path></svg>
-                            </div>
-                            <div>
-                                <h4 class="text-lg font-semibold text-white mb-2">Automated vehicle handling</h4>
-                                <p class="text-gray-300">Robotic systems for efficient vehicle storage and retrieval</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="w-8 h-8 bg-teal-100 rounded-lg flex items-center justify-center mr-4 mt-1">
-                                <svg class="w-5 h-5 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h1M3 12H2m15.59-8.41l-.707.707M6.41 19.59l-.707-.707M18.88 15.5l-.708-.708M5.12 8.5l-.708-.708M12 12a3 3 0 110-6 3 3 0 010 6z"></path></svg>
-                            </div>
-                            <div>
-                                <h4 class="text-lg font-semibold text-white mb-2">Solar-powered, energy-efficient design</h4>
-                                <p class="text-gray-300">Sustainable operations with renewable energy integration</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="w-8 h-8 bg-teal-100 rounded-lg flex items-center justify-center mr-4 mt-1">
-                                <svg class="w-5 h-5 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"></path></svg>
-                            </div>
-                            <div>
-                                <h4 class="text-lg font-semibold text-white mb-2">Dynamic pricing & in-app payments</h4>
-                                <p class="text-gray-300">AI-driven pricing optimization with seamless payment processing</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="w-8 h-8 bg-teal-100 rounded-lg flex items-center justify-center mr-4 mt-1">
-                                <svg class="w-5 h-5 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                            </div>
-                            <div>
-                                <h4 class="text-lg font-semibold text-white mb-2">Integration with city mobility platforms</h4>
-                                <p class="text-gray-300">Connected ecosystem for comprehensive urban transportation</p>
-                            </div>
-                        </div>
-                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Smart Multilevel Hubs</h3>
+                    <p class="text-gray-400 mb-8 leading-relaxed">Vertical stacking automated hubs that maximize
+                        capacity in minimal city footprints.</p>
+
+                    <ul class="space-y-4">
+                        <li class="flex items-center text-gray-300">
+                            <svg class="w-5 h-5 text-teal-400 mr-3" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Robotic vehicle handling
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <svg class="w-5 h-5 text-teal-400 mr-3" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Solar-powered sustainability
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <svg class="w-5 h-5 text-teal-400 mr-3" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Integrated EV charging
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="features" class="py-20 bg-gray-800">
+    <!-- Features Grid -->
+    <section id="features" class="py-24 relative bg-black/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Key Features</h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">Explore the innovative functionalities of the Park Conscious ecosystem.</p>
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-blue-400 font-semibold tracking-wider uppercase text-sm">Ecosystem</span>
+                <h2 class="text-3xl md:text-5xl font-bold text-white mt-2 mb-6">Everything you need</h2>
             </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-gradient-to-br from-blue-900 to-blue-800 rounded-2xl p-8 card-hover cursor-pointer" onclick="openParkingMap()">
-                    <div class="mb-4">
-                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Feature 1 -->
+                <div class="glass p-8 rounded-2xl hover:bg-white/5 transition-colors cursor-pointer"
+                    onclick="openParkingMap()" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-6 text-blue-400">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Find Nearby Parking</h3>
-                    <p class="text-gray-300">Real-time map, filters by price, EV slots, and distance</p>
+                    <h3 class="text-xl font-bold text-white mb-2">Find Places</h3>
+                    <p class="text-sm text-gray-400">Real-time availability map with price filtering and distance
+                        sorting.</p>
                 </div>
-                
-                <div class="bg-gradient-to-br from-green-900 to-green-800 rounded-2xl p-8 card-hover">
-                    <div class="mb-4">
-                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10v11h18V10M3 10h18M3 10l-1-6h20l-1 6m-9 0v4m0-4h.01M9 12h6"></path></svg>
+
+                <!-- Feature 2 -->
+                <div class="glass p-8 rounded-2xl hover:bg-white/5 transition-colors" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-6 text-green-400">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 10v11h18V10M3 10h18M3 10l-1-6h20l-1 6m-9 0v4m0-4h.01M9 12h6"></path>
+                        </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Reserve & Pay</h3>
-                    <p class="text-gray-300">One-tap booking, digital payment, dynamic pricing</p>
+                    <h3 class="text-xl font-bold text-white mb-2">Reserve & Pay</h3>
+                    <p class="text-sm text-gray-400">Instant booking with secure digital payments and dynamic pricing.
+                    </p>
                 </div>
-                
-                <div class="bg-gradient-to-br from-purple-900 to-purple-800 rounded-2xl p-8 card-hover">
-                    <div class="mb-4">
-                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+
+                <!-- Feature 3 -->
+                <div class="glass p-8 rounded-2xl hover:bg-white/5 transition-colors" data-aos="fade-up"
+                    data-aos-delay="200">
+                    <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-6 text-purple-400">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Smart Entry/Exit</h3>
-                    <p class="text-gray-300">QR, RFID, and license plate recognition</p>
+                    <h3 class="text-xl font-bold text-white mb-2">Smart Access</h3>
+                    <p class="text-sm text-gray-400">License plate recognition and NFC entry for seamless experience.
+                    </p>
                 </div>
-                
-                <div class="bg-gradient-to-br from-orange-900 to-orange-800 rounded-2xl p-8 card-hover">
-                    <div class="mb-4">
-                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+
+                <!-- Feature 4 -->
+                <div class="glass p-8 rounded-2xl hover:bg-white/5 transition-colors" data-aos="fade-up"
+                    data-aos-delay="300">
+                    <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-6 text-yellow-400">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Personal Dashboard</h3>
-                    <p class="text-gray-300">History, eco score, and saved locations</p>
+                    <h3 class="text-xl font-bold text-white mb-2">EV Integration</h3>
+                    <p class="text-sm text-gray-400">Locate chargers, reserve slots, and monitor charging status.</p>
                 </div>
-                
-                <div class="bg-gradient-to-br from-yellow-900 to-yellow-800 rounded-2xl p-8 card-hover">
-                    <div class="mb-4">
-                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+
+                <!-- Feature 5 -->
+                <div class="glass p-8 rounded-2xl hover:bg-white/5 transition-colors" data-aos="fade-up"
+                    data-aos-delay="400">
+                    <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-6 text-indigo-400">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+                            </path>
+                        </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">EV Parking</h3>
-                    <p class="text-gray-300">Pre-book EV chargers, monitor charging status</p>
+                    <h3 class="text-xl font-bold text-white mb-2">Analytics</h3>
+                    <p class="text-sm text-gray-400">Data-driven insights for parking lots to optimize revenue.</p>
                 </div>
-                
-                <div class="bg-gradient-to-br from-teal-900 to-teal-800 rounded-2xl p-8 card-hover">
-                    <div class="mb-4">
-                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+
+                <!-- Feature 6 -->
+                <div class="glass p-8 rounded-2xl hover:bg-white/5 transition-colors" data-aos="fade-up"
+                    data-aos-delay="500">
+                    <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-6 text-red-400">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z">
+                            </path>
+                        </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">ParkShare</h3>
-                    <p class="text-gray-300">Rent or share private parking spaces</p>
-                </div>
-                
-                <div class="bg-gradient-to-br from-indigo-900 to-indigo-800 rounded-2xl p-8 card-hover">
-                    <div class="mb-4">
-                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21H5a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v14a2 2 0 01-2 2h-3M19 10H5"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">AI Integration</h3>
-                    <p class="text-gray-300">Predict parking demand & traffic flow</p>
-                </div>
-                
-                <div class="bg-gradient-to-br from-pink-900 to-pink-800 rounded-2xl p-8 card-hover">
-                    <div class="mb-4">
-                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Smart City Collaboration</h3>
-                    <p class="text-gray-300">Data dashboards for urban planning</p>
-                </div>
-                
-                <div class="bg-gradient-to-br from-red-900 to-red-800 rounded-2xl p-8 card-hover">
-                    <div class="mb-4">
-                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Safety & Support</h3>
-                    <p class="text-gray-300">24/7 surveillance & emergency assist</p>
-                </div>
-                
-                <div class="bg-gradient-to-br from-emerald-900 to-emerald-800 rounded-2xl p-8 card-hover md:col-span-2 lg:col-span-1">
-                    <div class="mb-4">
-                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V4m0 8v4m-6 1H4M10 6H5a2 2 0 00-2 2v8a2 2 0 002 2h5l2 2 2-2h5a2 2 0 002-2V8a2 2 0 00-2-2h-5s-1.14-.547-2-1c-.52-.292-1.12-.428-1.72-.428Z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Rewards & Loyalty</h3>
-                    <p class="text-gray-300">Earn points for eco-friendly parking</p>
+                    <h3 class="text-xl font-bold text-white mb-2">24/7 Safety</h3>
+                    <p class="text-sm text-gray-400">Surveillance integration and emergency support systems.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Impact Section -->
-    <section id="impact" class="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-teal-800 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6">Building Smarter, Cleaner Cities</h2>
-                <p class="text-xl text-blue-100 max-w-3xl mx-auto">Park Conscious creates measurable impact for cities, drivers, and the environment.</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-8">
-                    <div class="text-5xl font-bold text-green-400 mb-4">70%</div>
-                    <h3 class="text-xl font-semibold mb-2">Time Saved</h3>
-                    <p class="text-blue-100">Reduce search time by up to 70%</p>
-                </div>
-                
-                <div class="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-8">
-                    <div class="text-5xl font-bold text-blue-400 mb-4">50%</div>
-                    <h3 class="text-xl font-semibold mb-2">Less Congestion</h3>
-                    <p class="text-blue-100">Decrease traffic congestion & emissions</p>
-                </div>
-                
-                <div class="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-8">
-                    <div class="text-5xl font-bold text-yellow-400 mb-4">40%</div>
-                    <h3 class="text-xl font-semibold mb-2">Revenue Boost</h3>
-                    <p class="text-blue-100">Boost parking revenue for property owners</p>
-                </div>
-                
-                <div class="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-8">
-                    <div class="text-5xl font-bold text-teal-400 mb-4">100+</div>
-                    <h3 class="text-xl font-semibold mb-2">Smart Cities</h3>
-                    <p class="text-blue-100">Support India's Smart City Mission</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="py-20 bg-gray-900">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Be Part of the Change</h2>
-            <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-                We're collecting public insights to shape Park Conscious. Take our short survey and help us redesign how cities park.
+    <!-- Impact/CTA -->
+    <section id="impact" class="py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-blue-900/10"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h2 class="text-4xl md:text-6xl font-bold text-white mb-8" data-aos="fade-up">Reduce the Chaos.</h2>
+            <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                Help us design the perfect parking experience. Your feedback shapes the future of our cities.
             </p>
-            
-            <button onclick="openSurvey()" class="bg-gradient-to-r from-blue-600 to-teal-600 text-white px-12 py-6 rounded-full text-xl font-semibold hover:shadow-2xl transition-all transform hover:scale-105">
-                Fill the Survey
-            </button>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-900 text-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">Let's Connect</h2>
-            <p class="text-xl text-gray-300 mb-8">
-                Interested in collaborating, investing, or testing Park Conscious?
-            </p>
-            
-            <div class="mb-8">
-                <a href="mailto:parkconscious@gmail.com" class="text-2xl font-semibold text-blue-400 hover:text-blue-300 transition-colors">
-                    parkconscious@gmail.com
-                </a>
-            </div>
-            
-            <div class="flex justify-center space-x-6">
-                <a href="#" class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                    </svg>
-                </a>
-                <a href="#" class="w-12 h-12 bg-pink-600 rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.097.118.112.221.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.748-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.001z"/>
-                    </svg>
-                </a>
-                <a href="#" class="w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                    </svg>
-                </a>
+            <div data-aos="fade-up" data-aos-delay="200">
+                <button onclick="openSurvey()"
+                    class="px-10 py-5 bg-white text-gray-900 rounded-full font-bold text-xl hover:bg-gray-100 transition-colors shadow-2xl shadow-white/10">
+                    Take 2-Minute Survey
+                </button>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-black text-white py-8">
+    <footer class="bg-black py-12 border-t border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="flex items-center mb-4 md:mb-0">
-                    <img src="./assets/logo.jpg" alt="Park Conscious Logo" class="h-8 w-auto mr-3"/>
-                    <span class="text-xl font-bold">Park Conscious</span>
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center">
+                    <div class="w-8 h-8 rounded bg-gradient-to-br from-blue-600 to-teal-600 mr-3"></div>
+                    <span class="text-xl font-bold text-white">Park Conscious</span>
                 </div>
-                <p class="text-gray-400 text-sm">© 2024 Park Conscious. The Future of Parking in Smart Cities.</p>
+
+                <div class="flex gap-8">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Terms</a>
+                    <a href="mailto:parkconscious@gmail.com"
+                        class="text-gray-400 hover:text-white transition-colors">Contact</a>
+                </div>
+
+                <p class="text-gray-500 text-sm">© 2024 Park Conscious.</p>
             </div>
         </div>
     </footer>
 
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            offset: 50,
+            duration: 800,
+            easing: 'ease-out-cubic',
+        });
+    </script>
+
+    <!-- Logic Script (Preserved) -->
     <script>
         function openParkingMap() {
             window.location.href = 'index.html';
@@ -513,30 +634,30 @@
         function selectParking(type) {
             const parkingNames = {
                 'mall': 'Phoenix Mall Parking',
-                'office': 'Business Hub Parking', 
+                'office': 'Business Hub Parking',
                 'metro': 'Metro Station Parking',
                 'residential': 'Residential Complex'
             };
-            
+
             const prices = {
                 'mall': '₹40/hr',
                 'office': '₹60/hr',
-                'metro': '₹30/hr', 
+                'metro': '₹30/hr',
                 'residential': '₹20/hr'
             };
-            
+
             const modal = document.createElement('div');
-            modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4';
+            modal.className = 'fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4';
             modal.innerHTML = `
-                <div class="bg-white rounded-2xl p-8 max-w-md w-full">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Reserve Parking Spot</h3>
+                <div class="bg-gray-900 border border-white/10 rounded-2xl p-8 max-w-md w-full shadow-2xl transform transition-all scale-100">
+                    <h3 class="text-2xl font-bold text-white mb-4">Reserve Spot</h3>
                     <div class="mb-6">
-                        <h4 class="font-semibold text-lg mb-2">${parkingNames[type]}</h4>
-                        <p class="text-gray-600 mb-4">Rate: ${prices[type]}</p>
+                        <h4 class="font-semibold text-teal-400 text-lg mb-2">${parkingNames[type]}</h4>
+                        <p class="text-gray-400 mb-4">Rate: ${prices[type]}</p>
                         <div class="space-y-4">
                             <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Duration</label>
-                                <select class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <label class="block text-sm font-medium text-gray-400 mb-2">Duration</label>
+                                <select class="w-full px-4 py-3 bg-gray-800 border-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 border">
                                     <option>1 hour</option>
                                     <option>2 hours</option>
                                     <option>4 hours</option>
@@ -544,16 +665,16 @@
                                 </select>
                             </div>
                             <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Vehicle Number</label>
-                                <input type="text" placeholder="MH 01 AB 1234" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <label class="block text-sm font-medium text-gray-400 mb-2">Vehicle Number</label>
+                                <input type="text" placeholder="MH 01 AB 1234" class="w-full px-4 py-3 bg-gray-800 border-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 border">
                             </div>
                         </div>
                     </div>
                     <div class="space-y-3">
-                        <button onclick="confirmReservation('${type}')" class="w-full bg-gradient-to-r from-blue-600 to-teal-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all">
+                        <button onclick="confirmReservation('${type}')" class="w-full bg-gradient-to-r from-blue-600 to-teal-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg hover:shadow-teal-500/20 transition-all">
                             Reserve & Pay ${prices[type]}
                         </button>
-                        <button onclick="closeModal()" class="w-full bg-gray-200 text-gray-800 px-6 py-3 rounded-full font-semibold hover:bg-gray-300 transition-colors">
+                        <button onclick="closeModal()" class="w-full bg-gray-800 text-gray-300 px-6 py-3 rounded-full font-semibold hover:bg-gray-700 transition-colors">
                             Cancel
                         </button>
                     </div>
@@ -566,25 +687,25 @@
             const parkingNames = {
                 'mall': 'Phoenix Mall Parking',
                 'office': 'Business Hub Parking',
-                'metro': 'Metro Station Parking', 
+                'metro': 'Metro Station Parking',
                 'residential': 'Residential Complex'
             };
-            
+
             closeModal();
-            
+
             const successModal = document.createElement('div');
-            successModal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4';
+            successModal.className = 'fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4';
             successModal.innerHTML = `
-                <div class="bg-white rounded-2xl p-8 max-w-md w-full text-center">
-                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                <div class="bg-gray-900 border border-white/10 rounded-2xl p-8 max-w-md w-full text-center shadow-2xl">
+                    <div class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                         </svg>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Reservation Confirmed!</h3>
-                    <p class="text-gray-600 mb-6">Your parking spot at ${parkingNames[type]} has been reserved. You'll receive directions and entry instructions via SMS.</p>
-                    <div class="bg-gray-50 rounded-lg p-4 mb-6">
-                        <p class="text-sm text-gray-600">Reservation ID: <span class="font-mono font-semibold">#SP${Math.random().toString(36).substr(2, 6).toUpperCase()}</span></p>
+                    <h3 class="text-2xl font-bold text-white mb-4">Reservation Confirmed!</h3>
+                    <p class="text-gray-400 mb-6">Your parking spot at ${parkingNames[type]} has been reserved. You'll receive directions and entry instructions via SMS.</p>
+                    <div class="bg-gray-800 rounded-lg p-4 mb-6 border border-white/5">
+                        <p class="text-sm text-gray-400">Reservation ID: <span class="font-mono font-semibold text-white">#SP${Math.random().toString(36).substr(2, 6).toUpperCase()}</span></p>
                     </div>
                     <button onclick="closeModal()" class="w-full bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors">
                         Done
@@ -596,16 +717,16 @@
 
         function openSurvey() {
             const modal = document.createElement('div');
-            modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4';
+            modal.className = 'fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4';
             modal.innerHTML = `
-                <div class="bg-white rounded-2xl p-8 max-w-md w-full">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">📋 Take Our Survey</h3>
-                    <p class="text-gray-600 mb-6">Help us understand your parking challenges and needs. This quick survey takes just 2 minutes and will help shape the future of urban parking.</p>
+                <div class="bg-gray-900 border border-white/10 rounded-2xl p-8 max-w-md w-full shadow-2xl">
+                    <h3 class="text-2xl font-bold text-white mb-4">📋 Take Our Survey</h3>
+                    <p class="text-gray-400 mb-6">Help us understand your parking challenges. This quick survey takes just 2 minutes and shapes the future of urban parking.</p>
                     <div class="space-y-4">
                         <button onclick="window.open('https://forms.gle/6mKwyci1BS9J9B24A', '_blank')" class="w-full bg-gradient-to-r from-blue-600 to-teal-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all">
                             Start Survey
                         </button>
-                        <button onclick="closeModal()" class="w-full bg-gray-200 text-gray-800 px-6 py-3 rounded-full font-semibold hover:bg-gray-300 transition-colors">
+                        <button onclick="closeModal()" class="w-full bg-gray-800 text-gray-300 px-6 py-3 rounded-full font-semibold hover:bg-gray-700 transition-colors">
                             Maybe Later
                         </button>
                     </div>
@@ -616,17 +737,17 @@
 
         function joinWaitlist() {
             const modal = document.createElement('div');
-            modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4';
+            modal.className = 'fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4';
             modal.innerHTML = `
-                <div class="bg-white rounded-2xl p-8 max-w-md w-full">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">🚀 Join the Waitlist</h3>
-                    <p class="text-gray-600 mb-6">Be among the first to experience SmartPark when we launch in your city. We'll keep you updated on our progress and early access opportunities.</p>
+                <div class="bg-gray-900 border border-white/10 rounded-2xl p-8 max-w-md w-full shadow-2xl">
+                    <h3 class="text-2xl font-bold text-white mb-4">🚀 Join the Waitlist</h3>
+                    <p class="text-gray-400 mb-6">Be among the first to experience SmartPark. We'll keep you updated on our progress and early access opportunities.</p>
                     <div class="space-y-4">
-                        <input type="email" placeholder="Enter your email" class="w-full px-4 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <input type="email" placeholder="Enter your email" class="w-full px-4 py-3 bg-gray-800 border-gray-700 text-white rounded-full focus:outline-none focus:ring-2 focus:ring-teal-500 border">
                         <button onclick="submitWaitlist()" class="w-full bg-gradient-to-r from-teal-600 to-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all">
                             Join Waitlist
                         </button>
-                        <button onclick="closeModal()" class="w-full bg-gray-200 text-gray-800 px-6 py-3 rounded-full font-semibold hover:bg-gray-300 transition-colors">
+                        <button onclick="closeModal()" class="w-full bg-gray-800 text-gray-300 px-6 py-3 rounded-full font-semibold hover:bg-gray-700 transition-colors">
                             Close
                         </button>
                     </div>
@@ -638,8 +759,16 @@
         function submitWaitlist() {
             const email = document.querySelector('input[type="email"]').value;
             if (email) {
-                alert('Thank you for joining our waitlist! We\'ll be in touch soon.');
-                closeModal();
+                // In a real app, you would send this to a backend
+                // For now, visual feedback
+                const btn = document.querySelector('button[onclick="submitWaitlist()"]');
+                btn.innerHTML = 'Joined! ✓';
+                btn.classList.remove('from-teal-600', 'to-blue-600');
+                btn.classList.add('bg-green-600');
+
+                setTimeout(() => {
+                    closeModal();
+                }, 1500);
             } else {
                 alert('Please enter a valid email address.');
             }
@@ -648,36 +777,32 @@
         function closeModal() {
             const modal = document.querySelector('.fixed.inset-0');
             if (modal) {
-                modal.remove();
+                // Add fade out effect
+                modal.classList.add('opacity-0');
+                modal.style.transition = 'opacity 0.3s ease';
+                setTimeout(() => modal.remove(), 300);
             }
         }
 
         // Close modal when clicking outside
-        document.addEventListener('click', function(e) {
+        document.addEventListener('click', function (e) {
             if (e.target.classList.contains('fixed') && e.target.classList.contains('inset-0')) {
                 closeModal();
             }
         });
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-
-        // Add scroll effect to navigation
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 100) {
-                nav.classList.add('bg-white/95');
-                nav.classList.remove('bg-white/95');
+        // Navbar blur effect on scroll
+        window.addEventListener('scroll', function () {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-lg');
+                nav.style.background = 'rgba(17, 24, 39, 0.95)';
+            } else {
+                nav.classList.remove('shadow-lg');
+                nav.style.background = 'rgba(17, 24, 39, 0.5)';
             }
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98f53f7a06c3594b',t:'MTc2MDU5MzUwNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</body>
+
 </html>
