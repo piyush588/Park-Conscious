@@ -1,13 +1,18 @@
 {
-  "version": 2,
-  "routes": [
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
     {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
+      "source": "/",
+      "destination": "/frontend/landing.html"
     },
     {
-      "src": "/(.*)",
-      "dest": "frontend/$1"
+      "source": "/:path((?!api/).*)",
+      "destination": "/frontend/:path"
     }
-  ]
+  ],
+  "functions": {
+    "api/parking.js": {
+      "includeFiles": "backend/data/**"
+    }
+  }
 }
