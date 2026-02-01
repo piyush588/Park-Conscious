@@ -1,5 +1,4 @@
-// ---- CONFIG ----
-const PARKING_JSON = 'http://localhost:5050/api/parking';
+const PARKING_JSON = './assets/data/parkings.json';
 const DEFAULT_LOCATION = { lat: 28.644800, lng: 77.216721 }; // Delhi center fallback
 // -----------------
 
