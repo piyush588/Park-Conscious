@@ -169,8 +169,24 @@
   <!-- Scripts -->
   <script src="./scripts/main.js"></script>
   <!-- Google Maps API -->
-  <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbGNHEFN2Ta57Gz_5YB4w8ZDbuw6OVgRk&libraries=places&callback=initMap"></script>
+  <!-- Local Config (Ignored by Git) -->
+  <script src="./scripts/config.js"></script>
+
+  <script>
+    function loadGoogleMaps() {
+      const script = document.createElement('script');
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${window.PARK_CONFIG.MAPS_KEY}&libraries=places&callback=initMap`;
+      script.async = true;
+      script.defer = true;
+      document.head.appendChild(script);
+    }
+
+    if (window.PARK_CONFIG && window.PARK_CONFIG.MAPS_KEY) {
+      loadGoogleMaps();
+    } else {
+      console.error('Google Maps API Key not found in config.js');
+    }
+  </script>
 
   <script>
     // Simple mobile sidebar toggle
