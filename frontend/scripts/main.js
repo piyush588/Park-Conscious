@@ -447,11 +447,10 @@ function getUserLocation(requirePrompt) {
         }, err => {
             console.warn('Geolocation error', err);
             if (requirePrompt) alert('Location access needed to find nearby spots.');
-            // Default center fallback
+            // Default fallback
             userPosition = null;
             map.setCenter(DEFAULT_LOCATION);
-            // Try to render with default center logic or just empty? 
-            // Better to show empty state if no user loc.
+            renderNearby(); // Update UI to show "Location not set"
         }, { enableHighAccuracy: true, timeout: 8000 });
     } else {
         if (requirePrompt) alert('Geolocation not supported.');
