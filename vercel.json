@@ -3,7 +3,7 @@
   "rewrites": [
     {
       "source": "/",
-      "destination": "/frontend/landing.html"
+      "destination": "/frontend/index.html"
     },
     {
       "source": "/:path((?!api/).*)",
