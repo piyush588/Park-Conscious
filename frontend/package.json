@@ -2,7 +2,8 @@
   "name": "parkfinder-frontend",
   "version": "1.0.0",
   "scripts": {
-    "start": "npx serve ."
+    "start": "npx serve .",
+    "build": "node scripts/generate-config.js"
   },
   "dependencies": {}
 }

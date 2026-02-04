@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technology | Park Conscious</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .main-gradient {
+            background: radial-gradient(circle at top right, #1e40af 0%, transparent 40%),
+                radial-gradient(circle at bottom left, #0f766e 0%, transparent 40%),
+                radial-gradient(circle at center, #111827 0%, #000000 100%);
+            background-attachment: fixed;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-950 text-gray-200 main-gradient min-h-screen">
+    <nav class="w-full z-50 py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <div class="flex items-center cursor-pointer" onclick="window.location.href='index.html'">
+                <span class="text-xl font-bold text-white tracking-tight">Park <span
+                        class="text-teal-400">Conscious</span></span>
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="about.html"
+                    class="text-gray-300 hover:text-white text-sm font-medium transition-colors">About</a>
+                <a href="technology.html" class="text-white text-sm font-medium transition-colors">Technology</a>
+                <a href="contact.html"
+                    class="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-5 py-2 rounded-full text-sm font-medium transition-all backdrop-blur-sm">Join
+                    Waitlist</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="text-center max-w-3xl mx-auto mb-20">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Built for the <span
+                    class="text-blue-500">Future.</span></h1>
+            <p class="text-xl text-gray-400">Our stack combines reliable mapping with next-gen AI.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="glass p-8 rounded-2xl hover:bg-white/5 transition-colors">
+                <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-6 text-blue-400">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-4">Google Maps Platform</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">We leverage the Places and Maps APIs for accurate
+                    global positioning, routing, and location data, ensuring users find spots with pinpoint precision.
+                </p>
+            </div>
+
+            <div class="glass p-8 rounded-2xl hover:bg-white/5 transition-colors">
+                <div class="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center mb-6 text-teal-400">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-4">Computer Vision (AI)</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Our future smart-entry systems will use ANPR (Automatic
+                    Number Plate Recognition) to allow ticketless entry and exit for registered users.</p>
+            </div>
+
+            <div class="glass p-8 rounded-2xl hover:bg-white/5 transition-colors">
+                <div
+                    class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-6 text-purple-400">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-4">Node.js Backend</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">A robust, scalable real-time event loop architecture
+                    handles thousands of concurrent socket connections for live parking status updates.</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

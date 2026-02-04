@@ -21,6 +21,18 @@ function haversineDistance(lat1, lon1, lat2, lon2) {
     return R * c;
 }
 
+// Persist Bookings
+function saveBooking(booking) {
+    const bookings = loadBookings();
+    bookings.push(booking);
+    localStorage.setItem('parkings_bookings', JSON.stringify(bookings));
+}
+
+function loadBookings() {
+    const s = localStorage.getItem('parkings_bookings');
+    return s ? JSON.parse(s) : [];
+}
+
 // Load parking JSON
 async function loadParkingData() {
     try {
@@ -95,6 +107,38 @@ function initMap() {
     }
 
     getUserLocation(false);
+
+    // Tab Logic
+    const tabNearby = document.getElementById('tab-nearby');
+    const tabBookings = document.getElementById('tab-bookings');
+
+    if (tabNearby && tabBookings) {
+        tabNearby.addEventListener('click', () => {
+            tabNearby.classList.add('border-teal-500', 'text-teal-400');
+            tabNearby.classList.remove('border-transparent', 'text-gray-400');
+            tabBookings.classList.remove('border-teal-500', 'text-teal-400');
+            tabBookings.classList.add('border-transparent', 'text-gray-400');
+
+            // Show stats/filters
+            const filters = document.querySelector('.p-4.border-b .flex.justify-between');
+            if (filters) filters.style.display = 'flex';
+
+            renderNearby();
+        });
+
+        tabBookings.addEventListener('click', () => {
+            tabBookings.classList.add('border-teal-500', 'text-teal-400');
+            tabBookings.classList.remove('border-transparent', 'text-gray-400');
+            tabNearby.classList.remove('border-teal-500', 'text-teal-400');
+            tabNearby.classList.add('border-transparent', 'text-gray-400');
+
+            // Hide stats/filters
+            const filters = document.querySelector('.p-4.border-b .flex.justify-between');
+            if (filters) filters.style.display = 'none';
+
+            renderBookingsList();
+        });
+    }
 }
 
 async function boot() {
@@ -143,10 +187,10 @@ function showInfoWindow(item, marker) {
     // Styled info window content
     const content = `
     <div style="font-family:'Inter', sans-serif; color:#111; padding:4px;">
-        <strong style="font-size:14px; display:block; margin-bottom:4px;">${escapeHtml(item.Location)}</strong>
-        <div style="color:#666; font-size:12px; margin-bottom:8px;">${escapeHtml(item.Type || '')}</div>
-        <div style="font-weight:600; color:#1f40af; margin-bottom:8px;">${item.PricePerHour ? '₹' + item.PricePerHour + '/hr' : 'Contact'}</div>
-        <button id="iw-book-${item.ID}" style="background:#0f766e; color:white; border:none; padding:6px 12px; border-radius:4px; font-size:12px; cursor:pointer; width:100%;">Book Spot</button>
+        <strong style="font-size:16px; display:block; margin-bottom:4px; font-family:'Outfit',sans-serif;">${escapeHtml(item.Location)}</strong>
+        <div style="color:#666; font-size:13px; margin-bottom:8px;">${escapeHtml(item.Type || '')}</div>
+        <div style="font-weight:600; color:#1f40af; margin-bottom:8px; font-size:14px;">${item.PricePerHour ? '₹' + item.PricePerHour + '/hr' : 'Contact'}</div>
+        <button id="iw-book-${item.ID}" style="background:#0f766e; color:white; border:none; padding:6px 14px; border-radius:4px; font-size:13px; font-weight:500; cursor:pointer; width:100%;">Book Spot</button>
     </div>`;
 
     infoWindow.setContent(content);
@@ -229,6 +273,46 @@ function renderNearby() {
     renderMarkers(results);
 }
 
+function renderBookingsList() {
+    const listEl = document.getElementById('results-list');
+    listEl.innerHTML = '';
+    const bookings = loadBookings();
+
+    if (bookings.length === 0) {
+        listEl.innerHTML = '<div class="text-center p-6 text-gray-400 text-sm">No active bookings found.</div>';
+    } else {
+        // Show newest first
+        bookings.reverse().forEach(b => {
+            const el = document.createElement('div');
+            el.className = 'glass-card rounded-xl p-4 relative group mb-3';
+            el.innerHTML = `
+                <div class="flex justify-between items-start mb-2">
+                    <div>
+                        <h4 class="font-bold text-white text-base">${escapeHtml(b.locationName)}</h4>
+                        <div class="text-xs text-teal-400 font-mono mt-1">ID: ${b.id}</div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-2 text-sm my-3">
+                    <div>
+                        <div class="text-xs text-gray-500 uppercase font-bold">Time</div>
+                         <div class="text-gray-300 text-sm">${b.startTime} - ${b.endTime}</div>
+                    </div>
+                     <div>
+                        <div class="text-xs text-gray-500 uppercase font-bold">Amount</div>
+                         <div class="text-gray-300 text-sm">${b.amount}</div>
+                    </div>
+                </div>
+
+                <div class="w-full bg-green-500/10 border border-green-500/20 text-green-400 py-2 rounded-lg text-sm text-center font-medium">
+                    Confirmed
+                </div>
+            `;
+            listEl.appendChild(el);
+        });
+    }
+}
+
 function openBookingModal(item) {
     const modalRoot = document.getElementById('modal-root');
     // Dark modal with Tailwind
@@ -302,6 +386,16 @@ function openBookingModal(item) {
         const bookingId = 'BK' + Date.now().toString().slice(-6);
         const modalRoot = document.getElementById('modal-root');
 
+        // Save to local storage
+        saveBooking({
+            id: bookingId,
+            locationName: item.Location,
+            startTime: document.getElementById('start-time').value,
+            endTime: document.getElementById('end-time').value,
+            amount: document.getElementById('total-fare').innerText,
+            date: new Date().toISOString()
+        });
+
         modalRoot.innerHTML = `
         <div class="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4">
             <div class="bg-gray-900 border border-white/10 rounded-2xl w-full max-w-sm text-center p-8 shadow-2xl relative">
@@ -309,19 +403,24 @@ function openBookingModal(item) {
                     <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                 </div>
                 <h3 class="text-2xl font-bold text-white mb-2">Success!</h3>
-                <p class="text-gray-400 mb-6">Your spot is reserved.</p>
+                <p class="text-gray-400 mb-6 font-medium text-sm">Your spot is reserved.</p>
                 
                 <div class="bg-gray-800 rounded-xl p-4 mb-6 border border-white/5 border-dashed">
                     <div class="text-xs text-gray-500 uppercase font-bold mb-1">Booking ID</div>
                     <div class="text-xl font-mono text-white tracking-widest">${bookingId}</div>
                 </div>
 
-                <button id="close-ok" class="w-full py-3 rounded-xl bg-blue-600 text-white font-bold hover:bg-blue-500 transition-colors">Done</button>
+                <button id="close-ok" class="w-full py-3 rounded-xl bg-blue-600 text-white font-bold hover:bg-blue-500 transition-colors text-base shadow-lg shadow-blue-500/25">Done</button>
             </div>
         </div>
         `;
         document.getElementById('close-ok').addEventListener('click', () => {
             document.getElementById('modal-root').innerHTML = '';
+            // If we are on bookings tab, refresh it?
+            // Or just let user discover it.
+            // We could switch to booking tab automatically:
+            const tabBookings = document.getElementById('tab-bookings');
+            if (tabBookings) tabBookings.click();
         });
     });
 

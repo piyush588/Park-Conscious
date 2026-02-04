@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Waitlist | Park Conscious</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .main-gradient {
+            background: radial-gradient(circle at top right, #1e40af 0%, transparent 40%),
+                radial-gradient(circle at bottom left, #0f766e 0%, transparent 40%),
+                radial-gradient(circle at center, #111827 0%, #000000 100%);
+            background-attachment: fixed;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-950 text-gray-200 main-gradient min-h-screen flex flex-col">
+    <nav class="w-full z-50 py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <div class="flex items-center cursor-pointer" onclick="window.location.href='index.html'">
+                <span class="text-xl font-bold text-white tracking-tight">Park <span
+                        class="text-teal-400">Conscious</span></span>
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="about.html"
+                    class="text-gray-300 hover:text-white text-sm font-medium transition-colors">About</a>
+                <a href="technology.html"
+                    class="text-gray-300 hover:text-white text-sm font-medium transition-colors">Technology</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="flex-1 flex items-center justify-center p-4">
+        <div class="glass w-full max-w-lg p-8 rounded-2xl shadow-2xl">
+            <h1 class="text-3xl font-bold text-white mb-2">Join the Revolution</h1>
+            <p class="text-gray-400 mb-8">We are currently in pilot phase. Sign up to get invited.</p>
+
+            <form class="space-y-6"
+                onsubmit="event.preventDefault(); alert('Thanks for joining!'); window.location.href='index.html'">
+                <div>
+                    <label class="block text-sm font-medium text-gray-400 mb-2">Full Name</label>
+                    <input type="text"
+                        class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-teal-500 transition-colors">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-400 mb-2">Email Address</label>
+                    <input type="email"
+                        class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-teal-500 transition-colors">
+                </div>
+
+                <div class="flex gap-4">
+                    <label
+                        class="flex items-center p-4 border border-white/10 rounded-xl cursor-pointer hover:bg-white/5 transition-colors flex-1">
+                        <input type="radio" name="role"
+                            class="text-teal-500 focus:ring-teal-500 h-4 w-4 bg-gray-800 border-gray-600">
+                        <span class="ml-3 text-sm font-medium text-white">I'm a User</span>
+                    </label>
+                    <label
+                        class="flex items-center p-4 border border-white/10 rounded-xl cursor-pointer hover:bg-white/5 transition-colors flex-1">
+                        <input type="radio" name="role"
+                            class="text-teal-500 focus:ring-teal-500 h-4 w-4 bg-gray-800 border-gray-600">
+                        <span class="ml-3 text-sm font-medium text-white">I'm a Parking Owner</span>
+                    </label>
+                </div>
+
+                <button type="submit"
+                    class="w-full bg-gradient-to-r from-blue-600 to-teal-500 text-white font-bold py-4 rounded-xl hover:shadow-lg hover:shadow-blue-500/20 transition-all transform hover:-translate-y-0.5">
+                    Join Waitlist
+                </button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
