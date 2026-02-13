@@ -85,5 +85,8 @@ app.get("/api/contact", async (req, res) => {
 // Health check
 app.get("/api", (req, res) => res.json({ status: "✅ API running!" }));
 
-// Export for Vercel serverless
-export default app;
+// Vercel serverless handler
+export default async (req, res) => {
+    // Handle the request with Express
+    return app(req, res);
+};
