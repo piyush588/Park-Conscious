@@ -70,16 +70,20 @@ export default async function handler(req, res) {
         await connectDB();
     }
 
-    const { method, url } = req;
+    const { method } = req;
+    // Extract path - handle both /api/waitlist and /waitlist
+    const path = req.url || req.query?.path || '';
+
+    console.log('Request:', method, path, req.url);
 
     try {
-        // Health check
-        if (url === '/api' && method === 'GET') {
+        // Health check - /api or root
+        if ((path === '/api' || path === '/' || path === '') && method === 'GET') {
             return res.status(200).json({ status: "✅ API running!", connected: isConnected });
         }
 
         // Waitlist POST
-        if (url === '/api/waitlist' && method === 'POST') {
+        if (path.includes('waitlist') && method === 'POST') {
             const { email } = req.body;
             if (!email) {
                 return res.status(400).json({ message: "Email is required" });
@@ -98,13 +102,13 @@ export default async function handler(req, res) {
         }
 
         // Waitlist GET
-        if (url === '/api/waitlist' && method === 'GET') {
+        if (path.includes('waitlist') && method === 'GET') {
             const list = await Waitlist.find().sort({ createdAt: -1 });
             return res.status(200).json(list);
         }
 
         // Contact POST
-        if (url === '/api/contact' && method === 'POST') {
+        if (path.includes('contact') && method === 'POST') {
             const { name, email, role, message } = req.body;
 
             if (!email || !name) {
@@ -125,12 +129,16 @@ export default async function handler(req, res) {
         }
 
         // Contact GET
-        if (url === '/api/contact' && method === 'GET') {
+        if (path.includes('contact') && method === 'GET') {
             const messages = await Contact.find().sort({ createdAt: -1 });
             return res.status(200).json(messages);
         }
 
-        return res.status(404).json({ message: "Not found" });
+        return res.status(404).json({
+            message: "Not found",
+            path: path,
+            method: method
+        });
 
     } catch (error) {
         console.error('API Error:', error);
