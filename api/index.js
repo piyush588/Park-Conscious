@@ -70,20 +70,29 @@ export default async function handler(req, res) {
         await connectDB();
     }
 
-    const { method } = req;
-    // Extract path - handle both /api/waitlist and /waitlist
-    const path = req.url || req.query?.path || '';
+    const { method, url, query } = req;
 
-    console.log('Request:', method, path, req.url);
+    // Log for debugging
+    console.log('Request:', { method, url, query });
 
     try {
-        // Health check - /api or root
-        if ((path === '/api' || path === '/' || path === '') && method === 'GET') {
-            return res.status(200).json({ status: "✅ API running!", connected: isConnected });
+        // Parse the endpoint - handle various URL formats
+        const isWaitlist = url?.includes('waitlist') || query?.endpoint === 'waitlist';
+        const isContact = url?.includes('contact') || query?.endpoint === 'contact';
+        const isRoot = !isWaitlist && !isContact;
+
+        // Health check
+        if (isRoot && method === 'GET') {
+            return res.status(200).json({
+                status: "✅ API running!",
+                connected: isConnected,
+                url: url,
+                query: query
+            });
         }
 
         // Waitlist POST
-        if (path.includes('waitlist') && method === 'POST') {
+        if (isWaitlist && method === 'POST') {
             const { email } = req.body;
             if (!email) {
                 return res.status(400).json({ message: "Email is required" });
@@ -102,13 +111,13 @@ export default async function handler(req, res) {
         }
 
         // Waitlist GET
-        if (path.includes('waitlist') && method === 'GET') {
+        if (isWaitlist && method === 'GET') {
             const list = await Waitlist.find().sort({ createdAt: -1 });
             return res.status(200).json(list);
         }
 
         // Contact POST
-        if (path.includes('contact') && method === 'POST') {
+        if (isContact && method === 'POST') {
             const { name, email, role, message } = req.body;
 
             if (!email || !name) {
@@ -129,15 +138,20 @@ export default async function handler(req, res) {
         }
 
         // Contact GET
-        if (path.includes('contact') && method === 'GET') {
+        if (isContact && method === 'GET') {
             const messages = await Contact.find().sort({ createdAt: -1 });
             return res.status(200).json(messages);
         }
 
         return res.status(404).json({
-            message: "Not found",
-            path: path,
-            method: method
+            message: "Endpoint not found",
+            debug: {
+                url: url,
+                method: method,
+                query: query,
+                isWaitlist: isWaitlist,
+                isContact: isContact
+            }
         });
 
     } catch (error) {
