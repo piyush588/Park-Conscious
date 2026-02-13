@@ -1,18 +1,35 @@
 import mongoose from 'mongoose';
 
-// MongoDB connection
-let isConnected = false;
+// MongoDB connection with singleton pattern
+let cached = global.mongoose;
+
+if (!cached) {
+    cached = global.mongoose = { conn: null, promise: null };
+}
 
 async function connectDB() {
-    if (isConnected) return;
+    if (cached.conn) {
+        return cached.conn;
+    }
+
+    if (!cached.promise) {
+        const opts = {
+            bufferCommands: false,
+        };
+
+        cached.promise = mongoose.connect(process.env.MONGODB_URI, opts).then((mongoose) => {
+            return mongoose;
+        });
+    }
 
     try {
-        const conn = await mongoose.connect(process.env.MONGODB_URI);
-        isConnected = true;
-        console.log(`MongoDB Connected: ${conn.connection.host}`);
-    } catch (error) {
-        console.error(`MongoDB Error: ${error.message}`);
+        cached.conn = await cached.promise;
+    } catch (e) {
+        cached.promise = null;
+        throw e;
     }
+
+    return cached.conn;
 }
 
 // Waitlist Model
@@ -40,125 +57,98 @@ const contactSchema = new mongoose.Schema({
         required: true,
         match: [/\S+@\S+\.\S+/, 'is invalid'],
     },
-    role: {
-        type: String,
-        required: false,
-    },
-    message: {
-        type: String,
-        required: false,
-    },
+    role: String,
+    message: String,
 }, {
     timestamps: true,
 });
 
 const Contact = mongoose.models.Contact || mongoose.model('Contact', contactSchema);
 
-// Serverless Function Handler
+// Main handler
 export default async function handler(req, res) {
-    // Enable CORS
+    // CORS
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
     res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+    res.setHeader('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
     if (req.method === 'OPTIONS') {
-        return res.status(200).end();
+        res.status(200).end();
+        return;
     }
-
-    // Connect to database
-    if (process.env.MONGODB_URI) {
-        await connectDB();
-    }
-
-    const { method, url, query } = req;
-
-    // Log for debugging
-    console.log('Request:', { method, url, query });
 
     try {
-        // Parse the endpoint - handle various URL formats
-        const isWaitlist = url?.includes('waitlist') || query?.endpoint === 'waitlist';
-        const isContact = url?.includes('contact') || query?.endpoint === 'contact';
-        const isRoot = !isWaitlist && !isContact;
+        // Connect to DB
+        await connectDB();
 
-        // Health check
-        if (isRoot && method === 'GET') {
+        const { method, url } = req;
+
+        // Root/health check
+        if (method === 'GET' && (!url || url === '/' || url === '/api')) {
             return res.status(200).json({
                 status: "✅ API running!",
-                connected: isConnected,
-                url: url,
-                query: query
+                connected: mongoose.connection.readyState === 1
             });
         }
 
-        // Waitlist POST
-        if (isWaitlist && method === 'POST') {
-            const { email } = req.body;
-            if (!email) {
-                return res.status(400).json({ message: "Email is required" });
+        // Waitlist endpoints
+        if (url && url.includes('waitlist')) {
+            if (method === 'POST') {
+                const { email } = req.body;
+
+                if (!email) {
+                    return res.status(400).json({ message: "Email is required" });
+                }
+
+                const existing = await Waitlist.findOne({ email });
+                if (existing) {
+                    return res.status(409).json({ message: "Email already on waitlist" });
+                }
+
+                const entry = await Waitlist.create({ email });
+                return res.status(201).json({
+                    message: "Successfully joined waitlist",
+                    data: entry
+                });
             }
 
-            const existing = await Waitlist.findOne({ email });
-            if (existing) {
-                return res.status(409).json({ message: "Email already on waitlist" });
+            if (method === 'GET') {
+                const list = await Waitlist.find().sort({ createdAt: -1 }).limit(100);
+                return res.status(200).json(list);
+            }
+        }
+
+        // Contact endpoints
+        if (url && url.includes('contact')) {
+            if (method === 'POST') {
+                const { name, email, role, message } = req.body;
+
+                if (!email || !name) {
+                    return res.status(400).json({ message: "Name and Email are required" });
+                }
+
+                const entry = await Contact.create({ name, email, role, message });
+                return res.status(201).json({
+                    message: "Message sent successfully",
+                    data: entry
+                });
             }
 
-            const waitlistEntry = await Waitlist.create({ email });
-            return res.status(201).json({
-                message: "Successfully joined waitlist",
-                data: waitlistEntry
-            });
-        }
-
-        // Waitlist GET
-        if (isWaitlist && method === 'GET') {
-            const list = await Waitlist.find().sort({ createdAt: -1 });
-            return res.status(200).json(list);
-        }
-
-        // Contact POST
-        if (isContact && method === 'POST') {
-            const { name, email, role, message } = req.body;
-
-            if (!email || !name) {
-                return res.status(400).json({ message: "Name and Email are required" });
+            if (method === 'GET') {
+                const messages = await Contact.find().sort({ createdAt: -1 }).limit(100);
+                return res.status(200).json(messages);
             }
-
-            const contactEntry = await Contact.create({
-                name,
-                email,
-                role,
-                message
-            });
-
-            return res.status(201).json({
-                message: "Message sent successfully",
-                data: contactEntry
-            });
         }
 
-        // Contact GET
-        if (isContact && method === 'GET') {
-            const messages = await Contact.find().sort({ createdAt: -1 });
-            return res.status(200).json(messages);
-        }
-
-        return res.status(404).json({
-            message: "Endpoint not found",
-            debug: {
-                url: url,
-                method: method,
-                query: query,
-                isWaitlist: isWaitlist,
-                isContact: isContact
-            }
-        });
+        return res.status(404).json({ message: "Not found", url, method });
 
     } catch (error) {
         console.error('API Error:', error);
         return res.status(500).json({
             message: "Server Error",
-            error: error.message
+            error: error.message,
+            stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
         });
     }
 }
