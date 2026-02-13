@@ -13,11 +13,24 @@ async function connectDB() {
     }
 
     if (!cached.promise) {
+        const uri = process.env.MONGODB_URI;
+        if (!uri) {
+            throw new Error('MONGODB_URI is not defined in environment variables');
+        }
+
+        // Clean the URI (sometimes hidden characters or whitespace can cause issues)
+        const cleanUri = uri.trim();
+
         const opts = {
             bufferCommands: false,
+            connectTimeoutMS: 10000, // 10 seconds timeout
+            socketTimeoutMS: 45000,
+            family: 4 // Force IPv4 to avoid some Vercel/Atlas networking quirks
         };
 
-        cached.promise = mongoose.connect(process.env.MONGODB_URI, opts).then((mongoose) => {
+        console.log('Connecting to MongoDB...');
+        cached.promise = mongoose.connect(cleanUri, opts).then((mongoose) => {
+            console.log('MongoDB connection established');
             return mongoose;
         });
     }
@@ -26,6 +39,7 @@ async function connectDB() {
         cached.conn = await cached.promise;
     } catch (e) {
         cached.promise = null;
+        console.error('MongoDB Initial Connection Error:', e.message);
         throw e;
     }
 
@@ -88,7 +102,8 @@ export default async function handler(req, res) {
         if (method === 'GET' && (!url || url === '/' || url === '/api')) {
             return res.status(200).json({
                 status: "✅ API running!",
-                connected: mongoose.connection.readyState === 1
+                connected: mongoose.connection.readyState === 1,
+                dbName: mongoose.connection.name
             });
         }
 
@@ -148,7 +163,7 @@ export default async function handler(req, res) {
         return res.status(500).json({
             message: "Server Error",
             error: error.message,
-            stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
+            tip: "If this is a connection error, verify MONGODB_URI in Vercel and check Atlas IP whitelist (0.0.0.0/0)."
         });
     }
 }
