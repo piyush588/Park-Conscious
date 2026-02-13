@@ -233,6 +233,10 @@
               class="px-8 py-4 bg-gradient-to-r from-blue-600 to-teal-500 rounded-full text-white font-semibold text-lg shadow-xl shadow-blue-500/25 transition-all hover:shadow-blue-500/40 hover:-translate-y-1 flex items-center justify-center gap-2">
               For Parking Owners
             </button>
+            <button onclick="window.location.href='verification/index.html'"
+              class="px-8 py-4 bg-gray-800 border border-teal-500/30 rounded-full text-teal-400 font-semibold text-lg shadow-lg hover:bg-gray-700 hover:text-white transition-all hover:-translate-y-1 flex items-center justify-center gap-2">
+              Scanner Demo
+            </button>
           </div>
 
           <div class="mt-12 flex items-center gap-8 text-sm text-gray-400 font-medium">
@@ -357,20 +361,20 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
         <div class="text-center" data-aos="fade-up" data-aos-delay="0">
-          <div class="text-4xl font-bold text-white mb-1">70%</div>
-          <div class="text-sm text-gray-400 uppercase tracking-wide">Time Saved</div>
+          <div class="text-3xl font-bold text-white mb-1">Targeting</div>
+          <div class="text-xs text-gray-400 uppercase tracking-wide">Smart Cities</div>
         </div>
         <div class="text-center" data-aos="fade-up" data-aos-delay="100">
-          <div class="text-4xl font-bold text-white mb-1">50%</div>
-          <div class="text-sm text-gray-400 uppercase tracking-wide">Less Traffic</div>
+          <div class="text-3xl font-bold text-white mb-1">Upcoming</div>
+          <div class="text-xs text-gray-400 uppercase tracking-wide">Beta Access</div>
         </div>
         <div class="text-center" data-aos="fade-up" data-aos-delay="200">
-          <div class="text-4xl font-bold text-white mb-1">40%</div>
-          <div class="text-sm text-gray-400 uppercase tracking-wide">Revenue Boost</div>
+          <div class="text-3xl font-bold text-white mb-1">AI-Driven</div>
+          <div class="text-xs text-gray-400 uppercase tracking-wide">Future of Parking</div>
         </div>
         <div class="text-center" data-aos="fade-up" data-aos-delay="300">
-          <div class="text-4xl font-bold text-white mb-1">100+</div>
-          <div class="text-sm text-gray-400 uppercase tracking-wide">Smart Cities</div>
+          <div class="text-3xl font-bold text-white mb-1">Join Us</div>
+          <div class="text-xs text-gray-400 uppercase tracking-wide">Early Adopters</div>
         </div>
       </div>
     </div>
@@ -726,19 +730,54 @@
       document.body.appendChild(modal);
     }
 
-    function submitWaitlist() {
-      const email = document.querySelector('input[type="email"]').value;
-      if (email) {
-        // In a real app, you would send this to a backend
-        // For now, visual feedback
-        const btn = document.querySelector('button[onclick="submitWaitlist()"]');
-        btn.innerHTML = 'Joined! ✓';
-        btn.classList.remove('from-teal-600', 'to-blue-600');
-        btn.classList.add('bg-green-600');
+    async function submitWaitlist() {
+      const emailInput = document.querySelector('input[type="email"]');
+      const email = emailInput.value;
+      const btn = document.querySelector('button[onclick="submitWaitlist()"]');
+      const originalText = btn.innerText;
 
-        setTimeout(() => {
-          closeModal();
-        }, 1500);
+      if (email) {
+        btn.innerText = 'Joining...';
+        btn.disabled = true;
+
+        // Dynamic API URL for development and production
+        const API_URL = window.location.hostname === 'localhost'
+          ? 'http://localhost:5050'
+          : '';
+
+        try {
+          const response = await fetch(`${API_URL}/api/waitlist`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email })
+          });
+
+          if (response.ok) {
+            btn.innerHTML = 'Joined! ✓';
+            btn.classList.remove('from-teal-600', 'to-blue-600');
+            btn.classList.add('bg-green-600');
+
+            setTimeout(() => {
+              closeModal();
+              // Reset button for next time
+              btn.innerText = originalText;
+              btn.disabled = false;
+              btn.classList.add('from-teal-600', 'to-blue-600');
+              btn.classList.remove('bg-green-600');
+              emailInput.value = '';
+            }, 1500);
+          } else {
+            const data = await response.json();
+            alert(data.message || 'Error joining waitlist');
+            btn.innerText = originalText;
+            btn.disabled = false;
+          }
+        } catch (error) {
+          console.error('Error:', error);
+          alert('Failed to connect to server');
+          btn.innerText = originalText;
+          btn.disabled = false;
+        }
       } else {
         alert('Please enter a valid email address.');
       }

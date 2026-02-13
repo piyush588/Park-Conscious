@@ -55,39 +55,86 @@
             <h1 class="text-3xl font-bold text-white mb-2">Join the Revolution</h1>
             <p class="text-gray-400 mb-8">We are currently in pilot phase. Sign up to get invited.</p>
 
-            <form class="space-y-6"
-                onsubmit="event.preventDefault(); alert('Thanks for joining!'); window.location.href='index.html'">
+            <form class="space-y-6" id="contactForm">
                 <div>
                     <label class="block text-sm font-medium text-gray-400 mb-2">Full Name</label>
-                    <input type="text"
+                    <input type="text" name="name" required
                         class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-teal-500 transition-colors">
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-400 mb-2">Email Address</label>
-                    <input type="email"
+                    <input type="email" name="email" required
                         class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-teal-500 transition-colors">
                 </div>
 
                 <div class="flex gap-4">
                     <label
                         class="flex items-center p-4 border border-white/10 rounded-xl cursor-pointer hover:bg-white/5 transition-colors flex-1">
-                        <input type="radio" name="role"
+                        <input type="radio" name="role" value="User" checked
                             class="text-teal-500 focus:ring-teal-500 h-4 w-4 bg-gray-800 border-gray-600">
                         <span class="ml-3 text-sm font-medium text-white">I'm a User</span>
                     </label>
                     <label
                         class="flex items-center p-4 border border-white/10 rounded-xl cursor-pointer hover:bg-white/5 transition-colors flex-1">
-                        <input type="radio" name="role"
+                        <input type="radio" name="role" value="Parking Owner"
                             class="text-teal-500 focus:ring-teal-500 h-4 w-4 bg-gray-800 border-gray-600">
                         <span class="ml-3 text-sm font-medium text-white">I'm a Parking Owner</span>
                     </label>
                 </div>
 
-                <button type="submit"
+                <button type="submit" id="submitBtn"
                     class="w-full bg-gradient-to-r from-blue-600 to-teal-500 text-white font-bold py-4 rounded-xl hover:shadow-lg hover:shadow-blue-500/20 transition-all transform hover:-translate-y-0.5">
                     Join Waitlist
                 </button>
             </form>
+
+            <script>
+                document.getElementById('contactForm').addEventListener('submit', async (e) => {
+                    e.preventDefault();
+
+                    const btn = document.getElementById('submitBtn');
+                    const originalText = btn.innerText;
+                    btn.innerText = 'Sending...';
+                    btn.disabled = true;
+
+                    const formData = new FormData(e.target);
+                    const data = {
+                        name: formData.get('name'),
+                        email: formData.get('email'),
+                        role: formData.get('role')
+                    };
+
+                    try {
+                        // Dynamic API URL for development and production
+                        const API_URL = window.location.hostname === 'localhost'
+                            ? 'http://localhost:5050'
+                            : '';
+
+                        const response = await fetch(`${API_URL}/api/contact`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(data)
+                        });
+
+                        if (response.ok) {
+                            alert('Thanks for joining! We will be in touch.');
+                            window.location.href = 'index.html';
+                        } else {
+                            const err = await response.json();
+                            alert('Error: ' + (err.message || 'Something went wrong'));
+                            btn.innerText = originalText;
+                            btn.disabled = false;
+                        }
+                    } catch (error) {
+                        console.error('Error:', error);
+                        alert('Failed to connect to server.');
+                        btn.innerText = originalText;
+                        btn.disabled = false;
+                    }
+                });
+            </script>
         </div>
     </div>
 </body>

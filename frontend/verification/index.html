@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ParkConscious Scanner</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: 'hsl(var(--background))',
+            foreground: 'hsl(var(--foreground))',
+            primary: 'hsl(var(--primary))',
+            accent: 'hsl(var(--accent))',
+            card: 'hsl(var(--card))',
+            secondary: 'hsl(var(--secondary))',
+            muted: 'hsl(var(--muted))',
+            destructive: 'hsl(var(--destructive))',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            headline: ['Outfit', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="style.css">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Tesseract -->
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+</head>
+
+<body class="bg-background text-foreground h-screen flex flex-col overflow-hidden">
+
+  <!-- Back Button -->
+  <a href="../index.html"
+    class="absolute top-4 left-4 z-50 bg-secondary/80 p-2 rounded-full hover:bg-secondary transition-colors border border-white/10">
+    <i data-lucide="arrow-left" class="w-5 h-5 text-foreground"></i>
+  </a>
+
+  <!-- Header -->
+  <header
+    class="p-4 flex items-center justify-center border-b border-white/10 bg-background/80 backdrop-blur-md z-20 relative">
+    <div class="flex items-center gap-3">
+      <div
+        class="relative w-10 h-10 flex items-center justify-center bg-gradient-to-br from-blue-600 to-teal-600 rounded-lg shadow-lg overflow-hidden">
+        <img src="../assets/logo.jpg" alt="Logo" class="w-full h-full object-cover opacity-90">
+      </div>
+      <h1 class="text-xl font-headline font-bold tracking-tight text-white">
+        Park <span class="text-primary">Conscious</span>
+      </h1>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-1 relative overflow-hidden">
+
+    <!-- Scan Tab -->
+    <div id="tab-scan" class="h-full w-full relative">
+      <div class="relative w-full h-full bg-black flex flex-col items-center justify-center overflow-hidden">
+        <video id="camera-video" autoplay playsinline muted class="absolute inset-0 w-full h-full object-cover"></video>
+        <canvas id="scan-canvas" class="hidden"></canvas>
+
+        <!-- Overlay -->
+        <div class="absolute inset-0 pointer-events-none z-10 p-4 flex flex-col items-center justify-center">
+          <div id="scan-line" class="scan-line hidden"></div>
+          <div id="loading-camera"
+            class="flex flex-col items-center gap-4 text-white/50 bg-black/40 p-8 rounded-3xl backdrop-blur-xl">
+            <i data-lucide="loader-2" class="animate-spin h-12 w-12 text-accent"></i>
+            <span class="text-sm">Accessing Camera...</span>
+          </div>
+        </div>
+
+        <!-- Result Card -->
+        <div id="result-card"
+          class="hidden absolute top-24 left-1/2 -translate-x-1/2 w-[90%] max-w-xs z-40 float-animation">
+          <div class="glass-panel p-5 shadow-2xl rounded-xl border border-accent/40 plate-highlight bg-card">
+            <div class="flex flex-col items-center gap-4">
+              <div
+                class="text-[10px] uppercase tracking-[0.2em] px-3 py-1 font-bold text-accent border border-accent/50 rounded-full">
+                Detected</div>
+              <div id="detected-text"
+                class="text-4xl font-mono font-bold tracking-tighter text-accent bg-black/60 px-6 py-3 rounded-xl border border-white/10 w-full text-center">
+                MH12
+              </div>
+              <div class="flex w-full gap-3 mt-1">
+                <button onclick="resetScan()"
+                  class="flex-1 bg-secondary/30 border border-white/10 hover:bg-secondary/50 text-foreground py-2 rounded-lg flex items-center justify-center gap-2">
+                  <i data-lucide="refresh-ccw" class="h-4 w-4"></i> Redo
+                </button>
+                <button onclick="saveScan()"
+                  class="flex-1 bg-accent text-background font-bold py-2 rounded-lg flex items-center justify-center gap-2 hover:opacity-90">
+                  <i data-lucide="save" class="h-4 w-4"></i> Save
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Capture Button -->
+        <div class="absolute bottom-32 left-0 right-0 flex justify-center items-center z-20">
+          <button id="scan-btn" onclick="triggerScan()"
+            class="group relative flex items-center justify-center w-28 h-28 rounded-full transition-all active:scale-95">
+            <div
+              class="absolute inset-0 rounded-full border-2 border-accent/20 scale-110 group-hover:scale-125 transition-transform">
+            </div>
+            <div class="absolute inset-2 rounded-full border border-accent/40 animate-pulse"></div>
+            <div
+              class="w-20 h-20 rounded-full bg-accent flex items-center justify-center text-background shadow-[0_0_40px_rgba(144,219,244,0.5)] group-hover:shadow-[0_0_60px_rgba(144,219,244,0.7)] transition-all">
+              <i id="scan-icon" data-lucide="scan" class="h-10 w-10 group-hover:rotate-90 transition-transform"></i>
+              <i id="processing-icon" data-lucide="loader-2" class="h-10 w-10 animate-spin hidden"></i>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- History Tab -->
+    <div id="tab-history" class="h-full w-full hidden overflow-y-auto bg-background p-4 pb-32">
+      <div class="max-w-2xl mx-auto space-y-6">
+
+        <div class="flex items-center justify-between sticky top-0 bg-background/95 backdrop-blur-sm z-10 py-4 px-2">
+          <div>
+            <h2 class="text-2xl font-bold text-foreground">Scan Log</h2>
+            <p id="history-count" class="text-muted-foreground text-sm">0 records captured</p>
+          </div>
+          <div>
+            <button onclick="clearHistory()"
+              class="text-destructive hover:bg-destructive/10 px-3 py-1.5 rounded-lg text-sm flex items-center gap-2 transition-colors">
+              <i data-lucide="trash-2" class="h-4 w-4"></i> Clear
+            </button>
+          </div>
+        </div>
+
+        <div id="history-list" class="grid gap-4 px-2">
+          <!-- History items will be injected here -->
+          <div id="empty-history" class="flex flex-col items-center justify-center py-24 text-center space-y-4">
+            <div class="bg-secondary/50 p-8 rounded-full border border-white/5 shadow-inner">
+              <i data-lucide="search" class="h-14 w-14 text-muted-foreground"></i>
+            </div>
+            <div class="space-y-2">
+              <h3 class="text-xl font-semibold">No scans yet</h3>
+              <p class="text-muted-foreground max-w-xs mx-auto">Start by pointing your camera at a vehicle in the Scan
+                tab.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Tabs -->
+    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-30">
+      <div class="bg-secondary/90 backdrop-blur-xl border border-white/5 h-14 p-1 rounded-full shadow-2xl flex gap-1">
+        <button onclick="switchTab('scan')" id="btn-tab-scan"
+          class="rounded-full px-8 flex items-center gap-2 transition-all bg-primary text-accent">
+          <i data-lucide="camera" class="h-4 w-4"></i>
+          <span class="font-semibold text-sm">Scan</span>
+        </button>
+        <button onclick="switchTab('history')" id="btn-tab-history"
+          class="rounded-full px-8 flex items-center gap-2 transition-all text-muted-foreground hover:text-foreground">
+          <i data-lucide="history" class="h-4 w-4"></i>
+          <span class="font-semibold text-sm">Log</span>
+        </button>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Toast Container -->
+  <div id="toast-container"
+    class="absolute top-4 left-1/2 -translate-x-1/2 z-50 flex flex-col gap-2 w-full max-w-xs pointer-events-none"></div>
+
+  <script src="script.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+
+</html>

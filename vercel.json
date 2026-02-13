@@ -1,9 +1,14 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "cd frontend && npm run build",
   "rewrites": [
     {
       "source": "/",
       "destination": "/frontend/index.html"
+    },
+    {
+      "source": "/api/:path*",
+      "destination": "/backend/server.js"
     },
     {
       "source": "/:path((?!api/).*)",
@@ -11,8 +16,9 @@
     }
   ],
   "functions": {
-    "api/parking.js": {
-      "includeFiles": "backend/data/**"
+    "backend/server.js": {
+      "runtime": "nodejs18.x",
+      "includeFiles": "backend/**"
     }
   }
 }

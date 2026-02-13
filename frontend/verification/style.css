@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  /* Main Theme: Deep Urban Tech */
+  --background: 222 47% 11%;
+  /* Gray 950 #030712 - slightly adjusted for HSL */
+  --foreground: 210 40% 98%;
+  /* Gray 50 */
+  --card: 217 33% 17%;
+  /* Gray 900 #111827 */
+  --card-foreground: 210 40% 98%;
+  --popover: 222 47% 11%;
+  --popover-foreground: 210 40% 98%;
+
+  --primary: 180 76% 50%;
+  /* Teal 400 #2dd4bf - using as primary accent */
+  --primary-foreground: 222 47% 11%;
+
+  --secondary: 217 33% 17%;
+  /* Gray 900 */
+  --secondary-foreground: 210 40% 98%;
+
+  --muted: 217 33% 17%;
+  --muted-foreground: 215 20% 65%;
+  /* Gray 400 */
+
+  --accent: 221 83% 53%;
+  /* Blue 600 #2563eb - using as secondary accent/gradient */
+  --accent-foreground: 210 40% 98%;
+
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 217 33% 17%;
+  --input: 217 33% 17%;
+  --ring: 180 76% 50%;
+  --radius: 1rem;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  /* Main Gradient from website */
+  background: radial-gradient(circle at top right, #1e40af 0%, transparent 40%),
+    radial-gradient(circle at bottom left, #0f766e 0%, transparent 40%),
+    radial-gradient(circle at center, #111827 0%, #000000 100%);
+  background-attachment: fixed;
+  color: hsl(var(--foreground));
+  margin: 0;
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-headline {
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Glass Panel */
+.glass-panel {
+  background-color: hsl(var(--card) / 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Animations */
+.scan-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: hsl(var(--accent));
+  box-shadow: 0 0 20px rgba(144, 219, 244, 1);
+  animation: scan-move 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  z-index: 10;
+}
+
+@keyframes scan-move {
+  0% {
+    top: 15%;
+    opacity: 0.2;
+  }
+
+  50% {
+    top: 85%;
+    opacity: 1;
+  }
+
+  100% {
+    top: 15%;
+    opacity: 0.2;
+  }
+}
+
+.plate-highlight {
+  animation: pulse-border 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-border {
+
+  0%,
+  100% {
+    border-color: hsla(var(--accent), 0.2);
+    box-shadow: 0 0 0px rgba(var(--accent), 0);
+  }
+
+  50% {
+    border-color: hsla(var(--accent), 0.8);
+    box-shadow: 0 0 20px hsla(var(--accent), 0.2);
+  }
+}
+
+.float-animation {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px) translateX(-50%);
+  }
+
+  50% {
+    transform: translateY(-10px) translateX(-50%);
+  }
+}
+
+/* Utility for dynamic text colors since Tailwind CDN doesn't read CSS vars automatically for everything */
+.text-accent {
+  color: hsl(var(--accent));
+}
+
+.bg-accent {
+  background-color: hsl(var(--accent));
+}
+
+.bg-primary {
+  background-color: hsl(var(--primary));
+}
+
+.text-primary-foreground {
+  color: hsl(var(--primary-foreground));
+}
+
+.bg-background {
+  background-color: hsl(var(--background));
+}
+
+.border-accent {
+  border-color: hsl(var(--accent));
+}
+
+/* Custom Scrollbar for history */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 3px;
+}
