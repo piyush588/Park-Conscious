@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 33% 3%;
+    --foreground: 195 20% 98%;
+    --card: 210 33% 5%;
+    --card-foreground: 195 20% 98%;
+    --popover: 210 33% 3%;
+    --popover-foreground: 195 20% 98%;
+    --primary: 200 44% 39%;
+    --primary-foreground: 195 83% 98%;
+    --secondary: 200 30% 12%;
+    --secondary-foreground: 195 83% 76%;
+    --muted: 210 30% 10%;
+    --muted-foreground: 195 20% 65%;
+    --accent: 195 83% 76%;
+    --accent-foreground: 210 33% 3%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 200 30% 15%;
+    --input: 200 30% 15%;
+    --ring: 195 83% 76%;
+    --radius: 1rem;
+    --chart-1: 195 83% 76%;
+    --chart-2: 200 44% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+.glass-panel {
+  @apply bg-card/60 backdrop-blur-md border border-white/10;
+}
+
+.scanner-overlay {
+  background: radial-gradient(circle, transparent 30%, rgba(5, 8, 10, 0.6) 100%);
+}
+
+.scan-line {
+  @apply absolute left-0 right-0 h-[2px] bg-accent shadow-[0_0_20px_rgba(144,219,244,1)];
+  animation: scan-move 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes scan-move {
+  0% { top: 15%; opacity: 0.2; }
+  50% { top: 85%; opacity: 1; }
+  100% { top: 15%; opacity: 0.2; }
+}
+
+.plate-highlight {
+  animation: pulse-border 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-border {
+  0%, 100% { border-color: hsla(var(--accent), 0.2); box-shadow: 0 0 0px rgba(var(--accent), 0); }
+  50% { border-color: hsla(var(--accent), 0.8); box-shadow: 0 0 20px hsla(var(--accent), 0.2); }
+}
+
+.float-animation {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) translateX(-50%); }
+  50% { transform: translateY(-10px) translateX(-50%); }
+}
+
+.stagger-1 { animation-delay: 100ms; }
+.stagger-2 { animation-delay: 200ms; }
+.stagger-3 { animation-delay: 300ms; }
