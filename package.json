@@ -2,9 +2,11 @@
   "name": "park-conscious",
   "version": "1.0.0",
   "type": "module",
+  "scripts": {
+    "build": "node frontend/scripts/generate-config.js"
+  },
   "description": "Park Conscious - Smart Parking Solution",
   "engines": {
     "node": ">=18.x"
   }
 }
-
