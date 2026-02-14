@@ -53,6 +53,48 @@
                     class="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-5 py-2 rounded-full text-sm font-medium transition-all backdrop-blur-sm">Contact
                     Sales</button>
             </div>
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+                <button class="text-gray-300 hover:text-white p-2" id="mobile-menu-button">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div class="fixed inset-0 z-[60] hidden" id="mobile-menu">
+            <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" id="mobile-menu-overlay"></div>
+            <div class="absolute right-0 top-0 h-full w-64 bg-gray-900 border-l border-white/10 p-6 transform translate-x-full transition-transform duration-300 ease-in-out shadow-2xl"
+                id="mobile-menu-drawer">
+                <div class="flex justify-end mb-8">
+                    <button class="text-gray-400 hover:text-white" id="mobile-menu-close">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="flex flex-col space-y-6">
+                    <a href="index.html"
+                        class="text-lg font-medium text-white hover:text-teal-400 transition-colors">Home</a>
+                    <a href="about.html"
+                        class="text-lg font-medium text-white hover:text-teal-400 transition-colors">About</a>
+                    <a href="technology.html"
+                        class="text-lg font-medium text-white hover:text-teal-400 transition-colors">Technology</a>
+                    <div class="h-px bg-white/10 w-full"></div>
+                    <button onclick="window.location.href='owner/login.html'"
+                        class="w-full bg-white/5 hover:bg-white/10 text-white border border-white/20 py-3 rounded-xl text-sm font-medium transition-colors">
+                        Login
+                    </button>
+                    <button onclick="window.location.href='contact.html'"
+                        class="w-full bg-gradient-to-r from-blue-600 to-teal-500 text-white py-3 rounded-xl text-sm font-semibold shadow-lg shadow-blue-500/30 transition-colors">
+                        Contact Sales
+                    </button>
+                </div>
+            </div>
         </div>
     </nav>
 
@@ -73,7 +115,7 @@
                         class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-teal-500 transition-colors">
                 </div>
 
-                <div class="flex gap-4">
+                <div class="flex flex-col sm:flex-row gap-4">
                     <label
                         class="flex items-center p-4 border border-white/10 rounded-xl cursor-pointer hover:bg-white/5 transition-colors flex-1">
                         <input type="radio" name="role" value="User" checked
@@ -140,12 +182,39 @@
                         btn.disabled = false;
                     }
                 });
+
+                // Mobile Menu Logic
+                const mobileMenuButton = document.getElementById('mobile-menu-button');
+                const mobileMenuClose = document.getElementById('mobile-menu-close');
+                const mobileMenu = document.getElementById('mobile-menu');
+                const mobileMenuDrawer = document.getElementById('mobile-menu-drawer');
+                const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+
+                function openMobileMenu() {
+                    mobileMenu.classList.remove('hidden');
+                    setTimeout(() => {
+                        mobileMenuDrawer.classList.remove('translate-x-full');
+                    }, 10);
+                    document.body.style.overflow = 'hidden';
+                }
+
+                function closeMobileMenu() {
+                    mobileMenuDrawer.classList.add('translate-x-full');
+                    setTimeout(() => {
+                        mobileMenu.classList.add('hidden');
+                    }, 300);
+                    document.body.style.overflow = '';
+                }
+
+                mobileMenuButton?.addEventListener('click', openMobileMenu);
+                mobileMenuClose?.addEventListener('click', closeMobileMenu);
+                mobileMenuOverlay?.addEventListener('click', closeMobileMenu);
             </script>
         </div>
     </div>
     <!-- Vercel Speed Insights & Analytics -->
     <script>
-      window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+        window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
     </script>
     <script defer src="/_vercel/speed-insights/script.js"></script>
     <script defer src="/_vercel/insights/script.js"></script>
