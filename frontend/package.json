@@ -5,5 +5,7 @@
     "start": "npx serve .",
     "build": "node scripts/generate-config.js"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@vercel/speed-insights": "^1.3.1"
+  }
 }
