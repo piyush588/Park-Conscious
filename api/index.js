@@ -79,6 +79,27 @@ const contactSchema = new mongoose.Schema({
 
 const Contact = mongoose.models.Contact || mongoose.model('Contact', contactSchema);
 
+// Access Log Model
+const accessLogSchema = new mongoose.Schema({
+    plateNumber: {
+        type: String,
+        required: true,
+    },
+    location: {
+        type: String,
+        default: "Main Entrance",
+    },
+    timestamp: {
+        type: Date,
+        default: Date.now,
+    },
+    imageUrl: String,
+}, {
+    timestamps: true,
+});
+
+const AccessLog = mongoose.models.AccessLog || mongoose.model('AccessLog', accessLogSchema);
+
 // Main handler
 export default async function handler(req, res) {
     // CORS
@@ -153,6 +174,33 @@ export default async function handler(req, res) {
             if (method === 'GET') {
                 const messages = await Contact.find().sort({ createdAt: -1 }).limit(100);
                 return res.status(200).json(messages);
+            }
+        }
+
+        // Access Log endpoints
+        if (url && url.includes('logs')) {
+            if (method === 'POST') {
+                const { plateNumber, location, imageUrl } = req.body;
+
+                if (!plateNumber) {
+                    return res.status(400).json({ message: "Plate number is required" });
+                }
+
+                const entry = await AccessLog.create({
+                    plateNumber: plateNumber.toUpperCase(),
+                    location,
+                    imageUrl
+                });
+
+                return res.status(201).json({
+                    message: "Detection logged successfully",
+                    data: entry
+                });
+            }
+
+            if (method === 'GET') {
+                const logs = await AccessLog.find().sort({ timestamp: -1 }).limit(50);
+                return res.status(200).json(logs);
             }
         }
 
