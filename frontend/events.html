@@ -94,6 +94,38 @@
         /* Booking Steps */
         .step-hidden { display: none; }
 
+        /* Ad Banner Styles */
+        .ad-banner {
+            background: #fef08a; /* Bright Yellow like Blinkit/Zomato */
+            color: #000;
+            font-family: 'Outfit', sans-serif;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .ad-text-container {
+            display: flex;
+            transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+
+        .ad-copy {
+            min-width: 100%;
+            padding: 1rem;
+            text-align: center;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .ad-copy { font-size: 1.25rem; padding: 1.5rem; }
+        }
+
         /* Custom Scrollbar for modern feel */
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: #020617; }
@@ -127,7 +159,7 @@
     </nav>
 
     <!-- Hero -->
-    <header class="relative pt-40 pb-20 overflow-hidden text-center">
+    <header class="relative pt-40 pb-10 overflow-hidden text-center">
         <div class="max-w-4xl mx-auto px-4 relative z-10" data-aos="zoom-out" data-aos-duration="1200">
             <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-fuchsia-500/10 border border-fuchsia-500/20 text-fuchsia-400 text-[10px] font-bold uppercase tracking-[0.2em] mb-6 pulse-neon">
                 Parking made smoother for events
@@ -136,11 +168,18 @@
                 DON'T MISS <br>
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-fuchsia-500 to-purple-600">THE VIBE.</span>
             </h1>
-            <p class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto font-medium">
+            <p class="text-lg text-gray-400 mb-6 max-w-2xl mx-auto font-medium">
                 The biggest concerts and festivals in Delhi NCR are here. Pre-book your parking spot and walk straight to the front row.
             </p>
         </div>
     </header>
+
+    <!-- Creative Ad Banner -->
+    <section class="ad-banner mb-16 shadow-2xl skew-y-1">
+        <div class="ad-text-container" id="ad-rotation-container">
+            <!-- Ad copies will be injected here -->
+        </div>
+    </section>
 
     <!-- Filters -->
     <section class="max-w-7xl mx-auto px-4 mb-12">
@@ -490,8 +529,48 @@
             document.body.style.overflow = 'auto';
         }
 
+        // --- Ad Rotation ---
+        const adCopies = [
+            "Travis Scott tonight. Your car shouldn't be doing 'Sicko Mode' in traffic.",
+            "The concert starts at 7. Delhi traffic started at 4.",
+            "Front row ticket? Nice. Parking plan? ...not so nice.",
+            "Three stages. Thousands of fans. Zero parking. Unless you booked it.",
+            "Music festival checklist: Tickets, Outfit, Friends. ❌ Parking. Fix that first.",
+            "You came for the music. Not the 2 km parking walk.",
+            "5000+ dishes waiting for you. Parking spots? Not that many.",
+            "Delhi loves food. Delhi hates parking. We solved one of those.",
+            "You handle the food coma. We'll handle the parking.",
+            "Batman found Gotham parking faster than you'll find Comic Con parking.",
+            "Cosplay ready. Camera ready. Parking ready?",
+            "Superheroes fly. Cars don't. Reserve your parking.",
+            "AI is solving complex problems. Parking shouldn't be one of them.",
+            "You're here to discuss the future of AI. Not circle the lot for 20 mins.",
+            "Your pitch is ready. Your parking plan should be too.",
+            "Concert starts in 30 mins. Parking vanished 2 hours ago.",
+            "You booked the ticket. Now book the parking.",
+            "Delhi traffic is the real opening act.",
+            "Great events. Terrible parking. Until now."
+        ];
+
+        function initAdRotation() {
+            const container = document.getElementById('ad-rotation-container');
+            adCopies.forEach(copy => {
+                const div = document.createElement('div');
+                div.className = 'ad-copy';
+                div.innerHTML = `<span>${copy}</span> <button onclick="window.scrollTo({top: 800, behavior: 'smooth'})" class="bg-black text-white px-4 py-1 rounded-full text-[10px] font-black hover:scale-105 transition-transform">BOOK NOW</button>`;
+                container.appendChild(div);
+            });
+
+            let currentAd = 0;
+            setInterval(() => {
+                currentAd = (currentAd + 1) % adCopies.length;
+                container.style.transform = `translateX(-${currentAd * 100}%)`;
+            }, 4000);
+        }
+
         // Start
         renderEvents();
+        initAdRotation();
     </script>
 </body>
 </html>
