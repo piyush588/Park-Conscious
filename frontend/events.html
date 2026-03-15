@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events | Park Conscious - Urban Event Parking</title>
+    <meta name="description" content="Discover major concerts, festivals, and trending events in Delhi NCR and pre-book your parking in advance.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            background: #020617;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .events-gradient {
+            background: radial-gradient(circle at top right, #3b82f6 0%, transparent 40%),
+                        radial-gradient(circle at bottom left, #d946ef 0%, transparent 40%),
+                        radial-gradient(circle at center, #020617 0%, #000000 100%);
+            background-attachment: fixed;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: rgba(217, 70, 239, 0.5);
+            background: rgba(15, 23, 42, 0.8);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(217, 70, 239, 0.2);
+        }
+
+        .text-neon-pink {
+            color: #ff00ff;
+            text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+        }
+
+        .text-neon-cyan {
+            color: #00ffff;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+
+        .btn-neon {
+            background: linear-gradient(135deg, #3b82f6 0%, #d946ef 100%);
+            transition: all 0.3s ease;
+        }
+
+        .btn-neon:hover {
+            box-shadow: 0 0 25px rgba(217, 70, 239, 0.6);
+            transform: scale(1.05);
+        }
+
+        .tab-active {
+            background: linear-gradient(135deg, #3b82f6 0%, #d946ef 100%);
+            color: white;
+        }
+
+        @keyframes pulse-neon {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .pulse-neon {
+            animation: pulse-neon 2s infinite;
+        }
+    </style>
+</head>
+
+<body class="text-gray-200 events-gradient min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 bg-black/40 backdrop-blur-xl border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center cursor-pointer" onclick="window.location.href='index.html'">
+                    <div class="relative w-10 h-10 mr-3 flex items-center justify-center bg-gradient-to-br from-blue-600 to-fuchsia-600 rounded-lg shadow-lg overflow-hidden">
+                        <img src="./assets/logo.jpg" alt="Logo" class="w-full h-full object-cover">
+                    </div>
+                    <span class="text-xl font-bold text-white tracking-tight">Park <span class="text-fuchsia-400">Events</span></span>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-300 hover:text-white text-sm font-medium transition-colors">Home</a>
+                    <a href="find-parking.html" class="text-gray-300 hover:text-white text-sm font-medium transition-colors">Find Parking</a>
+                    <button onclick="window.location.href='contact.html'" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-5 py-2 rounded-full text-sm font-medium transition-all">Support</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="relative pt-40 pb-20 overflow-hidden text-center">
+        <div class="max-w-4xl mx-auto px-4 relative z-10" data-aos="zoom-out" data-aos-duration="1200">
+            <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-fuchsia-500/10 border border-fuchsia-500/20 text-fuchsia-400 text-[10px] font-bold uppercase tracking-[0.2em] mb-6 pulse-neon">
+                Urban Intelligence for Events
+            </div>
+            <h1 class="text-5xl md:text-8xl font-black text-white mb-6 leading-[1] tracking-tighter">
+                DON'T MISS <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-fuchsia-500 to-purple-600">THE VIBE.</span>
+            </h1>
+            <p class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto font-medium">
+                The biggest concerts and festivals in Delhi NCR are here. Pre-book your parking spot and walk straight to the front row.
+            </p>
+        </div>
+    </header>
+
+    <!-- Filters -->
+    <section class="max-w-7xl mx-auto px-4 mb-12">
+        <div class="flex flex-wrap justify-center gap-4" data-aos="fade-up">
+            <button class="px-6 py-2 rounded-full glass border border-white/10 text-sm font-bold tab-active">All Events</button>
+            <button class="px-6 py-2 rounded-full glass border border-white/10 text-sm font-bold hover:bg-white/5 transition-colors">Concerts</button>
+            <button class="px-6 py-2 rounded-full glass border border-white/10 text-sm font-bold hover:bg-white/5 transition-colors">Festivals</button>
+            <button class="px-6 py-2 rounded-full glass border border-white/10 text-sm font-bold hover:bg-white/5 transition-colors">Culture</button>
+        </div>
+    </section>
+
+    <!-- Events Grid -->
+    <main class="max-w-7xl mx-auto px-4 pb-32">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Event 1: Kanye -->
+            <div class="glass-card rounded-[2.5rem] p-6 group" data-aos="fade-up">
+                <div class="relative h-64 mb-6 rounded-[2rem] overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Ye Live" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute bottom-4 left-6 z-20">
+                        <span class="bg-blue-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest mb-2 inline-block">Trending</span>
+                        <h3 class="text-2xl font-black text-white">YE (Kanye West) Live</h3>
+                    </div>
+                </div>
+                <div class="space-y-4 mb-8">
+                    <div class="flex items-center gap-3 text-gray-400">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-fuchsia-500"></i>
+                        <span class="text-sm font-semibold">Jawaharlal Nehru Stadium, Delhi</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-gray-400">
+                        <i data-lucide="users" class="w-4 h-4 text-blue-500"></i>
+                        <span class="text-sm">70,000+ Expected Fans</span>
+                    </div>
+                </div>
+                <button onclick="prebookParking('Ye Live', 'Jawaharlal Nehru Stadium')" class="w-full btn-neon py-4 rounded-2xl text-white font-black text-sm uppercase tracking-widest">
+                    Pre-book Parking
+                </button>
+            </div>
+
+            <!-- Event 2: Travis Scott -->
+            <div class="glass-card rounded-[2.5rem] p-6 group" data-aos="fade-up" data-aos-delay="100">
+                <div class="relative h-64 mb-6 rounded-[2rem] overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Travis Scott" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute bottom-4 left-6 z-20">
+                        <span class="bg-fuchsia-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest mb-2 inline-block">Top Choice</span>
+                        <h3 class="text-2xl font-black text-white">Travis Scott: Circus Maximus</h3>
+                    </div>
+                </div>
+                <div class="space-y-4 mb-8">
+                    <div class="flex items-center gap-3 text-gray-400">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-fuchsia-500"></i>
+                        <span class="text-sm font-semibold">Jawaharlal Nehru Stadium, Delhi</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-gray-400">
+                        <i data-lucide="calendar" class="w-4 h-4 text-blue-500"></i>
+                        <span class="text-sm">Multiple Nights Available</span>
+                    </div>
+                </div>
+                <button onclick="prebookParking('Travis Scott', 'Jawaharlal Nehru Stadium')" class="w-full btn-neon py-4 rounded-2xl text-white font-black text-sm uppercase tracking-widest">
+                    Pre-book Parking
+                </button>
+            </div>
+
+            <!-- Event 3: Karan Aujla -->
+            <div class="glass-card rounded-[2.5rem] p-6 group" data-aos="fade-up" data-aos-delay="200">
+                <div class="relative h-64 mb-6 rounded-[2rem] overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Karan Aujla" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute bottom-4 left-6 z-20">
+                        <span class="bg-purple-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest mb-2 inline-block">Massive</span>
+                        <h3 class="text-2xl font-black text-white">Karan Aujla: P-POP</h3>
+                    </div>
+                </div>
+                <div class="space-y-4 mb-8">
+                    <div class="flex items-center gap-3 text-gray-400">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-fuchsia-500"></i>
+                        <span class="text-sm font-semibold">Delhi NCR (Venue TBD)</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-gray-400">
+                        <i data-lucide="star" class="w-4 h-4 text-blue-500"></i>
+                        <span class="text-sm">75,000+ Fans Attending</span>
+                    </div>
+                </div>
+                <button onclick="prebookParking('Karan Aujla', 'Delhi NCR')" class="w-full btn-neon py-4 rounded-2xl text-white font-black text-sm uppercase tracking-widest">
+                    Pre-book Parking
+                </button>
+            </div>
+
+            <!-- Event 4: Comic Con -->
+            <div class="glass-card rounded-[2.5rem] p-6 group" data-aos="fade-up">
+                <div class="relative h-64 mb-6 rounded-[2rem] overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1533481406255-7a6b991f6300?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Comic Con" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute bottom-4 left-6 z-20">
+                        <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest mb-2 inline-block">Viral</span>
+                        <h3 class="text-2xl font-black text-white">Comic Con India</h3>
+                    </div>
+                </div>
+                <div class="space-y-4 mb-8">
+                    <div class="flex items-center gap-3 text-gray-400">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-fuchsia-500"></i>
+                        <span class="text-sm font-semibold">NSIC Grounds, Okhla</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-gray-400">
+                        <i data-lucide="camera" class="w-4 h-4 text-blue-500"></i>
+                        <span class="text-sm">Cosplay & Gaming Fest</span>
+                    </div>
+                </div>
+                <button onclick="prebookParking('Comic Con India', 'Okhla')" class="w-full btn-neon py-4 rounded-2xl text-white font-black text-sm uppercase tracking-widest">
+                    Pre-book Parking
+                </button>
+            </div>
+
+            <!-- Event 5: Horn OK Please -->
+            <div class="glass-card rounded-[2.5rem] p-6 group" data-aos="fade-up" data-aos-delay="100">
+                <div class="relative h-64 mb-6 rounded-[2rem] overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Food Fest" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute bottom-4 left-6 z-20">
+                        <span class="bg-green-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest mb-2 inline-block">Foodie Alert</span>
+                        <h3 class="text-2xl font-black text-white">Horn OK Please</h3>
+                    </div>
+                </div>
+                <div class="space-y-4 mb-8">
+                    <div class="flex items-center gap-3 text-gray-400">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-fuchsia-500"></i>
+                        <span class="text-sm font-semibold">JLN Stadium, Delhi</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-gray-400">
+                        <i data-lucide="heart" class="w-4 h-4 text-blue-500"></i>
+                        <span class="text-sm">Delhi's Happiest Food Fest</span>
+                    </div>
+                </div>
+                <button onclick="prebookParking('Horn OK Please', 'Jawaharlal Nehru Stadium')" class="w-full btn-neon py-4 rounded-2xl text-white font-black text-sm uppercase tracking-widest">
+                    Pre-book Parking
+                </button>
+            </div>
+
+            <!-- Event 6: Sunburn -->
+            <div class="glass-card rounded-[2.5rem] p-6 group" data-aos="fade-up" data-aos-delay="200">
+                <div class="relative h-64 mb-6 rounded-[2rem] overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1514525253361-bee8718a34a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Sunburn" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute bottom-4 left-6 z-20">
+                        <span class="bg-blue-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest mb-2 inline-block">EDM</span>
+                        <h3 class="text-2xl font-black text-white">Sunburn Arena</h3>
+                    </div>
+                </div>
+                <div class="space-y-4 mb-8">
+                    <div class="flex items-center gap-3 text-gray-400">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-fuchsia-500"></i>
+                        <span class="text-sm font-semibold">Gurgaon Venue</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-gray-400">
+                        <i data-lucide="zap" class="w-4 h-4 text-blue-500"></i>
+                        <span class="text-sm">Martin Garrix / DJ Snake</span>
+                    </div>
+                </div>
+                <button onclick="prebookParking('Sunburn Arena', 'Gurgaon')" class="w-full btn-neon py-4 rounded-2xl text-white font-black text-sm uppercase tracking-widest">
+                    Pre-book Parking
+                </button>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Venue Section -->
+    <section class="py-24 bg-black/40 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-black text-white mb-12" data-aos="fade-right">PRIME VENUES</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="glass p-6 rounded-3xl" data-aos="fade-up">
+                    <h4 class="text-white font-bold mb-2">JLN Stadium</h4>
+                    <p class="text-xs text-gray-500">Delhi's Arena Hub</p>
+                </div>
+                <div class="glass p-6 rounded-3xl" data-aos="fade-up" data-aos-delay="100">
+                    <h4 class="text-white font-bold mb-2">CyberHub</h4>
+                    <p class="text-xs text-gray-500">Gurgaon Pulse</p>
+                </div>
+                <div class="glass p-6 rounded-3xl" data-aos="fade-up" data-aos-delay="200">
+                    <h4 class="text-white font-bold mb-2">India Expo Mart</h4>
+                    <p class="text-xs text-gray-500">Greater Noida</p>
+                </div>
+                <div class="glass p-6 rounded-3xl" data-aos="fade-up" data-aos-delay="300">
+                    <h4 class="text-white font-bold mb-2">Pragati Maidan</h4>
+                    <p class="text-xs text-gray-500">Central Delhi</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-20 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
+            <div>
+                <span class="text-2xl font-black text-white">PARK <span class="text-fuchsia-500">CONSCIOUS</span></span>
+                <p class="text-gray-500 text-sm mt-2 font-medium">Urban intelligence for the modern world.</p>
+            </div>
+            <div class="flex gap-12 font-bold text-sm">
+                <a href="#" class="text-gray-400 hover:text-white">INSTAGRAM</a>
+                <a href="#" class="text-gray-400 hover:text-white">TWITTER</a>
+                <a href="#" class="text-gray-400 hover:text-white">TIKTOK</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="fixed inset-0 bg-black/90 backdrop-blur-xl z-[100] hidden flex items-center justify-center p-4">
+        <div class="glass-card max-w-lg w-full rounded-[3rem] p-10 relative">
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-gray-500 hover:text-white transition-colors">
+                <i data-lucide="x" class="w-8 h-8"></i>
+            </button>
+            <div class="mb-8">
+                <span class="text-neon-pink font-black text-[10px] uppercase tracking-widest mb-4 inline-block">Confirm Pre-booking</span>
+                <h2 id="modal-event-name" class="text-4xl font-black text-white mb-2 tracking-tighter">Event Name</h2>
+                <div class="flex items-center gap-2 text-gray-500 font-bold text-xs uppercase tracking-widest">
+                    <i data-lucide="map-pin" class="w-3 h-3"></i>
+                    <span id="modal-venue-name">Venue Name</span>
+                </div>
+            </div>
+            
+            <div class="space-y-6 mb-10">
+                <div class="glass p-6 rounded-[2rem] border border-white/10">
+                    <span class="block text-gray-500 font-black text-[10px] uppercase mb-4 tracking-widest">Select Parking Slot</span>
+                    <div class="grid grid-cols-2 gap-4">
+                        <label class="block cursor-pointer">
+                            <input type="radio" name="slot" value="vip" class="hidden peer" checked>
+                            <div class="p-4 rounded-2xl border border-white/5 bg-white/5 text-center peer-checked:border-fuchsia-500 peer-checked:bg-fuchsia-500/10 peer-checked:text-fuchsia-400 transition-all">
+                                <div class="font-black text-sm">VIP</div>
+                                <div class="text-[10px] opacity-70 italic">Closest to Entry</div>
+                            </div>
+                        </label>
+                        <label class="block cursor-pointer">
+                            <input type="radio" name="slot" value="standard" class="hidden peer">
+                            <div class="p-4 rounded-2xl border border-white/5 bg-white/5 text-center peer-checked:border-blue-500 peer-checked:bg-blue-500/10 peer-checked:text-blue-400 transition-all">
+                                <div class="font-black text-sm">Standard</div>
+                                <div class="text-[10px] opacity-70 italic">3 min walk</div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="glass p-6 rounded-[2rem] border border-white/10 flex items-center justify-between">
+                    <div>
+                        <span class="block text-gray-500 font-black text-[10px] uppercase mb-1 tracking-widest">Est. Cost</span>
+                        <div class="text-2xl font-black text-white tracking-widest">₹299.00</div>
+                    </div>
+                    <i data-lucide="credit-card" class="text-fuchsia-500 w-8 h-8 opacity-50"></i>
+                </div>
+            </div>
+
+            <button onclick="confirmBooking()" class="w-full btn-neon py-5 rounded-3xl text-white font-black text-lg uppercase tracking-[0.2em] shadow-2xl">
+                Pay & Reserve
+            </button>
+        </div>
+    </div>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true });
+        lucide.createIcons();
+
+        function prebookParking(eventName, venueName) {
+            document.getElementById('modal-event-name').textContent = eventName;
+            document.getElementById('modal-venue-name').textContent = venueName;
+            document.getElementById('booking-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('booking-modal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function confirmBooking() {
+            alert("Reservation Success! Check your SMS for details.");
+            closeModal();
+        }
+    </script>
+</body>
+</html>
