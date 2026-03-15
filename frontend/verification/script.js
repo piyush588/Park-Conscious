@@ -1,8 +1,27 @@
+// Error Handling
+window.onerror = function(msg, url, lineNo, columnNo, error) {
+  console.error("Global Error:", msg, error);
+  // Only show toast for relevant errors
+  if (msg.toLowerCase().includes('tesseract') || msg.toLowerCase().includes('camera')) {
+    if (typeof showToast === 'function') showToast("System Error: " + msg, "error");
+  }
+  return false;
+};
+
 // State
 let stream = null;
 let history = [];
 let isScanning = false;
 let detectedPlate = null;
+let autoScanActive = true;
+let lastCapturedPlate = null;
+let lastCaptureTime = 0;
+const AUTO_SCAN_COOLDOWN = 10000; // 10 seconds cooldown between same plate logs
+const STABILITY_THRESHOLD = 2; // Number of consecutive frames required for a "lock"
+let currentStabilityCount = 0;
+let lastDraftPlate = null;
+
+console.log("Scanner Logic Initialized");
 
 // DOM Elements
 const video = document.getElementById('camera-video');
@@ -29,28 +48,72 @@ const PLATE_REGEX_RELAXED = /[A-Z]{2}[0-9O]{1,2}[A-Z]{1,2}[0-9O]{1,4}/;
 
 // Init
 async function init() {
+  console.log("Initializing Scanner App...");
   loadHistory();
-  await startCamera();
-  lucide.createIcons();
-  switchTab('scan');
+  
+  // Ensure we switch tab even if camera fails
+  switchTab('scan'); 
+  
+  try {
+    await startCamera();
+    lucide.createIcons();
+    console.log("Camera started successfully");
+    
+    // Start automatic scanning loop
+    setTimeout(autoScanLoop, 2000); // Give camera a moment to stabilize
+  } catch (e) {
+    console.error("Init failure:", e);
+    showToast("Initialization failed", "error");
+  }
+}
+
+async function autoScanLoop() {
+  if (autoScanActive && !isScanning && !detectedPlate && tabScan && tabScan.classList.contains('active-tab')) {
+    if (video && video.readyState >= 2) { 
+        await triggerScan(true);
+    }
+  }
+  
+  // Use a simpler loop to avoid memory/stack issues
+  setTimeout(autoScanLoop, 1200); 
 }
 
 // Camera
 async function startCamera() {
   try {
+    // Check if mediaDevices is supported
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+        throw new Error("Media Capture API not supported in this browser");
+    }
+
     const stream = await navigator.mediaDevices.getUserMedia({
       video: {
         facingMode: "environment",
-        width: { ideal: 1920 },
-        height: { ideal: 1080 }
+        width: { ideal: 1280 }, // Slightly lower resolution for better performance on mobile OCR
+        height: { ideal: 720 }
       }
     });
-    video.srcObject = stream;
-    loadingCamera.classList.add('hidden');
-    scanLine.classList.remove('hidden');
+    
+    if (video) {
+        video.srcObject = stream;
+        // Wait for video to be ready before hiding loader
+        video.onloadedmetadata = () => {
+            console.log("Video metadata loaded:", video.videoWidth, "x", video.videoHeight);
+            loadingCamera.classList.add('hidden');
+            scanLine.classList.remove('hidden');
+        };
+    }
   } catch (err) {
     console.error("Camera error:", err);
-    loadingCamera.innerHTML = '<span class="text-red-500">Camera blocked or unavailable</span>';
+    if (loadingCamera) {
+        loadingCamera.innerHTML = `<div class="flex flex-col items-center gap-2">
+            <i data-lucide="camera-off" class="h-8 w-8 text-red-500"></i>
+            <span class="text-red-500 font-bold">Camera unavailable</span>
+            <button onclick="location.reload()" class="mt-2 bg-accent text-white px-4 py-1 rounded-full text-xs">Retry</button>
+        </div>`;
+        lucide.createIcons();
+    }
+    showToast("Camera access denied", "error");
   }
 }
 
@@ -58,7 +121,9 @@ async function startCamera() {
 window.switchTab = function (tab) {
   if (tab === 'scan') {
     tabScan.classList.remove('hidden');
+    tabScan.classList.add('active-tab');
     tabHistory.classList.add('hidden');
+    tabHistory.classList.remove('active-tab');
 
     // Active Styles
     btnTabScan.classList.add('bg-primary', 'text-accent');
@@ -68,7 +133,9 @@ window.switchTab = function (tab) {
     btnTabHistory.classList.add('text-muted-foreground');
   } else {
     tabScan.classList.add('hidden');
+    tabScan.classList.remove('active-tab');
     tabHistory.classList.remove('hidden');
+    tabHistory.classList.add('active-tab');
     renderHistory();
 
     // Active Styles
@@ -116,19 +183,38 @@ function showToast(message, type = 'default') {
   }, 3000);
 }
 
-window.triggerScan = async function () {
+window.triggerScan = async function (arg) {
+  const isAuto = arg === true;
   if (isScanning) return;
 
-  // UI Loading
+  if (typeof Tesseract === 'undefined') {
+      if (!isAuto) showToast("OCR Engine loading...", "default");
+      return;
+  }
+
+  if (video.readyState < 2) {
+      if (!isAuto) showToast("Camera not ready", "error");
+      return;
+  }
+
+  // UI Loading (only show icon change if manual or high confidence)
   isScanning = true;
-  scanBtn.disabled = true;
-  scanIcon.classList.add('hidden');
-  processingIcon.classList.remove('hidden');
+  if (!isAuto) {
+    scanBtn.disabled = true;
+    scanIcon.classList.add('hidden');
+    processingIcon.classList.remove('hidden');
+  }
+
+  // Visual scan line pulse
+  scanLine.classList.add('scanning-active');
 
   // Capture
-  canvas.width = video.videoWidth;
-  canvas.height = video.videoHeight;
+  canvas.width = video.videoWidth || 640;
+  canvas.height = video.videoHeight || 480;
   ctx.drawImage(video, 0, 0);
+  
+  if (isAuto) console.log("Auto-scanning frame...");
+  else console.log("Manual scan triggered...");
 
   // OCR
   try {
@@ -145,24 +231,62 @@ window.triggerScan = async function () {
     }
 
     if (match) {
-      detectedPlate = match[0];
-      showResult(detectedPlate);
-    } else if (cleanText.length > 3) {
-      // Fallback: Show best guess
+      const currentPlate = match[0];
+      console.log("Plate Candidate:", currentPlate, "Confidence:", match.index);
+      
+      // Manual scan shows result IMMEDIATELY
+      if (!isAuto) {
+          detectedPlate = currentPlate;
+          showResult(currentPlate);
+          showToast("Detected: " + currentPlate, "success");
+          return;
+      }
+
+      // Stability check for AUTO-SCAN ONLY
+      if (currentPlate === lastDraftPlate) {
+        currentStabilityCount++;
+      } else {
+        lastDraftPlate = currentPlate;
+        currentStabilityCount = 1;
+      }
+
+      if (currentStabilityCount >= STABILITY_THRESHOLD) {
+        // Cooldown check for automatic logging
+        const now = Date.now();
+        if (currentPlate === lastCapturedPlate && (now - lastCaptureTime) < AUTO_SCAN_COOLDOWN) {
+          console.log("Plate in cooldown:", currentPlate);
+        } else {
+          detectedPlate = currentPlate;
+          showResult(currentPlate);
+          showToast("AI Auto-Scan: " + currentPlate, "success");
+        }
+        currentStabilityCount = 0;
+      }
+    } else {
+      currentStabilityCount = 0;
+      lastDraftPlate = null;
+    }
+
+    // Fallback for manual scan only
+    if (!isAuto && !match && cleanText.length > 3) {
       detectedPlate = cleanText;
       showResult(cleanText + "?");
       showToast("Low confidence scan", "default");
-    } else {
+    } else if (!isAuto && !match) {
       showToast("No plate detected", "error");
     }
+
   } catch (err) {
     console.error(err);
-    showToast("Scanner failed", "error");
+    if (!isAuto) showToast("Scanner failed", "error");
   } finally {
     isScanning = false;
-    scanBtn.disabled = false;
-    scanIcon.classList.remove('hidden');
-    processingIcon.classList.add('hidden');
+    scanLine.classList.remove('scanning-active');
+    if (!isAuto) {
+      scanBtn.disabled = false;
+      scanIcon.classList.remove('hidden');
+      processingIcon.classList.add('hidden');
+    }
   }
 };
 
@@ -183,9 +307,13 @@ window.saveScan = function () {
 
   const newEntry = {
     id: Math.random().toString(36).substr(2, 9),
-    plateNumber: detectedPlate,
+    plateNumber: detectedPlate.replace("?", ""),
     timestamp: new Date().toISOString()
   };
+
+  // Update cooldown tracking
+  lastCapturedPlate = newEntry.plateNumber;
+  lastCaptureTime = Date.now();
 
   history.unshift(newEntry);
   saveHistory();

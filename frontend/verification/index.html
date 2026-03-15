@@ -66,6 +66,12 @@
       <div class="relative w-full h-full bg-black flex flex-col items-center justify-center overflow-hidden">
         <video id="camera-video" autoplay playsinline muted class="absolute inset-0 w-full h-full object-cover"></video>
         <canvas id="scan-canvas" class="hidden"></canvas>
+        
+        <!-- Auto-Scan Status Badge -->
+        <div class="absolute top-6 right-6 z-20 flex items-center gap-2 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-primary/30">
+            <span class="w-2 h-2 rounded-full bg-primary shadow-[0_0_10px_hsl(var(--primary))] animate-pulse"></span>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-primary">AI Auto-Scan Active</span>
+        </div>
 
         <!-- Overlay -->
         <div class="absolute inset-0 pointer-events-none z-10 p-4 flex flex-col items-center justify-center">
@@ -112,9 +118,10 @@
             </div>
             <div class="absolute inset-2 rounded-full border border-accent/40 animate-pulse"></div>
             <div
-              class="w-20 h-20 rounded-full bg-accent flex items-center justify-center text-background shadow-[0_0_40px_rgba(144,219,244,0.5)] group-hover:shadow-[0_0_60px_rgba(144,219,244,0.7)] transition-all">
-              <i id="scan-icon" data-lucide="scan" class="h-10 w-10 group-hover:rotate-90 transition-transform"></i>
-              <i id="processing-icon" data-lucide="loader-2" class="h-10 w-10 animate-spin hidden"></i>
+              class="w-20 h-20 rounded-full bg-accent flex flex-col items-center justify-center text-background shadow-[0_0_40px_rgba(144,219,244,0.5)] group-hover:shadow-[0_0_60px_rgba(144,219,244,0.7)] transition-all">
+              <i id="scan-icon" data-lucide="scan" class="h-8 w-8 group-hover:rotate-90 transition-transform"></i>
+              <i id="processing-icon" data-lucide="loader-2" class="h-8 w-8 animate-spin hidden"></i>
+              <span class="text-[8px] font-bold uppercase mt-1">Manual</span>
             </div>
           </button>
         </div>

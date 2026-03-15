@@ -77,6 +77,13 @@ h6,
   box-shadow: 0 0 20px rgba(144, 219, 244, 1);
   animation: scan-move 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.scan-line.scanning-active {
+  background-color: hsl(var(--primary));
+  box-shadow: 0 0 30px hsla(var(--primary), 1);
+  height: 4px;
 }
 
 @keyframes scan-move {
